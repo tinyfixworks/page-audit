@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 from urllib.parse import urlparse
 import requests
 from playwright.sync_api import sync_playwright
+from ai_analyzer import analyze as analyze_with_gemini
 
 def finding(cat, sev, title, evidence, context="", impact="", confidence="high", source="rules"):
     return {"id":"","category":cat,"severity":sev,"title":title,"evidence":evidence,"context":context,"impact":impact,"confidence":confidence,"source":source}
@@ -12,6 +13,7 @@ def main():
     ap=argparse.ArgumentParser()
     ap.add_argument("--url",default=os.getenv("AUDIT_URL",""))
     ap.add_argument("--output",default="results.json")
+    ap.add_argument("--skip-ai",action="store_true",help="Skip Gemini analysis")
     a=ap.parse_args()
     u=a.url.strip()
     p=urlparse(u)
@@ -20,6 +22,7 @@ def main():
     if allowed_host != "www.yettel.bg":
         raise SystemExit("For security, this prototype only audits URLs on www.yettel.bg.")
     start=time.time(); fs=[]
+    screenshot_path="page-audit-screenshot.png"
     d={"requested_url":u,"final_url":u,"status":None,"title":"","meta_description":"","canonical":"","h1":[],"headings":[],"links":[],"images":[],"resources":[],"text_excerpt":"","load_ms":None,"request_count":0}
     with sync_playwright() as pw:
         browser=pw.chromium.launch()
@@ -31,6 +34,8 @@ def main():
             try: page.goto(u,wait_until="domcontentloaded",timeout=25000)
             except Exception: pass
         d["final_url"]=page.url; d["status"]=response.status if response else None
+        try: page.screenshot(path=screenshot_path, full_page=False, animations="disabled")
+        except Exception: screenshot_path=""
         final_host = (urlparse(d["final_url"]).hostname or "").lower().rstrip(".")
         if final_host != "www.yettel.bg":
             browser.close()
@@ -86,9 +91,16 @@ def main():
             elif r.status_code in (401,403,429) or r.status_code>=500: fs.append(finding("Links","medium","Link could not be reliably verified",f'{x["href"]} returned HTTP {r.status_code}.',ctx,"Access controls, rate limits or server issues may affect the result.","medium"))
             elif r.status_code>=400: fs.append(finding("Links","medium","Link returned an HTTP error",f'{x["href"]} returned HTTP {r.status_code}.',ctx,"Confirm whether the response is expected.","medium"))
         except Exception as e: fs.append(finding("Links","low","Link check failed",f'{x["href"]} — {str(e)[:150]}',x["area"],"Network behavior prevented verification.","low"))
+    ai_result={"enabled":False,"status":"skipped by configuration","findings":[]}
+    if not a.skip_ai:
+        ai_result=analyze_with_gemini(d, screenshot_path)
+        fs.extend(ai_result.get("findings", []))
     order={"critical":0,"high":1,"medium":2,"low":3}; fs.sort(key=lambda x:(order.get(x["severity"],9),x["category"],x["title"]))
     for i,x in enumerate(fs,1): x["id"]=f"PA-{i:03d}"
-    report={"schema_version":1,"generated_at":datetime.now(timezone.utc).isoformat(),"page":d,"summary":{"total_findings":len(fs),"by_severity":dict(Counter(x["severity"] for x in fs)),"by_category":dict(Counter(x["category"] for x in fs))},"findings":fs,"ai_analysis":{"enabled":False,"status":"not configured"},"notes":["Findings require human review, especially contextual findings.","Checks up to 60 unique link destinations.","AI analysis is not enabled in this prototype."]}
+    report={"schema_version":1,"generated_at":datetime.now(timezone.utc).isoformat(),"page":d,"summary":{"total_findings":len(fs),"by_severity":dict(Counter(x["severity"] for x in fs)),"by_category":dict(Counter(x["category"] for x in fs))},"findings":fs,"ai_analysis":{"enabled":ai_result.get("enabled",False),"status":ai_result.get("status","unknown"),"model":os.getenv("GEMINI_MODEL","gemini-2.5-flash"),"finding_count":len(ai_result.get("findings",[]))},"notes":["Findings require human review, especially contextual findings.","Checks up to 60 unique link destinations.","AI findings are probabilistic and should be reviewed against the evidence."]}
     with open(a.output,"w",encoding="utf-8") as f: json.dump(report,f,ensure_ascii=False,indent=2)
-    print(f"Saved {len(fs)} findings to {a.output}")
+    if screenshot_path and os.path.exists(screenshot_path):
+        try: os.remove(screenshot_path)
+        except OSError: pass
+    print(f"Saved {len(fs)} findings to {a.output}; Gemini: {report['ai_analysis']['status']}")
 if __name__=="__main__": main()
