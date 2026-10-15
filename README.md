@@ -1,6 +1,6 @@
 # Page Audit — prototype 0.1
 
-First prototype for auditing one public HTTP(S) page and displaying an interactive static report.
+First prototype for auditing public pages on `https://www.yettel.bg` and displaying an interactive static report.
 
 ## Checks included
 - Page HTTP status, title, meta description, H1 headings and canonical URL
@@ -20,4 +20,5 @@ AI analysis is not connected yet. The report schema already includes AI status.
 5. Open Actions → Audit public page → Run workflow, enter a public URL, and run it.
 6. After the workflow commits `results.json`, open the GitHub Pages URL.
 
-The workflow is manual. Each run replaces the latest report; history is not implemented. Only inspect public pages you are authorized to audit. Do not commit API keys. 403/429/timeouts/5xx are not automatically classified as broken links. Findings are evidence and require contextual review.
+The workflow is manual. The dashboard URL form validates and copies a Yettel URL, but GitHub Pages cannot launch Actions by itself; paste the URL into Actions → Audit public page → Run workflow. Each run replaces the latest report; history is not implemented. Only inspect public pages you are authorized to audit. Do not commit API keys. 403/429/timeouts/5xx are not automatically classified as broken links. Findings are evidence and require contextual review.
+\n\n## Security allow-list\nThe checker only accepts the exact hostname `www.yettel.bg` over HTTP(S) and stops if browser navigation redirects to another hostname. The dashboard form currently accepts HTTPS only. This is an initial safeguard, not a complete SSRF defense; before exposing a public scan API, also validate every redirect and every subresource/request destination, use network egress restrictions, add authentication/rate limits, and keep the runner isolated.\n

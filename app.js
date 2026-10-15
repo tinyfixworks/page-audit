@@ -6,3 +6,17 @@ function render(r){const p=r.page||{};all=r.findings||[];$("page-url").textConte
 function filter(){const q=$("search").value.trim().toLowerCase(),c=$("category-filter").value,s=$("severity-filter").value;const items=all.filter(x=>(!q||[x.id,x.title,x.category,x.evidence,x.context,x.impact].join(" ").toLowerCase().includes(q))&&(!c||x.category===c)&&(!s||x.severity===s));$("visible-count").textContent=items.length;if(!items.length){$("findings").innerHTML='<div class="empty panel">No findings match these filters.</div>';return}$("findings").innerHTML=items.map(x=>`<button class="finding panel" data-id="${esc(x.id)}"><div class="tags"><span class="sev sev-${esc(x.severity)}">${esc(x.severity)}</span><span>${esc(x.id)}</span><span class="category">${esc(x.category)}</span></div><strong>${esc(x.title)}</strong><p>${esc(x.evidence)}</p><div class="context"><span>${esc(x.context||"Context not captured")}</span><b>View details ↗</b></div></button>`).join("");document.querySelectorAll(".finding").forEach(b=>b.addEventListener("click",()=>detail(all.find(x=>x.id===b.dataset.id))))}
 function detail(x){$("detail-category").textContent=(x.category||"Finding")+" · "+(x.id||"");$("detail-title").textContent=x.title||"Untitled finding";$("detail-severity").innerHTML=`<span class="sev sev-${esc(x.severity)}">${esc(nice(x.severity))} severity</span>`;$("detail-evidence").textContent=x.evidence||"No evidence captured.";$("detail-context").textContent=x.context||"No context captured.";$("detail-impact").textContent=x.impact||"Impact not assessed.";$("detail-confidence").textContent="Confidence: "+nice(x.confidence);$("detail-source").textContent="Source: "+(x.source||"rules");$("detail-id").textContent=x.id||"";$("detail-dialog").showModal()}
 ["search","category-filter","severity-filter"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",filter));$("close-dialog").onclick=()=>$("detail-dialog").close();$("detail-dialog").addEventListener("click",e=>{if(e.target===$("detail-dialog"))$("detail-dialog").close()});load();
+// GitHub Pages is static: this validates the URL and gives the user the exact workflow input.
+$("audit-form").addEventListener("submit", (event) => {
+  event.preventDefault();
+  const field = $("audit-url");
+  const message = $("form-message");
+  let parsed;
+  try { parsed = new URL(field.value.trim()); } catch { message.textContent = "Enter a valid URL."; return; }
+  if (parsed.protocol !== "https:" || parsed.hostname.toLowerCase() !== "www.yettel.bg" || parsed.username || parsed.password) {
+    message.textContent = "Only HTTPS URLs on exactly www.yettel.bg are allowed.";
+    return;
+  }
+  message.textContent = "URL validated: " + parsed.href + ". This static page cannot start GitHub Actions directly. Open the repository's Actions → Audit public page → Run workflow and paste this URL there.";
+  if (navigator.clipboard?.writeText) navigator.clipboard.writeText(parsed.href).catch(() => {});
+});

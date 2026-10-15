@@ -16,6 +16,9 @@ def main():
     u=a.url.strip()
     p=urlparse(u)
     if p.scheme not in ("http","https") or not p.netloc: raise SystemExit("Enter a valid public HTTP(S) URL.")
+    allowed_host = (p.hostname or "").lower().rstrip(".")
+    if allowed_host != "www.yettel.bg":
+        raise SystemExit("For security, this prototype only audits URLs on www.yettel.bg.")
     start=time.time(); fs=[]
     d={"requested_url":u,"final_url":u,"status":None,"title":"","meta_description":"","canonical":"","h1":[],"headings":[],"links":[],"images":[],"resources":[],"text_excerpt":"","load_ms":None,"request_count":0}
     with sync_playwright() as pw:
@@ -28,6 +31,10 @@ def main():
             try: page.goto(u,wait_until="domcontentloaded",timeout=25000)
             except Exception: pass
         d["final_url"]=page.url; d["status"]=response.status if response else None
+        final_host = (urlparse(d["final_url"]).hostname or "").lower().rstrip(".")
+        if final_host != "www.yettel.bg":
+            browser.close()
+            raise SystemExit("Navigation redirected outside www.yettel.bg. Audit stopped for security.")
         try: d["title"]=(page.title() or "").strip()
         except Exception: pass
         try:
