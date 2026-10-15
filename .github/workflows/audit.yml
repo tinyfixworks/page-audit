@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       url:
-        description: "Public page URL (https://...)"
+        description: "Public Yettel page URL (https://www.yettel.bg/...)"
         required: true
         type: string
 permissions:
