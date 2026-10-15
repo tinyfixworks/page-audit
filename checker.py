@@ -97,7 +97,7 @@ def main():
         fs.extend(ai_result.get("findings", []))
     order={"critical":0,"high":1,"medium":2,"low":3}; fs.sort(key=lambda x:(order.get(x["severity"],9),x["category"],x["title"]))
     for i,x in enumerate(fs,1): x["id"]=f"PA-{i:03d}"
-    report={"schema_version":1,"generated_at":datetime.now(timezone.utc).isoformat(),"page":d,"summary":{"total_findings":len(fs),"by_severity":dict(Counter(x["severity"] for x in fs)),"by_category":dict(Counter(x["category"] for x in fs))},"findings":fs,"ai_analysis":{"enabled":ai_result.get("enabled",False),"status":ai_result.get("status","unknown"),"model":os.getenv("GEMINI_MODEL","gemini-2.5-flash"),"finding_count":len(ai_result.get("findings",[]))},"notes":["Findings require human review, especially contextual findings.","Checks up to 60 unique link destinations.","AI findings are probabilistic and should be reviewed against the evidence."]}
+    report={"schema_version":1,"generated_at":datetime.now(timezone.utc).isoformat(),"page":d,"summary":{"total_findings":len(fs),"by_severity":dict(Counter(x["severity"] for x in fs)),"by_category":dict(Counter(x["category"] for x in fs))},"findings":fs,"ai_analysis":{"enabled":ai_result.get("enabled",False),"status":ai_result.get("status","unknown"),"model":os.getenv("GEMINI_MODEL","gemini-3.8-flash"),"finding_count":len(ai_result.get("findings",[]))},"notes":["Findings require human review, especially contextual findings.","Checks up to 60 unique link destinations.","AI findings are probabilistic and should be reviewed against the evidence."]}
     with open(a.output,"w",encoding="utf-8") as f: json.dump(report,f,ensure_ascii=False,indent=2)
     if screenshot_path and os.path.exists(screenshot_path):
         try: os.remove(screenshot_path)
