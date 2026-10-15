@@ -26,7 +26,7 @@ jobs:
         env:
           AUDIT_URL: ${{ inputs.url }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: gemini-2.5-flash
+          GEMINI_MODEL: gemini-3.8-flash
         run: python checker.py --url "$AUDIT_URL" --output results.json
       - uses: actions/upload-artifact@v4
         with:
