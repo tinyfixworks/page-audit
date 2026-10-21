@@ -1,48 +1,124 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-21T07:00:24.282813+00:00",
+  "generated_at": "2026-10-21T07:20:43.758663+00:00",
   "page": {
-    "requested_url": "https://www.yettel.bg/bg/novite-apple-iphone-duo",
-    "final_url": "https://www.yettel.bg/bg/novite-apple-iphone-duo",
+    "requested_url": "https://www.yettel.bg/bg/ustroystva/smartfon-vselena",
+    "final_url": "https://www.yettel.bg/bg/ustroystva/smartfon-vselena",
     "status": 200,
-    "title": "Поръчай iPhone Duo Предварително от Yettel",
-    "meta_description": "От 16 октомври в 15 ч. ще можеш да поръчаш новия iPhone Duo предварително от Yettel. С безплатна доставка в цяла България.",
-    "canonical": "https://www.yettel.bg/bg/novite-apple-iphone-duo",
+    "title": "Смартфон Вселена от Yettel",
+    "meta_description": "Смартфон Вселена ти дава по-дълга, 3 годишна гаранция и услуги, които да удължат живота на смартфона ти. Стани клиент на Yettel и вземи пакета.",
+    "canonical": "https://www.yettel.bg/bg/ustroystva/smartfon-vselena",
     "h1": [
-      "Поръчай предварително iPhone Duo"
+      "Смартфон Вселена от Yettel"
     ],
     "headings": [
       {
         "level": "H1",
-        "text": "Поръчай предварително iPhone Duo"
+        "text": "Смартфон Вселена от Yettel"
+      },
+      {
+        "level": "H5",
+        "text": "До 4 г. гаранция за смартфони"
+      },
+      {
+        "level": "H5",
+        "text": "До 275 € в допълнителни услуги"
+      },
+      {
+        "level": "H5",
+        "text": "3 г. гаранция за смарт часовници"
+      },
+      {
+        "level": "H5",
+        "text": "До 2 месеца застраховка от нас"
       },
       {
         "level": "H2",
-        "text": "Как работят предварителните поръчки?"
-      },
-      {
-        "level": "H5",
-        "text": "Период на предварителните поръчки"
-      },
-      {
-        "level": "H5",
-        "text": "Първи заявил, първи получил"
-      },
-      {
-        "level": "H5",
-        "text": "Доставка"
+        "text": "Как работи Смартфон Вселена?"
       },
       {
         "level": "H2",
-        "text": "Поръчай предварително в 3 стъпки"
-      },
-      {
-        "level": "H5",
-        "text": "Добре е да знаеш"
+        "text": "Сравни предимствата на Смартфон Вселена"
       },
       {
         "level": "H3",
-        "text": "Кампанията те очаква и в приложението Yettel"
+        "text": "Смартфон Вселена пакет L"
+      },
+      {
+        "level": "H3",
+        "text": "Смартфон Вселена пакет XL"
+      },
+      {
+        "level": "H2",
+        "text": "Какво ще откриеш в Смартфон Вселена?"
+      },
+      {
+        "level": "H5",
+        "text": "Смартфон диагностика"
+      },
+      {
+        "level": "H5",
+        "text": "Смартфон протект"
+      },
+      {
+        "level": "H5",
+        "text": "Сертифициран сервиз"
+      },
+      {
+        "level": "H5",
+        "text": "До 4 години гаранция"
+      },
+      {
+        "level": "H5",
+        "text": "Рециклирай и спести"
+      },
+      {
+        "level": "H5",
+        "text": "Смарт лизинг"
+      },
+      {
+        "level": "H5",
+        "text": "Отстъпка за смарт часовник"
+      },
+      {
+        "level": "H3",
+        "text": "Популярни устройства този месец"
+      },
+      {
+        "level": "H3",
+        "text": "До 50 € отстъпка за смарт часовник"
+      },
+      {
+        "level": "H3",
+        "text": "Популярни смарт аксесоари този месец"
+      },
+      {
+        "level": "H3",
+        "text": "Време за нов смартфон?"
+      },
+      {
+        "level": "H3",
+        "text": "Защо да купиш от Yettel?"
+      },
+      {
+        "level": "H5",
+        "text": "Повече сигурност"
+      },
+      {
+        "level": "H5",
+        "text": "Сертифициран сервиз"
+      },
+      {
+        "level": "H5",
+        "text": "Гъвкаво плащане"
+      },
+      {
+        "level": "H5",
+        "text": "Рециклирай и спести"
+      },
+      {
+        "level": "H4",
+        "text": "Допълнителен пакет Смартфон Вселена - старт"
       },
       {
         "level": "H3",
@@ -68,91 +144,147 @@
     "links": [
       {
         "text": "Skip to main content",
-        "href": "https://www.yettel.bg/bg/novite-apple-iphone-duo#main-content",
+        "href": "https://www.yettel.bg/bg/ustroystva/smartfon-vselena#main-content",
         "area": "Main content",
         "element": "text link",
         "imageAlt": null
       },
       {
         "text": "",
-        "href": "https://www.yettel.bg/bg/novite-apple-iphone-duo#main-content",
+        "href": "https://www.yettel.bg/bg/ustroystva/smartfon-vselena#main-content",
         "area": "Main content",
         "element": "text link",
         "imageAlt": null
       },
       {
-        "text": "iPhone Duo 256GB\n102.59 €/мес.\nс Total Unlimited 300 Online",
-        "href": "https://www.yettel.bg/eshop/devices/smartphones/apple/iphone-duo?storage=256GB&exact-color=%23F7F5F6&intent=NEW_ACTIVATION&paymentType=LEASE&planId=48701",
-        "area": "Main content",
-        "element": "image link",
-        "imageAlt": "Device Image"
-      },
-      {
-        "text": "iPhone Duo 256GB\n102.59 €/мес.\nс Total Unlimited 300 Online",
-        "href": "https://www.yettel.bg/eshop/devices/smartphones/apple/iphone-duo?storage=256GB&exact-color=%233F4955&intent=NEW_ACTIVATION&paymentType=LEASE&planId=48701",
-        "area": "Main content",
-        "element": "image link",
-        "imageAlt": "Device Image"
-      },
-      {
-        "text": "iPhone Duo 512GB\n116.59 €/мес.\nс Total Unlimited 300 Online",
-        "href": "https://www.yettel.bg/eshop/devices/smartphones/apple/iphone-duo?storage=512GB&exact-color=%233F4955&intent=NEW_ACTIVATION&paymentType=LEASE&planId=48701",
-        "area": "Main content",
-        "element": "image link",
-        "imageAlt": "Device Image"
-      },
-      {
-        "text": "iPhone Duo 512GB\n116.59 €/мес.\nс Total Unlimited 300 Online",
-        "href": "https://www.yettel.bg/eshop/devices/smartphones/apple/iphone-duo?storage=512GB&exact-color=%23F7F5F6&intent=NEW_ACTIVATION&paymentType=LEASE&planId=48701",
-        "area": "Main content",
-        "element": "image link",
-        "imageAlt": "Device Image"
-      },
-      {
-        "text": "iPhone Duo 1TB\n140.59 €/мес.\nс Total Unlimited 300 Online",
-        "href": "https://www.yettel.bg/eshop/devices/smartphones/apple/iphone-duo?storage=1T&exact-color=%233F4955&intent=NEW_ACTIVATION&paymentType=LEASE&planId=48701",
-        "area": "Main content",
-        "element": "image link",
-        "imageAlt": "Device Image"
-      },
-      {
-        "text": "iPhone Duo 1TB\n140.59 €/мес.\nс Total Unlimited 300 Online",
-        "href": "https://www.yettel.bg/eshop/devices/smartphones/apple/iphone-duo?storage=1T&exact-color=%23F7F5F6&intent=NEW_ACTIVATION&paymentType=LEASE&planId=48701",
-        "area": "Main content",
-        "element": "image link",
-        "imageAlt": "Device Image"
-      },
-      {
-        "text": "iPhone Duo 2TB\n173.99 €/мес.\nс Total Unlimited 300 Online",
-        "href": "https://www.yettel.bg/eshop/devices/smartphones/apple/iphone-duo?storage=2T&exact-color=%233F4955&intent=NEW_ACTIVATION&paymentType=LEASE&planId=48701",
-        "area": "Main content",
-        "element": "image link",
-        "imageAlt": "Device Image"
-      },
-      {
-        "text": "iPhone Duo 2TB\n173.99 €/мес.\nс Total Unlimited 300 Online",
-        "href": "https://www.yettel.bg/eshop/devices/smartphones/apple/iphone-duo?storage=2T&exact-color=%23F7F5F6&intent=NEW_ACTIVATION&paymentType=LEASE&planId=48701",
-        "area": "Main content",
-        "element": "image link",
-        "imageAlt": "Device Image"
-      },
-      {
-        "text": "Влез в приложението Yettel",
-        "href": "https://d.yettel.bg/?screen=home",
+        "text": "Виж повече",
+        "href": "https://www.yettel.bg/bg/ustroystva/smartfon-vselena/smartfon-diagnostika",
         "area": "Main content",
         "element": "text link",
         "imageAlt": null
       },
       {
-        "text": "За заявки от юридически лица, моля попълнете формата тук",
-        "href": "https://www.yettel.bg/bg/weborm-preorder-iphone-duo",
+        "text": "Виж повече",
+        "href": "https://www.yettel.bg/bg/ustroystva/smartfon-vselena/smartfon-protect",
         "area": "Main content",
         "element": "text link",
         "imageAlt": null
       },
       {
-        "text": "Виж пълните условия на кампанията",
-        "href": "https://www.yettel.bg/sites/default/files/2026-10/iphone_duo_pre_sale_2026.pdf",
+        "text": "Виж повече",
+        "href": "https://www.yettel.bg/bg/smarfon-vselena/udalzhena-garanciya",
+        "area": "Main content",
+        "element": "text link",
+        "imageAlt": null
+      },
+      {
+        "text": "Виж повече",
+        "href": "https://www.yettel.bg/bg/ustroystva/smartfon-vselena/retsikliray-i-spesti",
+        "area": "Main content",
+        "element": "text link",
+        "imageAlt": null
+      },
+      {
+        "text": "Виж повече",
+        "href": "https://www.yettel.bg/bg/ustroystva/smartfon-vselena/smart-lizing",
+        "area": "Main content",
+        "element": "text link",
+        "imageAlt": null
+      },
+      {
+        "text": "Виж повече",
+        "href": "https://www.yettel.bg/bg/eshop/landing/smart-chasovnici-s-otstypka",
+        "area": "Main content",
+        "element": "text link",
+        "imageAlt": null
+      },
+      {
+        "text": "Онлайн оферта\n\niPhone 17 256GB\n789.99 €\n639.99 €\nс Total Unlimited MAX",
+        "href": "https://www.yettel.bg/eshop/devices/smartphones/apple/iphone-17-eo?storage=256GB&exact-color=%23868FC7&intent=NEW_ACTIVATION&paymentType=CASH&planId=45299-26331",
+        "area": "Main content",
+        "element": "image link",
+        "imageAlt": "Device Image"
+      },
+      {
+        "text": "Онлайн оферта\n\nMOTOROLA Moto G67 5G 128GB + Philips Airfryer HD9255/30\n159.99 €\nс Total Unlimited MAX",
+        "href": "https://www.yettel.bg/eshop/devices/smartphones/motorola/motorola-moto-g67-5g-plus-philips-airfryer-eo?storage=128GB&exact-color=%23777777&intent=NEW_ACTIVATION&paymentType=CASH&planId=45299-26331",
+        "area": "Main content",
+        "element": "image link",
+        "imageAlt": "Device Image"
+      },
+      {
+        "text": "Онлайн оферта\n\nGoogle Pixel 10a 5G 128GB + Pixel Buds 2a\n369.99 €\n319.99 €\nс Total Unlimited MAX",
+        "href": "https://www.yettel.bg/eshop/devices/smartphones/google+pixel/google-pixel-10a-5g-128gb-plus-pixel-buds-2a?storage=128GB&exact-color=%23DADBD6&intent=NEW_ACTIVATION&paymentType=CASH&planId=45299-26331",
+        "area": "Main content",
+        "element": "image link",
+        "imageAlt": "Device Image"
+      },
+      {
+        "text": "Само онлайн\n\nRealme 16 Pro 5G 256GB Harry Potter Edition\n479.99 €\nс Total Unlimited MAX",
+        "href": "https://www.yettel.bg/eshop/devices/smartphones/realme/realme-16-pro-5g-256gb-harry-potter-edition?storage=256GB&exact-color=%233F2400&intent=NEW_ACTIVATION&paymentType=CASH&planId=45299-26331",
+        "area": "Main content",
+        "element": "image link",
+        "imageAlt": "Device Image"
+      },
+      {
+        "text": "Виж всички устройства",
+        "href": "https://www.yettel.bg/bg/eshop/device-gallery?category=SMARTPHONES&paymentType=LEASE",
+        "area": "Main content",
+        "element": "text link",
+        "imageAlt": null
+      },
+      {
+        "text": "Виж повече",
+        "href": "https://www.yettel.bg/bg/eshop/landing/smart-chasovnici-s-otstypka",
+        "area": "Main content",
+        "element": "text link",
+        "imageAlt": null
+      },
+      {
+        "text": "Huawei оферта\n\nHUAWEI Watch 6 LTE 42mm\n464.99 €",
+        "href": "https://www.yettel.bg/eshop/devices/smart_wearables/huawei/huawei-watch-6-lte-42mm?exact-color=%23CFAC68&intent=NO_PLAN&paymentType=CASH",
+        "area": "Main content",
+        "element": "image link",
+        "imageAlt": "Device Image"
+      },
+      {
+        "text": "Huawei оферта\n\nHUAWEI Watch 6 LTE 46mm\n504.99 €",
+        "href": "https://www.yettel.bg/eshop/devices/smart_wearables/huawei/huawei-watch-6-lte-46mm?exact-color=%23069ADF&intent=NO_PLAN&paymentType=CASH",
+        "area": "Main content",
+        "element": "image link",
+        "imageAlt": "Device Image"
+      },
+      {
+        "text": "Huawei оферта\n\nHUAWEI Watch 6 Pro LTE 43mm White Ceramic\n694.99 €",
+        "href": "https://www.yettel.bg/eshop/devices/smart_wearables/huawei/huawei-watch-6-pro-lte-43mm-white-ceramic?exact-color=%23F2F3F5&intent=NO_PLAN&paymentType=CASH",
+        "area": "Main content",
+        "element": "image link",
+        "imageAlt": "Device Image"
+      },
+      {
+        "text": "Huawei оферта\n\nHUAWEI FreeBuds Neo\n109.99 €",
+        "href": "https://www.yettel.bg/eshop/devices/wireless_headphones/huawei/huawei-freebuds-neo?exact-color=%23000000&intent=NO_PLAN&paymentType=CASH",
+        "area": "Main content",
+        "element": "image link",
+        "imageAlt": "Device Image"
+      },
+      {
+        "text": "Виж всички смарт аксесоари",
+        "href": "https://www.yettel.bg/bg/eshop/device-gallery?category=SMART_GADGETS&paymentType=LEASE&planType=no-plan",
+        "area": "Main content",
+        "element": "text link",
+        "imageAlt": null
+      },
+      {
+        "text": "Виж повече",
+        "href": "https://www.yettel.bg/bg/ustroystva/smartfon-vselena/retsikliray-i-spesti",
+        "area": "Main content",
+        "element": "text link",
+        "imageAlt": null
+      },
+      {
+        "text": "Разбери повече",
+        "href": "https://www.yettel.bg/bg/bg/ustroystva/smartfon-vselena/smartfon-vselena-start",
         "area": "Main content",
         "element": "text link",
         "imageAlt": null
@@ -166,7 +298,7 @@
       },
       {
         "text": "",
-        "href": "https://www.yettel.bg/bg/novite-apple-iphone-duo#",
+        "href": "https://www.yettel.bg/bg/ustroystva/smartfon-vselena#",
         "area": "Main content",
         "element": "image link",
         "imageAlt": null
@@ -384,170 +516,362 @@
     ],
     "images": [
       {
-        "src": "https://www.yettel.bg/sites/default/files/styles/scaled_images_2/public/2026-10/iphone-duo-preorder-lp-ds.png?itok=OcnZEoFm",
-        "alt": "iPhone duo",
+        "src": "https://www.yettel.bg/sites/default/files/styles/scaled_images_2/public/2026-05/SU-Hero-desktop_0.png?itok=eLLz59Ce",
+        "alt": "Какво ми дава Смартфон Вселена? Много повече",
         "width": 1900,
         "height": 680,
         "visible": true,
         "area": "Main content"
       },
       {
-        "src": "https://www.yettel.bg/sites/default/files/styles/scaled_images_2/public/2026-10/iphone-duo-preorder-lp-mb.png?itok=WNKn98JC",
-        "alt": "iPhone duo",
+        "src": "https://www.yettel.bg/sites/default/files/styles/scaled_images_2/public/2026-05/SU-Hero-mobile_0.png?itok=EA8QoOo4",
+        "alt": "Какво ми дава Смартфон Вселена? Много повече",
         "width": 0,
         "height": 0,
         "visible": false,
         "area": "Main content"
       },
       {
-        "src": "https://www.yettel.bg/sites/default/files/data/public/iPhone_Duo/Star_White/iPhone_Duo_Star_White_1.png",
-        "alt": "Device Image",
-        "width": 450,
-        "height": 450,
+        "src": "https://www.yettel.bg/sites/default/files/2026-05/Cloud%20Service.png",
+        "alt": "До 4 г. гаранция за смартфони",
+        "width": 88,
+        "height": 88,
         "visible": true,
         "area": "Main content"
       },
       {
-        "src": "https://www.yettel.bg/sites/default/files/data/public/iPhone_Duo/Night_Sky/iPhone_Duo_Night_Sky_1.png",
-        "alt": "Device Image",
-        "width": 450,
-        "height": 450,
+        "src": "https://www.yettel.bg/sites/default/files/2026-05/Cloud%20Service_0.png",
+        "alt": "До 275 € в допълнителни услуги",
+        "width": 88,
+        "height": 88,
         "visible": true,
         "area": "Main content"
       },
       {
-        "src": "https://www.yettel.bg/sites/default/files/data/public/iPhone_Duo/Night_Sky/iPhone_Duo_Night_Sky_1.png",
-        "alt": "Device Image",
-        "width": 450,
-        "height": 450,
+        "src": "https://www.yettel.bg/sites/default/files/2026-05/Cloud%20Service_1.png",
+        "alt": "3 г. гаранция за смарт часовници",
+        "width": 88,
+        "height": 88,
         "visible": true,
         "area": "Main content"
       },
       {
-        "src": "https://www.yettel.bg/sites/default/files/data/public/iPhone_Duo/Star_White/iPhone_Duo_Star_White_1.png",
-        "alt": "Device Image",
-        "width": 450,
-        "height": 450,
+        "src": "https://www.yettel.bg/sites/default/files/2026-05/Cloud%20Service_2.png",
+        "alt": "До 2 месеца застраховка от нас",
+        "width": 88,
+        "height": 88,
         "visible": true,
         "area": "Main content"
       },
       {
-        "src": "https://www.yettel.bg/sites/default/files/data/public/iPhone_Duo/Night_Sky/iPhone_Duo_Night_Sky_1.png",
-        "alt": "Device Image",
-        "width": 450,
-        "height": 450,
+        "src": "https://www.yettel.bg/sites/default/files/inline-images/Frame%202121213350_2.png",
+        "alt": null,
+        "width": 710,
+        "height": 453,
         "visible": true,
         "area": "Main content"
       },
       {
-        "src": "https://www.yettel.bg/sites/default/files/data/public/iPhone_Duo/Star_White/iPhone_Duo_Star_White_1.png",
-        "alt": "Device Image",
-        "width": 450,
-        "height": 450,
-        "visible": true,
-        "area": "Main content"
-      },
-      {
-        "src": "https://www.yettel.bg/sites/default/files/data/public/iPhone_Duo/Night_Sky/iPhone_Duo_Night_Sky_1.png",
-        "alt": "Device Image",
-        "width": 450,
-        "height": 450,
-        "visible": true,
-        "area": "Main content"
-      },
-      {
-        "src": "https://www.yettel.bg/sites/default/files/data/public/iPhone_Duo/Star_White/iPhone_Duo_Star_White_1.png",
-        "alt": "Device Image",
-        "width": 450,
-        "height": 450,
-        "visible": true,
-        "area": "Main content"
-      },
-      {
-        "src": "https://www.yettel.bg/sites/default/files/2026-09/Online%20Security_15.png",
-        "alt": "Период на предварителните поръчки",
+        "src": "https://www.yettel.bg/sites/default/files/2026-04/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_20.png",
+        "alt": "Купуваш ново устройство от нас",
         "width": 60,
         "height": 60,
         "visible": true,
         "area": "Main content"
       },
       {
-        "src": "https://www.yettel.bg/sites/default/files/2026-09/Online%20Security_16.png",
-        "alt": "Първи заявил, първи получил",
+        "src": "https://www.yettel.bg/sites/default/files/2026-05/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud.png",
+        "alt": "Ползваш го по-дълго, без притеснения",
+        "width": 60,
+        "height": 59,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/2026-05/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_0.png",
+        "alt": "Получаваш помощ при нужда",
         "width": 60,
         "height": 60,
         "visible": true,
         "area": "Main content"
       },
       {
-        "src": "https://www.yettel.bg/sites/default/files/2026-09/Online%20Security_17.png",
-        "alt": "Доставка",
+        "src": "https://www.yettel.bg/sites/default/files/2026-04/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_23.png",
+        "alt": "Сменяш го, когато си готов",
         "width": 60,
         "height": 60,
         "visible": true,
         "area": "Main content"
       },
       {
-        "src": "https://www.yettel.bg/sites/default/files/inline-images/Step%20Indicator_5.png",
-        "alt": "Стъпка 1",
-        "width": 100,
-        "height": 48,
+        "src": "https://www.yettel.bg/sites/default/files/2026-04/pure-nothing_0.png",
+        "alt": "Смартфон Вселена пакет L",
+        "width": 1,
+        "height": 1,
         "visible": true,
         "area": "Main content"
       },
       {
-        "src": "https://www.yettel.bg/sites/default/files/inline-images/Step%20Indicator_6.png",
-        "alt": "Стъпка 2",
-        "width": 100,
-        "height": 48,
-        "visible": true,
-        "area": "Main content"
-      },
-      {
-        "src": "https://www.yettel.bg/sites/default/files/inline-images/Step%20Indicator_7.png",
-        "alt": "Стъпка 3",
-        "width": 100,
-        "height": 48,
-        "visible": true,
-        "area": "Main content"
-      },
-      {
-        "src": "https://www.yettel.bg/sites/default/files/inline-images/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_33.png",
-        "alt": "",
-        "width": 80,
-        "height": 80,
-        "visible": true,
-        "area": "Main content"
-      },
-      {
-        "src": "https://www.yettel.bg/sites/default/files/inline-images/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_34.png",
+        "src": "https://www.yettel.bg/sites/default/files/inline-images/Cloud%20Service_0.png",
         "alt": null,
-        "width": 44,
-        "height": 44,
+        "width": 40,
+        "height": 40,
         "visible": true,
         "area": "Main content"
       },
       {
-        "src": "https://www.yettel.bg/sites/default/files/inline-images/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_34.png",
+        "src": "https://www.yettel.bg/sites/default/files/inline-images/Cloud%20Service_1.png",
         "alt": null,
-        "width": 44,
-        "height": 44,
+        "width": 40,
+        "height": 40,
         "visible": true,
         "area": "Main content"
       },
       {
-        "src": "https://www.yettel.bg/sites/default/files/inline-images/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_34.png",
+        "src": "https://www.yettel.bg/sites/default/files/inline-images/Cloud%20Service_2.png",
         "alt": null,
-        "width": 44,
-        "height": 44,
+        "width": 40,
+        "height": 40,
         "visible": true,
         "area": "Main content"
       },
       {
-        "src": "https://www.yettel.bg/sites/default/files/2026-10/duo-mockup4.png",
+        "src": "https://www.yettel.bg/sites/default/files/inline-images/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_14.png",
         "alt": null,
-        "width": 551,
-        "height": 621,
+        "width": 72,
+        "height": 72,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/2026-04/pure-nothing_1.png",
+        "alt": "Смартфон Вселена предимства",
+        "width": 1,
+        "height": 1,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/inline-images/Cloud%20Service_3.png",
+        "alt": null,
+        "width": 40,
+        "height": 40,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/inline-images/Cloud%20Service_4.png",
+        "alt": null,
+        "width": 40,
+        "height": 40,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/inline-images/Cloud%20Service_5.png",
+        "alt": null,
+        "width": 40,
+        "height": 40,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/inline-images/Cloud%20Service_7.png",
+        "alt": null,
+        "width": 40,
+        "height": 40,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/2026-04/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_24.png",
+        "alt": "Смартфон диагностика",
+        "width": 72,
+        "height": 72,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/2026-04/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_25.png",
+        "alt": "Смартфон протект",
+        "width": 72,
+        "height": 72,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/2026-04/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_26.png",
+        "alt": "Сертифициран сервиз",
+        "width": 72,
+        "height": 72,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/2026-05/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_22.png",
+        "alt": "До 4 години гаранция",
+        "width": 72,
+        "height": 71,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/2026-05/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_23.png",
+        "alt": "Рециклирай и спести",
+        "width": 72,
+        "height": 72,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/2026-05/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_24.png",
+        "alt": "Смарт лизинг",
+        "width": 72,
+        "height": 72,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/2026-05/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_25.png",
+        "alt": "Отстъпка за смарт часовник",
+        "width": 72,
+        "height": 72,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/data/public/50999238/50999238_cover.png",
+        "alt": "Device Image",
+        "width": 450,
+        "height": 450,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/data/public/Online_iphone_17___motorola/51000430_cover.png",
+        "alt": "Device Image",
+        "width": 450,
+        "height": 450,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/data/public/51000068/51000068_offer.png",
+        "alt": "Device Image",
+        "width": 450,
+        "height": 450,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/data/public/51000302/51000302_1.png",
+        "alt": "Device Image",
+        "width": 557,
+        "height": 483,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/styles/scaled_images_2/public/2026-04/Frame%202121213674.png?itok=l4I-Gn_E",
+        "alt": null,
+        "width": 144,
+        "height": 144,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/styles/scaled_images_2/public/2026-04/Frame%202121213674_0.png?itok=1gY9YeWX",
+        "alt": null,
+        "width": 0,
+        "height": 0,
+        "visible": false,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/data/public/Online_iphone_17___motorola/27119364_cover.png",
+        "alt": "Device Image",
+        "width": 450,
+        "height": 450,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/data/public/Online_iphone_17___motorola/WATCH_6_Blue_cover.png",
+        "alt": "Device Image",
+        "width": 450,
+        "height": 450,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/data/public/Online_iphone_17___motorola/27119368_cover.png",
+        "alt": "Device Image",
+        "width": 450,
+        "height": 450,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/data/public/27119373/27119373_1.png",
+        "alt": "Device Image",
+        "width": 450,
+        "height": 450,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/styles/scaled_images_2/public/2026-04/Frame%202121213674_1.png?itok=Ci2nEXxV",
+        "alt": null,
+        "width": 0,
+        "height": 0,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/styles/scaled_images_2/public/2026-04/Frame%202121213674_2.png?itok=ipZjV4Ry",
+        "alt": null,
+        "width": 0,
+        "height": 0,
+        "visible": false,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/2026-04/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_32.png",
+        "alt": "Повече сигурност",
+        "width": 0,
+        "height": 0,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/2026-04/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_33.png",
+        "alt": "Сертифициран сервиз",
+        "width": 0,
+        "height": 0,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/2026-04/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_34.png",
+        "alt": "Гъвкаво плащане",
+        "width": 0,
+        "height": 0,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/2026-04/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_35.png",
+        "alt": "Рециклирай и спести",
+        "width": 0,
+        "height": 0,
+        "visible": true,
+        "area": "Main content"
+      },
+      {
+        "src": "https://www.yettel.bg/sites/default/files/inline-images/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_10.png",
+        "alt": null,
+        "width": 60,
+        "height": 60,
         "visible": true,
         "area": "Main content"
       },
@@ -604,376 +928,538 @@
       {
         "name": "https://www.yettel.bg/sites/default/files/css/css_LbWf8vck0qPEdo2dFzHXEJdot8yqM__C-EGPfBYG0yM.css?delta=0&language=bg&theme=bootstrap_subtheme&include=eJyFjUuOxCAMRC9EwpGQATdBMjbCpiVu39Eskln0Z1n1SvWiiKkN6L6QRKBNbVHl4uIFGqpCQQ1Uy2H_AEvGOwad0Q5s6K_qHfykuRdWeW1KNeNwSQb6JK0LI5vu13zbGvL8xUMSmo3VpakmLfwJwmNysioMVK2i-m_QESyZFnLVJE8cy5-m89V1GFBO0aE-j9mB9rvZJ_cZqeqB2elSw-YjKL4AZt2R9A",
         "type": "link",
-        "duration": 488,
+        "duration": 381,
         "transferSize": 12538
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/css/css_LnaBLHMxJIOiOnboUUDILY-yVjAh7HEWkbCCbNN3LX0.css?delta=1&language=bg&theme=bootstrap_subtheme&include=eJyFjUuOxCAMRC9EwpGQATdBMjbCpiVu39Eskln0Z1n1SvWiiKkN6L6QRKBNbVHl4uIFGqpCQQ1Uy2H_AEvGOwad0Q5s6K_qHfykuRdWeW1KNeNwSQb6JK0LI5vu13zbGvL8xUMSmo3VpakmLfwJwmNysioMVK2i-m_QESyZFnLVJE8cy5-m89V1GFBO0aE-j9mB9rvZJ_cZqeqB2elSw-YjKL4AZt2R9A",
         "type": "link",
-        "duration": 949,
+        "duration": 731,
         "transferSize": 122335
       },
       {
         "name": "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css",
         "type": "link",
-        "duration": 91,
+        "duration": 17,
         "transferSize": 29285
       },
       {
         "name": "https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css",
         "type": "link",
-        "duration": 95,
+        "duration": 33,
         "transferSize": 873
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/css/css_p8KjVQmxOaJSXb5GPBxizIjkLi32Iir6Fto32ye1ywY.css?delta=5&language=bg&theme=bootstrap_subtheme&include=eJyFjUuOxCAMRC9EwpGQATdBMjbCpiVu39Eskln0Z1n1SvWiiKkN6L6QRKBNbVHl4uIFGqpCQQ1Uy2H_AEvGOwad0Q5s6K_qHfykuRdWeW1KNeNwSQb6JK0LI5vu13zbGvL8xUMSmo3VpakmLfwJwmNysioMVK2i-m_QESyZFnLVJE8cy5-m89V1GFBO0aE-j9mB9rvZJ_cZqeqB2elSw-YjKL4AZt2R9A",
         "type": "link",
-        "duration": 500,
+        "duration": 378,
         "transferSize": 6659
-      },
-      {
-        "name": "https://www.yettel.bg/sites/default/files/migration/logo-header.png",
-        "type": "img",
-        "duration": 500,
-        "transferSize": 2820
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2026-01/smartphone-icon-3x.png",
         "type": "img",
-        "duration": 493,
+        "duration": 388,
         "transferSize": 1038
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/migration/logo-header.png",
+        "type": "img",
+        "duration": 389,
+        "transferSize": 2820
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/css/css_0Pb7ve8dogxC9wcNDM5sRSMg46zQoBuOcSWPgXKrDTw.css?delta=2&language=bg&theme=bootstrap_subtheme&include=eJyFjUuOxCAMRC9EwpGQATdBMjbCpiVu39Eskln0Z1n1SvWiiKkN6L6QRKBNbVHl4uIFGqpCQQ1Uy2H_AEvGOwad0Q5s6K_qHfykuRdWeW1KNeNwSQb6JK0LI5vu13zbGvL8xUMSmo3VpakmLfwJwmNysioMVK2i-m_QESyZFnLVJE8cy5-m89V1GFBO0aE-j9mB9rvZJ_cZqeqB2elSw-YjKL4AZt2R9A",
         "type": "link",
-        "duration": 2525,
+        "duration": 2983,
         "transferSize": 866
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-gadgets-menu-icon_0.png",
         "type": "img",
-        "duration": 505,
+        "duration": 326,
         "transferSize": 1042
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-tablets-menu-icon_0.png",
         "type": "img",
-        "duration": 508,
+        "duration": 327,
         "transferSize": 709
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-smrsrv-menu-icon_0.png",
         "type": "img",
-        "duration": 704,
+        "duration": 449,
         "transferSize": 1140
-      },
-      {
-        "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-postpaid-menu-icon_0.png",
-        "type": "img",
-        "duration": 962,
-        "transferSize": 840
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2026-08/su-new-icon.png",
         "type": "img",
-        "duration": 968,
+        "duration": 572,
         "transferSize": 8695
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-postpaid-menu-icon_0.png",
+        "type": "img",
+        "duration": 678,
+        "transferSize": 840
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-prepaid-menu-icon_0.png",
         "type": "img",
-        "duration": 974,
+        "duration": 678,
         "transferSize": 847
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-data-menu-icon_0.png",
         "type": "img",
-        "duration": 1129,
+        "duration": 693,
         "transferSize": 1360
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/iconworlds_0.png",
         "type": "img",
-        "duration": 1134,
+        "duration": 715,
         "transferSize": 1324
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-fixed-menu-icon_0.png",
         "type": "img",
-        "duration": 1151,
+        "duration": 872,
         "transferSize": 1669
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-tv-navy-o.png",
         "type": "img",
-        "duration": 1446,
+        "duration": 1268,
         "transferSize": 2372
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-05/bundle-tv-net-res_1.png",
         "type": "img",
-        "duration": 1472,
+        "duration": 1263,
         "transferSize": 995
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-fixednet-menu-icon.png",
         "type": "img",
-        "duration": 1558,
+        "duration": 1277,
         "transferSize": 1960
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/tv-more-info.png",
         "type": "img",
-        "duration": 1606,
+        "duration": 1314,
         "transferSize": 1124
-      },
-      {
-        "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-star-menu-icon_0.png",
-        "type": "img",
-        "duration": 1627,
-        "transferSize": 1624
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-ds-menu-icon_0.png",
         "type": "img",
-        "duration": 1630,
+        "duration": 1384,
         "transferSize": 1466
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-star-menu-icon_0.png",
+        "type": "img",
+        "duration": 1388,
+        "transferSize": 1624
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-11/nsurance-menu.png",
         "type": "img",
-        "duration": 1723,
+        "duration": 1399,
         "transferSize": 13858
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-4u-menu-icon_0.png",
         "type": "img",
-        "duration": 1773,
+        "duration": 1470,
         "transferSize": 1810
-      },
-      {
-        "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-faq-menu-icon_0.png",
-        "type": "img",
-        "duration": 1783,
-        "transferSize": 1168
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-navy-security.png",
         "type": "img",
-        "duration": 1789,
+        "duration": 1517,
         "transferSize": 901
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-faq-menu-icon_0.png",
+        "type": "img",
+        "duration": 1509,
+        "transferSize": 1168
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-info-menu-icon_0.png",
         "type": "img",
-        "duration": 1645,
+        "duration": 1413,
         "transferSize": 1584
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/menu-y-icon.png",
         "type": "img",
-        "duration": 1735,
+        "duration": 1508,
         "transferSize": 843
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/menu-careers-icon.png",
         "type": "img",
-        "duration": 1784,
+        "duration": 1522,
         "transferSize": 530
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/menu-network-icon.png",
         "type": "img",
-        "duration": 1790,
+        "duration": 1531,
         "transferSize": 1174
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/menu-esg-icon.png",
         "type": "img",
-        "duration": 1797,
+        "duration": 1533,
         "transferSize": 1175
       },
       {
-        "name": "https://www.yettel.bg/sites/default/files/inline-images/Step%20Indicator_5.png",
+        "name": "https://www.yettel.bg/sites/default/files/inline-images/Frame%202121213350_2.png",
         "type": "img",
-        "duration": 1650,
-        "transferSize": 1612
+        "duration": 1579,
+        "transferSize": 450745
       },
       {
-        "name": "https://www.yettel.bg/sites/default/files/inline-images/Step%20Indicator_6.png",
+        "name": "https://www.yettel.bg/sites/default/files/inline-images/Cloud%20Service_0.png",
         "type": "img",
-        "duration": 1742,
-        "transferSize": 1738
+        "duration": 1633,
+        "transferSize": 1810
       },
       {
-        "name": "https://www.yettel.bg/sites/default/files/inline-images/Step%20Indicator_7.png",
+        "name": "https://www.yettel.bg/sites/default/files/inline-images/Cloud%20Service_1.png",
         "type": "img",
-        "duration": 1788,
-        "transferSize": 1757
+        "duration": 1615,
+        "transferSize": 1512
       },
       {
-        "name": "https://www.yettel.bg/sites/default/files/inline-images/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_33.png",
+        "name": "https://www.yettel.bg/sites/default/files/inline-images/Cloud%20Service_2.png",
         "type": "img",
-        "duration": 1795,
-        "transferSize": 3341
+        "duration": 1625,
+        "transferSize": 1810
       },
       {
-        "name": "https://www.yettel.bg/sites/default/files/inline-images/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_34.png",
+        "name": "https://www.yettel.bg/sites/default/files/inline-images/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_14.png",
         "type": "img",
-        "duration": 1815,
-        "transferSize": 1849
+        "duration": 1626,
+        "transferSize": 2164
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/inline-images/Cloud%20Service_3.png",
+        "type": "img",
+        "duration": 1676,
+        "transferSize": 1765
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/inline-images/Cloud%20Service_4.png",
+        "type": "img",
+        "duration": 1736,
+        "transferSize": 1512
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/inline-images/Cloud%20Service_5.png",
+        "type": "img",
+        "duration": 1745,
+        "transferSize": 1810
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/inline-images/Cloud%20Service_7.png",
+        "type": "img",
+        "duration": 1747,
+        "transferSize": 1494
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/inline-images/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_10.png",
+        "type": "img",
+        "duration": 1514,
+        "transferSize": 2056
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/prefooter_images/yappmockup-pref.png",
         "type": "img",
-        "duration": 1985,
+        "duration": 1638,
         "transferSize": 165691
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/js/js_sTXDV0tmUUJwHU25QxHseIwcn6EZXK7RAYKIGrWelJU.js?scope=footer&delta=0&language=bg&theme=bootstrap_subtheme&include=eJyFy0EKgDAMAMEPWfqkkpRYA2kjTXLw94KgJ9HrDouqbj5hz00UQZL5ITzagjcUC_SNOuUnveH_3mlEqjA1jGSpYa69XFTWGNVZBwg7k-UvPAEidkgw",
         "type": "script",
-        "duration": 669,
+        "duration": 366,
         "transferSize": 95515
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/migration/logo-yellow.png",
         "type": "img",
-        "duration": 1903,
+        "duration": 1562,
         "transferSize": 5598
       },
       {
         "name": "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js",
         "type": "script",
-        "duration": 419,
+        "duration": 5,
         "transferSize": 24161
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/js/js_d9r0_0uWKptpUPvk9It0UUU-LA2XSCnFckcVumnlNak.js?scope=footer&delta=2&language=bg&theme=bootstrap_subtheme&include=eJyFy0EKgDAMAMEPWfqkkpRYA2kjTXLw94KgJ9HrDouqbj5hz00UQZL5ITzagjcUC_SNOuUnveH_3mlEqjA1jGSpYa69XFTWGNVZBwg7k-UvPAEidkgw",
         "type": "script",
-        "duration": 588,
+        "duration": 131,
         "transferSize": 11988
       },
       {
         "name": "https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.min.js",
         "type": "script",
-        "duration": 528,
+        "duration": 107,
         "transferSize": 11570
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/js/js_sdhshbLye6-W7znYDGAerqIeklPqzJZSPHdQVTDXKyo.js?scope=footer&delta=4&language=bg&theme=bootstrap_subtheme&include=eJyFy0EKgDAMAMEPWfqkkpRYA2kjTXLw94KgJ9HrDouqbj5hz00UQZL5ITzagjcUC_SNOuUnveH_3mlEqjA1jGSpYa69XFTWGNVZBwg7k-UvPAEidkgw",
         "type": "script",
-        "duration": 657,
+        "duration": 216,
         "transferSize": 29774
       },
       {
         "name": "https://www.googletagmanager.com/gtm.js?id=GTM-M22DM2F",
         "type": "script",
-        "duration": 126,
+        "duration": 107,
         "transferSize": 0
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/styles/scaled_images_2/public/2026-04/Paragraph_cleanup.png?itok=59xvdgYn",
+        "type": "css",
+        "duration": 1587,
+        "transferSize": 51015
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/styles/scaled_images_2/public/2026-04/shutterstock_2526315301%201.png?itok=iSy6YdJM",
+        "type": "css",
+        "duration": 2106,
+        "transferSize": 846393
       },
       {
         "name": "https://www.yettel.bg/themes/custom/bootstrap_subtheme/fonts/Yettel-Regular.woff2",
         "type": "css",
-        "duration": 411,
+        "duration": 379,
         "transferSize": 35988
       },
       {
         "name": "https://www.yettel.bg/themes/custom/bootstrap_subtheme/fonts/Yettel-Bold.woff2",
         "type": "css",
-        "duration": 505,
+        "duration": 355,
         "transferSize": 35832
       },
       {
         "name": "https://www.yettel.bg/themes/custom/bootstrap_subtheme/fonts/Yettel-Light.woff2",
         "type": "css",
-        "duration": 473,
+        "duration": 241,
         "transferSize": 34848
       },
       {
-        "name": "https://www.yettel.bg/sites/default/files/styles/scaled_images_2/public/2026-10/iphone-duo-preorder-lp-ds.png?itok=OcnZEoFm",
+        "name": "https://www.yettel.bg/sites/default/files/styles/scaled_images_2/public/2026-05/SU-Hero-desktop_0.png?itok=eLLz59Ce",
         "type": "img",
-        "duration": 1245,
-        "transferSize": 631728
+        "duration": 1607,
+        "transferSize": 1123659
       },
       {
-        "name": "https://www.yettel.bg/sites/default/files/data/public/iPhone_Duo/Night_Sky/iPhone_Duo_Night_Sky_1.png",
+        "name": "https://www.yettel.bg/sites/default/files/2026-05/Cloud%20Service.png",
         "type": "img",
-        "duration": 623,
-        "transferSize": 125641
+        "duration": 317,
+        "transferSize": 4052
       },
       {
-        "name": "https://www.yettel.bg/sites/default/files/data/public/iPhone_Duo/Star_White/iPhone_Duo_Star_White_1.png",
+        "name": "https://www.yettel.bg/sites/default/files/2026-05/Cloud%20Service_1.png",
         "type": "img",
-        "duration": 756,
-        "transferSize": 155026
+        "duration": 544,
+        "transferSize": 2670
       },
       {
-        "name": "https://www.yettel.bg/sites/default/files/2026-09/Online%20Security_15.png",
+        "name": "https://www.yettel.bg/sites/default/files/2026-05/Cloud%20Service_0.png",
         "type": "img",
-        "duration": 1422,
-        "transferSize": 2080
+        "duration": 561,
+        "transferSize": 2521
       },
       {
-        "name": "https://www.yettel.bg/sites/default/files/2026-09/Online%20Security_16.png",
+        "name": "https://www.yettel.bg/sites/default/files/2026-05/Cloud%20Service_2.png",
         "type": "img",
-        "duration": 1408,
-        "transferSize": 2290
+        "duration": 455,
+        "transferSize": 2689
       },
       {
-        "name": "https://www.yettel.bg/sites/default/files/2026-09/Online%20Security_17.png",
+        "name": "https://www.yettel.bg/sites/default/files/2026-04/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_20.png",
         "type": "img",
-        "duration": 1411,
-        "transferSize": 1877
+        "duration": 575,
+        "transferSize": 1563
       },
       {
-        "name": "https://www.yettel.bg/sites/default/files/2026-10/duo-mockup4.png",
+        "name": "https://www.yettel.bg/sites/default/files/2026-05/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud.png",
         "type": "img",
-        "duration": 1754,
-        "transferSize": 145657
+        "duration": 386,
+        "transferSize": 1880
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/2026-05/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_0.png",
+        "type": "img",
+        "duration": 417,
+        "transferSize": 1890
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/2026-04/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_23.png",
+        "type": "img",
+        "duration": 444,
+        "transferSize": 1801
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/2026-04/pure-nothing_0.png",
+        "type": "img",
+        "duration": 1489,
+        "transferSize": 449
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/2026-04/pure-nothing_1.png",
+        "type": "img",
+        "duration": 1532,
+        "transferSize": 449
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/2026-04/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_24.png",
+        "type": "img",
+        "duration": 1610,
+        "transferSize": 2136
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/2026-04/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_25.png",
+        "type": "img",
+        "duration": 1639,
+        "transferSize": 2303
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/2026-04/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_26.png",
+        "type": "img",
+        "duration": 1657,
+        "transferSize": 2427
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/2026-05/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_22.png",
+        "type": "img",
+        "duration": 1661,
+        "transferSize": 3068
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/2026-05/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_23.png",
+        "type": "img",
+        "duration": 1734,
+        "transferSize": 2266
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/2026-05/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_24.png",
+        "type": "img",
+        "duration": 1737,
+        "transferSize": 2004
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/2026-05/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_25.png",
+        "type": "img",
+        "duration": 1782,
+        "transferSize": 2166
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/data/public/50999238/50999238_cover.png",
+        "type": "img",
+        "duration": 1785,
+        "transferSize": 78242
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/data/public/Online_iphone_17___motorola/51000430_cover.png",
+        "type": "img",
+        "duration": 1995,
+        "transferSize": 122876
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/data/public/51000068/51000068_offer.png",
+        "type": "img",
+        "duration": 1874,
+        "transferSize": 50607
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/styles/scaled_images_2/public/2026-04/Frame%202121213674.png?itok=l4I-Gn_E",
+        "type": "img",
+        "duration": 1913,
+        "transferSize": 4337
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/data/public/51000302/51000302_1.png",
+        "type": "img",
+        "duration": 2067,
+        "transferSize": 244867
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/data/public/Online_iphone_17___motorola/WATCH_6_Blue_cover.png",
+        "type": "img",
+        "duration": 2050,
+        "transferSize": 153072
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/data/public/Online_iphone_17___motorola/27119364_cover.png",
+        "type": "img",
+        "duration": 2051,
+        "transferSize": 161112
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/data/public/27119373/27119373_1.png",
+        "type": "img",
+        "duration": 2253,
+        "transferSize": 151757
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/data/public/Online_iphone_17___motorola/27119368_cover.png",
+        "type": "img",
+        "duration": 2275,
+        "transferSize": 171820
       },
       {
         "name": "https://consent.cookiebot.com/uc.js?cbid=b686af4f-9a57-4d8d-aace-227d9d197041&implementation=gtm&consentmode-dataredaction=dynamic&culture=bg",
         "type": "script",
-        "duration": 120,
+        "duration": 45,
         "transferSize": 0
-      },
-      {
-        "name": "https://www.yettel.bg/bg/login-status",
-        "type": "fetch",
-        "duration": 370,
-        "transferSize": 343
       },
       {
         "name": "https://consentcdn.cookiebot.com/sdk/bc-v4.min.html",
         "type": "iframe",
-        "duration": 102,
+        "duration": 29,
         "transferSize": 0
       },
       {
         "name": "https://consentcdn.cookiebot.com/consentconfig/b686af4f-9a57-4d8d-aace-227d9d197041/settings.json",
         "type": "xmlhttprequest",
-        "duration": 95,
+        "duration": 19,
         "transferSize": 0
       },
       {
         "name": "https://consent.cookiebot.com/b686af4f-9a57-4d8d-aace-227d9d197041/cc.js?renew=false&referer=www.yettel.bg&dnt=false&init=false&culture=bg",
         "type": "script",
-        "duration": 253,
+        "duration": 290,
         "transferSize": 0
+      },
+      {
+        "name": "https://www.yettel.bg/bg/login-status",
+        "type": "fetch",
+        "duration": 333,
+        "transferSize": 343
       }
     ],
-    "text_excerpt": "<iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-M22DM2F\"\n    height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe>\n     \n\n    \n      Skip to main content\n    \n    \n      \n    \n\n\t\n\t\t\t\n\t\n\t\n\t\t\n\t\t\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t  \n\n\n  \n  \n      \n    \n      \n\n\n  \n    Components library\n          \n              \n\n\n\n\n\n\n  \n  \n    \n\n    \n             \n          \n                          \n                      \n          \n          \n                          \n                      \n        \n    \n            \n            \n                \n                \n                                \n                \n\n           \n     \n  \n\n\n  \n\n          \n  \n\n                                                                                                                                                \n\n  \n    \n             \n                            \n                                                                                                \n                \n                                                \n\n                                \n                \n                    \n                        \n    \n                                                                        \n                                                                        \n                                                                                                \n                                                                                                                            \n\n                         \n                                                                \n                                                                                                                                                                \n                                                                \n                                  \n                                    Поръчай предварително iPhone Duo Сега можеш да вземеш първия сгъваем смартфон от Apple предварително. iPhone Duo може да бъде твой в няколко лесни стъпки, за да се насладиш на функциите и красивия му дизайн. \n                                \n\n                        \n\n                    \n                    \n                                                \n                    \n                \n                                  \n    \n  \n\n          \n\n    \n\n                                                \n\n\n  \n\n\n\n  \n    \n      \n    \n\n    \n                                  \n          \n                                                                  \n              \n                \n                  \n                \n                                \n                  Смартфони\n                \n              \n                      \n                  \n\n                                      \n        \t\n          \n                                        \n          \n            \n\n            \n\n                                                                  \n                  \n                                                                                                                                                                                                                                                                                                                                                                                                          \n                    \n\n                      \n                      \n                                                  \n                                              \n\n                                                                                        \n                      \n                                                                        iPhone Duo 256GB\n\n                                                \n                                                                                \n                            \n                            \n                                                              \n\n                                                                    \n                                    102.59 €/мес.\n                                  \n\n                                                                    \n                                                                    \n                                \n                                                          \n                          \n                                                                                                            с Total Unlimited 300 Online\n                                                    \n                        \n\n                        \n                          \n                            \n                              \n                            \n                          \n                        \n\n                      \n                    \n\n                                                                                                    \n                  \n                                                                                                                                                                                                                                                                                                                                                                                                          \n                    \n\n                      \n                      \n                                                  \n                                              \n\n                                                                                        \n                      \n                                                                        iPhone Duo 256GB\n\n                                                \n                                                                                \n                            \n                            \n                                                              \n\n                                                                    \n                                    102.59 €/мес.\n                                  \n\n                                                                    \n                                                                    \n                                \n                                                          \n                          \n                                                                                                            с Total Unlimited 300 Online\n                                                    \n                        \n\n                        \n                          \n                            \n                              \n                            \n                          \n                        \n\n                      \n                    \n\n                                                                                                    \n                  \n                                                                                                                                                                                                                                                                                                                                                                                                          \n                    \n\n                      \n                      \n                                                  \n                                              \n\n                                                                                        \n                      \n                                                                        iPhone Duo 512GB\n\n                                                \n                                                                                \n                            \n                            \n                                                              \n\n                                                                    \n                                    116.59 €/мес.\n                                  \n\n                                                                    \n                                                                    \n                                \n                                                          \n                          \n                                                                                                            с Total Unlimited 300 Online\n                                                    \n                        \n\n                        \n                          \n                            \n                              \n                            \n                          \n                        \n\n                      \n                    \n\n                                                                                                    \n                  \n                                                                                                                                                                                                                                                                                                                                                                                                          \n                    \n\n                      \n                      \n                                                  \n                                              \n\n                                                                                        \n                      \n                                                                        iPhone Duo 512GB\n\n                                                \n                                                                                \n                            \n                            \n                                                              \n\n                                                                    \n                                    116.59 €/мес.\n                                  \n\n                                                                    \n                                                                    \n                                \n                                                          \n                          \n                                                                                                            с Total Unlimited 300 Online\n                                                    \n                        \n\n                        \n                          \n                            \n                              \n                            \n                          \n                        \n\n                      \n                    \n\n                                                                                                    \n                  \n                                                                                                                                                                                                                                                                                                                                                                                                          \n                    \n\n                      \n                      \n                                                  \n                                              \n\n                                                                                        \n                      \n                                                                        iPhone Duo 1TB\n\n                                                \n                                                                                \n                            \n                            \n                                                              \n\n                                                                    \n                                    140.59 €/мес.\n                                  \n\n                                                                    \n                                                                    \n                                \n                                                          \n                          \n                                                                                                            с Total Unlimited 300 Online\n                                                    \n                        \n\n                        \n                          \n                            \n                              \n                            \n                          \n                        \n\n                      \n                    \n\n                                                                                                    \n                  \n                                                                                                                                                                                                                                                                                                                                                                                                          \n                    \n\n                      \n                      \n                                                  \n                                              \n\n                                                                                        \n                      \n                                                                        iPhone Duo 1TB\n\n                                                \n                                                                                \n                            \n                            \n                                                              \n\n                                                                    \n                                    140.59 €/мес.\n                                  \n\n                                                                    \n                                                                    \n                                \n                                                          \n                          \n                                                                                                            с Total Unlimited 300 Online\n                                                    \n                        \n\n                        \n                          \n                            \n                              \n                            \n                          \n                        \n\n                      \n                    \n\n                                                                                                    \n                  \n                                                                                                                                                                                                                                                                                                                                                                                                          \n                    \n\n                      \n                      \n                                                  \n                                              \n\n                                                                                        \n                      \n                                                                        iPhone Duo 2TB\n\n                                                \n                                                                                \n                            \n                            \n                                                              \n\n  ",
-    "load_ms": 4934,
-    "request_count": 60
+    "text_excerpt": "<iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-M22DM2F\"\n    height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe>\n     \n\n    \n      Skip to main content\n    \n    \n      \n    \n\n\t\n\t\t\t\n\t\n\t\n\t\t\n\t\t\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t  \n\n\n  \n  \n      \n    \n      \n\n\n  \n    Components library\n          \n              \n\n\n\n\n\n\n  \n    \n\n    \n             \n          \n                          \n                      \n          \n          \n                          \n                      \n        \n    \n            \n            \n                \n                \n                                \n                \n\n           \n     \n  \n\n\n\n          \n  \n\n                                                                                                    \n\n  \n    \n             \n                            \n                                                                                                \n                \n                                                \n\n                                \n                \n                    \n                        \n    \n                                                                        \n                                                                        \n                                                                                                \n                                                                                                                            \n\n                         \n                                                                \n                                                                                                                                                                \n                                                                \n                                  \n                                    Смартфон Вселена от Yettel  Смартфон Вселена е пакет от услуги, който получаваш при покупка на ново устройствo и включва цялостна грижа и защита за твоя смартфон и свързаните с него смарт аксесоари.\n                                \n\n                        \n\n                    \n                    \n                                                \n                    \n                \n                                  \n    \n  \n\n          \n\n    \n\n\n\n\n\n\n\n\n    \n    \n    \n            @media (min-width: 577px) {\n            #custom-component-29318 .component-margin.cards-per-row-3 {\n                margin: 2vw 2vw 2vw 3vw;\n            }\n        }\n    \n\n\n\n\n        \n        \n      \n      \n      \n              \n        \n      \n      \n      \n              \n        \n      \n      \n      \n              \n        \n      \n      \n      \n      \n          \n            \n            \n            \n  \n  \n\n\n          \n      \n                   \n              \n                \n                                    \n                                                                                  \n                                  \n                              \n                          \n                                                                                  \n                              До 4 г. гаранция за смартфони\n                          \n                                                    \n                                                                              \n                      \n                                        \n                                                                                  \n                                  \n                              \n                          \n                                                                                  \n                              До 275 € в допълнителни услуги\n                          \n                                                    \n                                                                              \n                      \n                                        \n                                                                                  \n                                  \n                              \n                          \n                                                                                  \n                              3 г. гаранция за смарт часовници\n                          \n                                                    \n                                                                              \n                      \n                                        \n                                                                                  \n                                  \n                              \n                          \n                                                                                  \n                              До 2 месеца застраховка от нас\n                          \n                                                    \n                                                                              \n                      \n                                \n            \n            \n    \n\n          \n  \n\n                                                                                                    \n\n  \n    \n             \n                            \n                                                                                                \n                \n                                                \n\n                                \n                \n                    \n                        \n    \n                                                                        \n                                                                        \n                                                                                                \n                                                                                                                            \n\n                         \n                                                                \n                                                                                                                                                                \n                                                                \n                                  \n                                    Как работи Смартфон Вселена?\n                                \n\n                        \n\n                    \n                    \n                                                \n                    \n                \n                                  \n    \n  \n\n          \n\n\n\n\n\n\n    \n    \n            @media (max-width: 576px) {\n            #custom-component-29321 .component-margin.login-advantages-component {\n                margin: 4vh 2vh 2vh 3vh;\n            }\n        }\n    \n            @media (min-width: 577px) {\n            #custom-component-29321 .component-margin.login-advantages-component {\n                margin: 2vw 2vw 2vw 3vw;\n            }\n        }\n    \n\n\n\n    \n\n      \n           \n                            \n\n                    \n                        \n                            \n\n\n                                                                    \n                                                                                                                                                                                                                                                \n                                        \n                                      \n                                            \n                                        \n                                    \n                                \n\n\n\n                                \n                                    \n                                                                                                                                                                                                                                 \n                                                                           \n                                                                            \n                                                            \n                        \n\n                        \n                                                                                            \n                                                                     \n\n                                                                  \n\n                                \n                                                                            \n                                                                                                                 \n                                            Купуваш ново устройство от насИзбираш от разнообразните ни устройства и изгодни оферти и се възползваш от гъвкави начини на плащане. \n                                        \n                                                                    \n                                                                                            \n                                                                     \n\n                                                                  \n\n                                \n                                                                            \n                                                                                                                 \n                                            Ползваш го по-дълго, без притесненияС навременна диагностика, удължена гаранция и застраховка оставаш спокоен. \n                                        \n                                                                    \n                                                                                            \n                                                                     \n\n                                                                  \n\n                                \n                                                                            \n                                                                                                                 \n                                            Получаваш помощ при нуждаАко изникне непредвидена ситуация, го носиш в нашия сертфициран сервиз. \n                                        \n                                                                    \n                                                                                            \n                                                                     \n\n                                                                  \n\n                                \n                                                                            \n                                                                                                                 \n                                            Сменяш го, когато си готовВръщаш старото устройство за рециклиране и спестяваш от следващия си телефон. \n                                        \n                                                                    \n                            \n                                                                \n                                                                                                                                                                                                                                 \n                                       \n                                                                            \n                                                        \n                    \n                \n                    \n        \n  \n          \n  \n\n                                                                                                    \n\n  \n    \n             \n                            \n                                                                                                \n                \n                                                \n\n                                \n                \n                    \n                        \n    \n                                                                        \n                                                                        \n                                                                                                \n                                                                                                                            \n\n                         \n                                                                \n                                                                                                                                                                \n                                                                \n                                  \n                                    Сравни предимствата на Смартфон Вселена\n                                \n\n                        \n\n                    \n                    \n                                                \n                    \n                \n                                  \n    \n  \n\n          \n\n                                                        \n\n\n  \n    \n       \n                \n                       \n                                          \n                \n\n                                      \n                                                                 \n                                                                                                                                                                                                             \n                      \n\n                                                \n                                                                                                \n                                                      Смартфон Вселена пакет L\n                                                  \n\n                                                \n                                                                          \n                                                                                                                      \n                                \n                                                                                                        \n                                                                  \n                                \n\n                                  \n\n                                                                    \n                                \n                              \n                                                      \n                        \n\n                                                                          \n                                                                                                                        \n                                  3 години гаранция на смартфон\n                                                                    \n                                \n                                                                                                                        \n                                  1 месец застраховка от нас\n                                                                    \n                                \n                                                                                                                        \n                                  3 години гаранция на смарт часовник\n                                                                    \n                                \n                                                                                                                        \n                                   До 50 € за смарт часовник\n                                                                    \n                                \n                                                                                                                        \n                                  Със Смартфон Вселена пакет ",
+    "load_ms": 5795,
+    "request_count": 87
   },
   "summary": {
-    "total_findings": 10,
+    "total_findings": 17,
     "by_severity": {
-      "medium": 6,
-      "low": 4
+      "medium": 14,
+      "low": 3
     },
     "by_category": {
-      "Accessibility": 9,
+      "Accessibility": 16,
       "Content": 1
     }
   },
@@ -983,7 +1469,7 @@
       "category": "Accessibility",
       "severity": "medium",
       "title": "Image has no alt attribute",
-      "evidence": "https://www.yettel.bg/sites/default/files/inline-images/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_34.png",
+      "evidence": "https://www.yettel.bg/sites/default/files/inline-images/Frame%202121213350_2.png",
       "context": "Main content",
       "impact": "Assistive technologies may lack a text alternative.",
       "confidence": "high",
@@ -994,7 +1480,7 @@
       "category": "Accessibility",
       "severity": "medium",
       "title": "Image has no alt attribute",
-      "evidence": "https://www.yettel.bg/sites/default/files/inline-images/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_34.png",
+      "evidence": "https://www.yettel.bg/sites/default/files/inline-images/Cloud%20Service_0.png",
       "context": "Main content",
       "impact": "Assistive technologies may lack a text alternative.",
       "confidence": "high",
@@ -1005,7 +1491,7 @@
       "category": "Accessibility",
       "severity": "medium",
       "title": "Image has no alt attribute",
-      "evidence": "https://www.yettel.bg/sites/default/files/inline-images/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_34.png",
+      "evidence": "https://www.yettel.bg/sites/default/files/inline-images/Cloud%20Service_1.png",
       "context": "Main content",
       "impact": "Assistive technologies may lack a text alternative.",
       "confidence": "high",
@@ -1016,7 +1502,7 @@
       "category": "Accessibility",
       "severity": "medium",
       "title": "Image has no alt attribute",
-      "evidence": "https://www.yettel.bg/sites/default/files/2026-10/duo-mockup4.png",
+      "evidence": "https://www.yettel.bg/sites/default/files/inline-images/Cloud%20Service_2.png",
       "context": "Main content",
       "impact": "Assistive technologies may lack a text alternative.",
       "confidence": "high",
@@ -1027,7 +1513,7 @@
       "category": "Accessibility",
       "severity": "medium",
       "title": "Image has no alt attribute",
-      "evidence": "https://www.yettel.bg/sites/default/files/migration/logo-yellow.png",
+      "evidence": "https://www.yettel.bg/sites/default/files/inline-images/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_14.png",
       "context": "Main content",
       "impact": "Assistive technologies may lack a text alternative.",
       "confidence": "high",
@@ -1035,6 +1521,94 @@
     },
     {
       "id": "PA-006",
+      "category": "Accessibility",
+      "severity": "medium",
+      "title": "Image has no alt attribute",
+      "evidence": "https://www.yettel.bg/sites/default/files/inline-images/Cloud%20Service_3.png",
+      "context": "Main content",
+      "impact": "Assistive technologies may lack a text alternative.",
+      "confidence": "high",
+      "source": "rules"
+    },
+    {
+      "id": "PA-007",
+      "category": "Accessibility",
+      "severity": "medium",
+      "title": "Image has no alt attribute",
+      "evidence": "https://www.yettel.bg/sites/default/files/inline-images/Cloud%20Service_4.png",
+      "context": "Main content",
+      "impact": "Assistive technologies may lack a text alternative.",
+      "confidence": "high",
+      "source": "rules"
+    },
+    {
+      "id": "PA-008",
+      "category": "Accessibility",
+      "severity": "medium",
+      "title": "Image has no alt attribute",
+      "evidence": "https://www.yettel.bg/sites/default/files/inline-images/Cloud%20Service_5.png",
+      "context": "Main content",
+      "impact": "Assistive technologies may lack a text alternative.",
+      "confidence": "high",
+      "source": "rules"
+    },
+    {
+      "id": "PA-009",
+      "category": "Accessibility",
+      "severity": "medium",
+      "title": "Image has no alt attribute",
+      "evidence": "https://www.yettel.bg/sites/default/files/inline-images/Cloud%20Service_7.png",
+      "context": "Main content",
+      "impact": "Assistive technologies may lack a text alternative.",
+      "confidence": "high",
+      "source": "rules"
+    },
+    {
+      "id": "PA-010",
+      "category": "Accessibility",
+      "severity": "medium",
+      "title": "Image has no alt attribute",
+      "evidence": "https://www.yettel.bg/sites/default/files/styles/scaled_images_2/public/2026-04/Frame%202121213674.png?itok=l4I-Gn_E",
+      "context": "Main content",
+      "impact": "Assistive technologies may lack a text alternative.",
+      "confidence": "high",
+      "source": "rules"
+    },
+    {
+      "id": "PA-011",
+      "category": "Accessibility",
+      "severity": "medium",
+      "title": "Image has no alt attribute",
+      "evidence": "https://www.yettel.bg/sites/default/files/styles/scaled_images_2/public/2026-04/Frame%202121213674_1.png?itok=Ci2nEXxV",
+      "context": "Main content",
+      "impact": "Assistive technologies may lack a text alternative.",
+      "confidence": "high",
+      "source": "rules"
+    },
+    {
+      "id": "PA-012",
+      "category": "Accessibility",
+      "severity": "medium",
+      "title": "Image has no alt attribute",
+      "evidence": "https://www.yettel.bg/sites/default/files/inline-images/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_10.png",
+      "context": "Main content",
+      "impact": "Assistive technologies may lack a text alternative.",
+      "confidence": "high",
+      "source": "rules"
+    },
+    {
+      "id": "PA-013",
+      "category": "Accessibility",
+      "severity": "medium",
+      "title": "Image has no alt attribute",
+      "evidence": "https://www.yettel.bg/sites/default/files/migration/logo-yellow.png",
+      "context": "Main content",
+      "impact": "Assistive technologies may lack a text alternative.",
+      "confidence": "high",
+      "source": "rules"
+    },
+    {
+      "id": "PA-014",
       "category": "Content",
       "severity": "medium",
       "title": "Possible internal component-library text",
@@ -1045,18 +1619,7 @@
       "source": "rules"
     },
     {
-      "id": "PA-007",
-      "category": "Accessibility",
-      "severity": "low",
-      "title": "Image has empty alt text",
-      "evidence": "https://www.yettel.bg/sites/default/files/inline-images/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_33.png",
-      "context": "Main content",
-      "impact": "Empty alt can be correct for decorative images; verify purpose.",
-      "confidence": "low",
-      "source": "rules"
-    },
-    {
-      "id": "PA-008",
+      "id": "PA-015",
       "category": "Accessibility",
       "severity": "low",
       "title": "Image has empty alt text",
@@ -1067,7 +1630,7 @@
       "source": "rules"
     },
     {
-      "id": "PA-009",
+      "id": "PA-016",
       "category": "Accessibility",
       "severity": "low",
       "title": "Image has empty alt text",
@@ -1078,7 +1641,7 @@
       "source": "rules"
     },
     {
-      "id": "PA-010",
+      "id": "PA-017",
       "category": "Accessibility",
       "severity": "low",
       "title": "Image has empty alt text",
