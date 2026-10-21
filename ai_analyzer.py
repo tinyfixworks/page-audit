@@ -10,8 +10,9 @@ import requests
 PRIMARY_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
 FALLBACK_MODEL = os.getenv("GEMINI_FALLBACK_MODEL", "gemini-3.5-flash-lite")
 
-RETRY_DELAYS = (2, 5, 10)
+RETRY_DELAYS = (2, 5)
 MAX_FINDINGS = 20
+REQUEST_TIMEOUT = (10, 60)
 
 PROMPT = """You are a contextual content and quality auditor for a public-facing telecom website.
 
@@ -105,10 +106,10 @@ def _prepare_parts(page_data, screenshot_path):
         )
     }
 
-    info["headings"] = (info.get("headings") or [])[:40]
-    info["text_excerpt"] = (info.get("text_excerpt") or "")[:16000]
-    info["links"] = (info.get("links") or [])[:60]
-    info["images"] = (info.get("images") or [])[:80]
+    info["headings"] = (info.get("headings") or [])[:30]
+    info["text_excerpt"] = (info.get("text_excerpt") or "")[:10000]
+    info["links"] = (info.get("links") or [])[:40]
+    info["images"] = (info.get("images") or [])[:50]
 
     parts = [
         {
@@ -159,7 +160,7 @@ def _request_model(model, api_key, parts):
                 url,
                 params={"key": api_key},
                 json=payload,
-                timeout=90,
+                timeout=REQUEST_TIMEOUT,
             )
         except requests.RequestException as error:
             last_error = f"Network error: {str(error)[:200]}"
@@ -168,7 +169,7 @@ def _request_model(model, api_key, parts):
                 time.sleep(RETRY_DELAYS[attempt])
                 continue
 
-            return None, last_error, False
+            return None, last_error, True
 
         if response.status_code == 200:
             try:
@@ -211,11 +212,14 @@ def _request_model(model, api_key, parts):
             f"Gemini API HTTP {response.status_code}: {message[:250]}"
         )
 
-        if response.status_code == 503 and attempt < len(RETRY_DELAYS):
-            time.sleep(RETRY_DELAYS[attempt])
-            continue
+        if response.status_code in (429, 500, 502, 503, 504):
+            if attempt < len(RETRY_DELAYS):
+                time.sleep(RETRY_DELAYS[attempt])
+                continue
 
-        return None, last_error, response.status_code == 503
+            return None, last_error, True
+
+        return None, last_error, False
 
     return None, last_error or "Unknown Gemini error", True
 
@@ -296,7 +300,7 @@ def analyze(page_data, screenshot_path):
                     "enabled": True,
                     "status": (
                         f"completed ({FALLBACK_MODEL}; "
-                        f"fallback after {PRIMARY_MODEL} returned HTTP 503)"
+                        f"fallback after {PRIMARY_MODEL} failed)"
                     ),
                     "findings": _normalize_findings(result),
                 }
