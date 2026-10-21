@@ -43,40 +43,22 @@
 </div>
 </section>
 
-<section class="card ai-panel">
-<div class="heading"><div><label class="eyebrow">AI ПРОВЕРКА</label><h2>Статус на анализа</h2></div><span id="ai-status-badge" class="status-badge status-neutral">Няма данни</span></div>
-<div class="ai-stats">
-<div><span>Статус</span><b id="ai-status">Няма данни</b></div>
-<div><span>Модел в доклада</span><b id="ai-model">Няма данни</b></div>
-<div><span>Находки от AI</span><b id="ai-finding-count">—</b></div>
-<div><span>Използван резервен модел</span><b id="ai-fallback">Няма данни</b></div>
-</div>
-<div class="diagnostic-box">
-<div class="diagnostic-title">Диагностика</div>
-<p id="ai-diagnostic">Диагностичната информация ще се покаже тук, ако е налична в results.json.</p>
-</div>
-</section>
-
 <section class="card context-panel">
 <div class="heading"><div><label class="eyebrow">КОНТЕКСТ</label><h2>Разбиране на страницата</h2></div><span class="subtle">Попълва се при наличие на данни</span></div>
 <div class="context-grid">
 <div><label>Предназначение на страницата</label><p id="page-purpose">Няма данни.</p></div>
-<div><label>Потенциални противоречия</label><p id="context-conflicts">Няма данни.</p></div>
 <div><label>Текст от изображения</label><p id="image-text-analysis">Няма данни.</p></div>
 <div><label>Обобщение от AI</label><p id="ai-summary">Няма данни.</p></div>
 </div>
 </section>
 
 <section class="results">
-<div class="heading"><div><label class="eyebrow">АВТОМАТИЧНИ ПРОВЕРКИ</label><h2>Открити проблеми <span id="visible-count" class="bubble">0</span></h2></div><span class="subtle">Доказателства · Контекст · Въздействие</span></div>
+<div class="heading"><div><label class="eyebrow">АВТОМАТИЧНИ ПРОВЕРКИ</label><h2>Открити проблеми <span id="visible-count" class="bubble">0</span></h2></div><span class="subtle">Правила и AI · Доказателства · Препоръки</span></div>
 <div class="filters card"><input id="search" type="search" placeholder="⌕ Търси проблем, текст или URL…"><select id="category-filter"><option value="">Всички категории</option></select><select id="severity-filter"><option value="">Всички нива</option><option>critical</option><option>high</option><option>medium</option><option>low</option></select></div>
 <div id="findings" class="finding-list"><div class="empty card">Зареждане на резултатите…</div></div>
 </section>
 
-<section class="results ai-findings-panel">
-<div class="heading"><div><label class="eyebrow">AI ПРОВЕРКИ</label><h2>AI констатации <span id="ai-visible-count" class="bubble">0</span></h2></div><span class="subtle">Отделно от автоматичните правила</span></div>
-<div id="ai-findings" class="finding-list"><div class="empty card">Няма заредени AI констатации.</div></div>
-</section>
+
 </div>
 
 <aside>
@@ -97,6 +79,7 @@
 <section><label>Доказателства</label><pre id="detail-evidence"></pre></section>
 <section><label>Контекст</label><p id="detail-context"></p></section>
 <section><label>Потенциално въздействие</label><p id="detail-impact"></p></section>
+<section><label>Препоръчително действие</label><p id="detail-recommendation"></p></section>
 <div class="dialog-meta"><span id="detail-confidence"></span><span id="detail-source"></span><span id="detail-id"></span></div>
 </dialog>
 <script src="app.js"></script>
