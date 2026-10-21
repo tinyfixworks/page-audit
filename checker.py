@@ -3,6 +3,7 @@ import argparse
 import json
 import os
 import re
+import difflib
 import time
 from collections import Counter
 from datetime import datetime, timezone
@@ -21,7 +22,8 @@ def finding(
     context="",
     impact="",
     confidence="high",
-    source="rules"
+    source="rules",
+    recommendation=""
 ):
     return {
         "id": "",
@@ -31,37 +33,94 @@ def finding(
         "evidence": evidence,
         "context": context,
         "impact": impact,
+        "recommendation": recommendation,
         "confidence": confidence,
         "source": source
     }
 
 
+def _normalise_text(value):
+    value = str(value or "").strip().lower()
+    value = re.sub(r"https?://", "", value)
+    value = re.sub(r"[^\w\s]", " ", value, flags=re.UNICODE)
+    return re.sub(r"\s+", " ", value).strip()
+
+
+def _is_ai_finding(item):
+    source = str(item.get("source", "")).lower()
+    return item.get("ai_generated") is True or "gemini" in source or source == "ai"
+
+
+def _merge_duplicate(existing, incoming):
+    preferred, supplemental = (
+        (existing, incoming)
+        if not _is_ai_finding(existing)
+        else (incoming, existing)
+    )
+    merged = dict(preferred)
+
+    for field in ("context", "impact", "recommendation"):
+        if not merged.get(field) and supplemental.get(field):
+            merged[field] = supplemental[field]
+
+    if _is_ai_finding(existing) or _is_ai_finding(incoming):
+        merged["source"] = "rules+gemini"
+        merged["ai_generated"] = True
+
+    confidence_rank = {"low": 1, "medium": 2, "high": 3}
+    if confidence_rank.get(str(supplemental.get("confidence", "")).lower(), 0) > confidence_rank.get(str(merged.get("confidence", "")).lower(), 0):
+        merged["confidence"] = supplemental["confidence"]
+
+    return merged
+
+
 def deduplicate_findings(findings):
-    seen = set()
     result = []
 
     for item in findings:
-        title = re.sub(
-            r"\s+",
-            " ",
-            str(item.get("title", "")).strip().lower()
-        )
-        evidence = re.sub(
-            r"\s+",
-            " ",
-            str(item.get("evidence", "")).strip().lower()
-        )
-        category = str(
-            item.get("category", "")
-        ).strip().lower()
-
-        key = (category, title, evidence)
-
-        if key in seen:
+        if not isinstance(item, dict):
             continue
 
-        seen.add(key)
-        result.append(item)
+        title = _normalise_text(item.get("title"))
+        evidence = _normalise_text(item.get("evidence"))
+        category = _normalise_text(item.get("category"))
+        duplicate_index = None
+
+        for index, existing in enumerate(result):
+            old_category = _normalise_text(existing.get("category"))
+            old_title = _normalise_text(existing.get("title"))
+            old_evidence = _normalise_text(existing.get("evidence"))
+
+            exact_duplicate = (
+                category == old_category
+                and title == old_title
+                and evidence == old_evidence
+            )
+
+            cross_source = _is_ai_finding(item) != _is_ai_finding(existing)
+            same_category = category == old_category
+            title_similarity = difflib.SequenceMatcher(None, title, old_title).ratio() if title and old_title else 0
+            evidence_similarity = difflib.SequenceMatcher(None, evidence, old_evidence).ratio() if evidence and old_evidence else 0
+
+            semantic_duplicate = (
+                cross_source
+                and same_category
+                and (
+                    title_similarity >= 0.90
+                    or (len(evidence) >= 35 and len(old_evidence) >= 35 and evidence_similarity >= 0.94)
+                )
+            )
+
+            if exact_duplicate or semantic_duplicate:
+                duplicate_index = index
+                break
+
+        if duplicate_index is None:
+            result.append(item)
+        else:
+            result[duplicate_index] = _merge_duplicate(
+                result[duplicate_index], item
+            )
 
     return result
 
@@ -573,7 +632,7 @@ def main():
         ai_findings = []
 
     report = {
-        "schema_version": 1,
+        "schema_version": 2,
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "page": d,
         "summary": {
