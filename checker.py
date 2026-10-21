@@ -85,20 +85,23 @@ def main():
         d["final_url"] = page.url
         d["status"] = response.status if response else None
 
-        final_host = (urlparse(d["final_url"]).hostname or "").lower().rstrip(".")
+        final_url = urlparse(d["final_url"])
+        final_host = (final_url.hostname or "").lower().rstrip(".")
+
         if final_host != "www.yettel.bg":
             browser.close()
             raise SystemExit(
-                "Navigation redirected outside www.yettel.bg. Audit stopped for security."
+                f"Navigation redirected outside www.yettel.bg. "
+                f"Final URL: {d['final_url']!r}. Audit stopped for security."
             )
 
-        # Remove the Cookiebot banner before screenshot and content analysis.
+        # Remove global header and Cookiebot before screenshot and analysis.
         try:
             page.evaluate("""
                 () => {
-                    document.querySelectorAll('#CybotCookiebotDialog').forEach(
-                        element => element.remove()
-                    );
+                    document.querySelectorAll(
+                        'header, #CybotCookiebotDialog'
+                    ).forEach(element => element.remove());
                 }
             """)
         except Exception:
@@ -122,8 +125,9 @@ def main():
             extracted = page.evaluate("""() => {
                 const txt = e => (e?.innerText || e?.textContent || '').trim();
 
-                // Exclude Cookiebot defensively from every extracted collection.
-                const excluded = e => !!e.closest('#CybotCookiebotDialog');
+                const excluded = e => !!e.closest(
+                    'header, #CybotCookiebotDialog'
+                );
                 const keep = e => !excluded(e);
 
                 const meta = document.querySelector('meta[name="description"]');
@@ -149,9 +153,8 @@ def main():
                         .map(a => ({
                             text: txt(a).slice(0, 200),
                             href: a.href,
-                            area: a.closest('header') ? 'Header'
+                            area: a.closest('footer') ? 'Footer'
                                 : a.closest('nav') ? 'Navigation'
-                                : a.closest('footer') ? 'Footer'
                                 : 'Main content',
                             element: a.querySelector('img') ? 'image link' : 'text link',
                             imageAlt: a.querySelector('img')?.getAttribute('alt') ?? null
@@ -169,9 +172,7 @@ def main():
                                 getComputedStyle(i).display !== 'none' &&
                                 getComputedStyle(i).visibility !== 'hidden'
                             ),
-                            area: i.closest('header') ? 'Header'
-                                : i.closest('footer') ? 'Footer'
-                                : 'Main content'
+                            area: i.closest('footer') ? 'Footer' : 'Main content'
                         })),
 
                     resources: performance.getEntriesByType('resource').map(r => ({
@@ -183,9 +184,10 @@ def main():
 
                     text_excerpt: (() => {
                         const clone = document.body.cloneNode(true);
-                        clone.querySelectorAll('#CybotCookiebotDialog').forEach(
-                            element => element.remove()
-                        );
+                        clone.querySelectorAll(
+                            'header, #CybotCookiebotDialog'
+                        ).forEach(element => element.remove());
+
                         return (clone.innerText || clone.textContent || '')
                             .trim()
                             .slice(0, 16000);
@@ -410,7 +412,7 @@ def main():
         },
         "notes": [
             "Findings require human review, especially contextual findings.",
-            "Checks up to 60 unique link destinations.",
+            "Checks up to 60 unique link destinations after excluding the header.",
             "AI findings are probabilistic and should be reviewed against the evidence."
         ]
     }
