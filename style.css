@@ -840,3 +840,89 @@ dialog pre {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+
+/* AI analysis panels */
+.ai-panel, .context-panel {
+  padding: 19px;
+  margin-bottom: 18px;
+}
+.ai-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 15px;
+}
+.ai-stats > div, .context-grid > div {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #edf0f5;
+  background: #fbfcfe;
+  border-radius: 10px;
+}
+.ai-stats span, .context-grid label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+.ai-stats b {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.status-neutral { background: #f1f5fa; color: #63748c; }
+.status-success { background: #e4f8ee; color: #168451; }
+.status-error { background: #ffeaec; color: #c52c3c; }
+.diagnostic-box {
+  margin-top: 11px;
+  padding: 12px 14px;
+  border: 1px solid #e5ebf5;
+  border-radius: 10px;
+  background: #f8faff;
+}
+.diagnostic-title {
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.diagnostic-box p, .context-grid p {
+  margin: 0;
+  color: #61738d;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+.context-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 13px;
+}
+.context-grid p { min-height: 36px; }
+.ai-findings-panel { margin-top: 21px; }
+.ai-findings-panel .empty p { margin-bottom: 0; font-size: 12px; }
+.notice > div { min-width: 0; }
+@media (max-width: 1000px) {
+  .ai-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 740px) {
+  .context-grid { grid-template-columns: 1fr; }
+  .ai-panel, .context-panel { padding: 15px; }
+}
+@media (max-width: 440px) {
+  .ai-stats { grid-template-columns: 1fr 1fr; }
+}
