@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-21T06:46:29.048845+00:00",
+  "generated_at": "2026-10-21T07:00:24.282813+00:00",
   "page": {
     "requested_url": "https://www.yettel.bg/bg/novite-apple-iphone-duo",
     "final_url": "https://www.yettel.bg/bg/novite-apple-iphone-duo",
@@ -604,378 +604,377 @@
       {
         "name": "https://www.yettel.bg/sites/default/files/css/css_LbWf8vck0qPEdo2dFzHXEJdot8yqM__C-EGPfBYG0yM.css?delta=0&language=bg&theme=bootstrap_subtheme&include=eJyFjUuOxCAMRC9EwpGQATdBMjbCpiVu39Eskln0Z1n1SvWiiKkN6L6QRKBNbVHl4uIFGqpCQQ1Uy2H_AEvGOwad0Q5s6K_qHfykuRdWeW1KNeNwSQb6JK0LI5vu13zbGvL8xUMSmo3VpakmLfwJwmNysioMVK2i-m_QESyZFnLVJE8cy5-m89V1GFBO0aE-j9mB9rvZJ_cZqeqB2elSw-YjKL4AZt2R9A",
         "type": "link",
-        "duration": 473,
+        "duration": 488,
         "transferSize": 12538
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/css/css_LnaBLHMxJIOiOnboUUDILY-yVjAh7HEWkbCCbNN3LX0.css?delta=1&language=bg&theme=bootstrap_subtheme&include=eJyFjUuOxCAMRC9EwpGQATdBMjbCpiVu39Eskln0Z1n1SvWiiKkN6L6QRKBNbVHl4uIFGqpCQQ1Uy2H_AEvGOwad0Q5s6K_qHfykuRdWeW1KNeNwSQb6JK0LI5vu13zbGvL8xUMSmo3VpakmLfwJwmNysioMVK2i-m_QESyZFnLVJE8cy5-m89V1GFBO0aE-j9mB9rvZJ_cZqeqB2elSw-YjKL4AZt2R9A",
         "type": "link",
-        "duration": 960,
+        "duration": 949,
         "transferSize": 122335
       },
       {
         "name": "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css",
         "type": "link",
-        "duration": 76,
+        "duration": 91,
         "transferSize": 29285
       },
       {
         "name": "https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css",
         "type": "link",
-        "duration": 79,
+        "duration": 95,
         "transferSize": 873
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/css/css_p8KjVQmxOaJSXb5GPBxizIjkLi32Iir6Fto32ye1ywY.css?delta=5&language=bg&theme=bootstrap_subtheme&include=eJyFjUuOxCAMRC9EwpGQATdBMjbCpiVu39Eskln0Z1n1SvWiiKkN6L6QRKBNbVHl4uIFGqpCQQ1Uy2H_AEvGOwad0Q5s6K_qHfykuRdWeW1KNeNwSQb6JK0LI5vu13zbGvL8xUMSmo3VpakmLfwJwmNysioMVK2i-m_QESyZFnLVJE8cy5-m89V1GFBO0aE-j9mB9rvZJ_cZqeqB2elSw-YjKL4AZt2R9A",
         "type": "link",
-        "duration": 484,
+        "duration": 500,
         "transferSize": 6659
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/migration/logo-header.png",
         "type": "img",
-        "duration": 485,
+        "duration": 500,
         "transferSize": 2820
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2026-01/smartphone-icon-3x.png",
         "type": "img",
-        "duration": 485,
+        "duration": 493,
         "transferSize": 1038
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/css/css_0Pb7ve8dogxC9wcNDM5sRSMg46zQoBuOcSWPgXKrDTw.css?delta=2&language=bg&theme=bootstrap_subtheme&include=eJyFjUuOxCAMRC9EwpGQATdBMjbCpiVu39Eskln0Z1n1SvWiiKkN6L6QRKBNbVHl4uIFGqpCQQ1Uy2H_AEvGOwad0Q5s6K_qHfykuRdWeW1KNeNwSQb6JK0LI5vu13zbGvL8xUMSmo3VpakmLfwJwmNysioMVK2i-m_QESyZFnLVJE8cy5-m89V1GFBO0aE-j9mB9rvZJ_cZqeqB2elSw-YjKL4AZt2R9A",
         "type": "link",
-        "duration": 2687,
+        "duration": 2525,
         "transferSize": 866
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-gadgets-menu-icon_0.png",
         "type": "img",
-        "duration": 500,
+        "duration": 505,
         "transferSize": 1042
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-tablets-menu-icon_0.png",
         "type": "img",
-        "duration": 500,
+        "duration": 508,
         "transferSize": 709
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-smrsrv-menu-icon_0.png",
         "type": "img",
-        "duration": 667,
+        "duration": 704,
         "transferSize": 1140
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-postpaid-menu-icon_0.png",
         "type": "img",
-        "duration": 978,
+        "duration": 962,
         "transferSize": 840
-      },
-      {
-        "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-prepaid-menu-icon_0.png",
-        "type": "img",
-        "duration": 979,
-        "transferSize": 847
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2026-08/su-new-icon.png",
         "type": "img",
-        "duration": 988,
+        "duration": 968,
         "transferSize": 8695
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-prepaid-menu-icon_0.png",
+        "type": "img",
+        "duration": 974,
+        "transferSize": 847
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-data-menu-icon_0.png",
         "type": "img",
-        "duration": 1147,
+        "duration": 1129,
         "transferSize": 1360
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/iconworlds_0.png",
         "type": "img",
-        "duration": 1151,
+        "duration": 1134,
         "transferSize": 1324
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-fixed-menu-icon_0.png",
         "type": "img",
-        "duration": 1389,
+        "duration": 1151,
         "transferSize": 1669
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-tv-navy-o.png",
         "type": "img",
-        "duration": 1445,
+        "duration": 1446,
         "transferSize": 2372
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-05/bundle-tv-net-res_1.png",
         "type": "img",
-        "duration": 1471,
+        "duration": 1472,
         "transferSize": 995
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-fixednet-menu-icon.png",
         "type": "img",
-        "duration": 1584,
+        "duration": 1558,
         "transferSize": 1960
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/tv-more-info.png",
         "type": "img",
-        "duration": 1604,
+        "duration": 1606,
         "transferSize": 1124
-      },
-      {
-        "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-ds-menu-icon_0.png",
-        "type": "img",
-        "duration": 1633,
-        "transferSize": 1466
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-star-menu-icon_0.png",
         "type": "img",
-        "duration": 1683,
+        "duration": 1627,
         "transferSize": 1624
       },
       {
-        "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-4u-menu-icon_0.png",
+        "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-ds-menu-icon_0.png",
         "type": "img",
-        "duration": 1746,
-        "transferSize": 1810
+        "duration": 1630,
+        "transferSize": 1466
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-11/nsurance-menu.png",
         "type": "img",
-        "duration": 1751,
+        "duration": 1723,
         "transferSize": 13858
       },
       {
-        "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-navy-security.png",
+        "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-4u-menu-icon_0.png",
         "type": "img",
-        "duration": 1762,
-        "transferSize": 901
+        "duration": 1773,
+        "transferSize": 1810
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-faq-menu-icon_0.png",
         "type": "img",
-        "duration": 1795,
+        "duration": 1783,
         "transferSize": 1168
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-navy-security.png",
+        "type": "img",
+        "duration": 1789,
+        "transferSize": 901
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-info-menu-icon_0.png",
         "type": "img",
-        "duration": 1697,
+        "duration": 1645,
         "transferSize": 1584
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/menu-y-icon.png",
         "type": "img",
-        "duration": 1762,
+        "duration": 1735,
         "transferSize": 843
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/menu-careers-icon.png",
         "type": "img",
-        "duration": 1763,
+        "duration": 1784,
         "transferSize": 530
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/menu-network-icon.png",
         "type": "img",
-        "duration": 1769,
+        "duration": 1790,
         "transferSize": 1174
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/menu-esg-icon.png",
         "type": "img",
-        "duration": 1808,
+        "duration": 1797,
         "transferSize": 1175
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/inline-images/Step%20Indicator_5.png",
         "type": "img",
-        "duration": 1708,
+        "duration": 1650,
         "transferSize": 1612
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/inline-images/Step%20Indicator_6.png",
         "type": "img",
-        "duration": 1777,
+        "duration": 1742,
         "transferSize": 1738
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/inline-images/Step%20Indicator_7.png",
         "type": "img",
-        "duration": 1771,
+        "duration": 1788,
         "transferSize": 1757
-      },
-      {
-        "name": "https://www.yettel.bg/sites/default/files/inline-images/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_34.png",
-        "type": "img",
-        "duration": 1797,
-        "transferSize": 1849
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/inline-images/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_33.png",
         "type": "img",
-        "duration": 1885,
+        "duration": 1795,
         "transferSize": 3341
       },
       {
-        "name": "https://www.yettel.bg/sites/default/files/migration/logo-yellow.png",
+        "name": "https://www.yettel.bg/sites/default/files/inline-images/BrandProofPoints_Isolated_Misc_Mobile%20Heart%20Cloud_34.png",
         "type": "img",
-        "duration": 1871,
-        "transferSize": 5598
+        "duration": 1815,
+        "transferSize": 1849
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/prefooter_images/yappmockup-pref.png",
         "type": "img",
-        "duration": 2586,
+        "duration": 1985,
         "transferSize": 165691
-      },
-      {
-        "name": "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js",
-        "type": "script",
-        "duration": 388,
-        "transferSize": 24161
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/js/js_sTXDV0tmUUJwHU25QxHseIwcn6EZXK7RAYKIGrWelJU.js?scope=footer&delta=0&language=bg&theme=bootstrap_subtheme&include=eJyFy0EKgDAMAMEPWfqkkpRYA2kjTXLw94KgJ9HrDouqbj5hz00UQZL5ITzagjcUC_SNOuUnveH_3mlEqjA1jGSpYa69XFTWGNVZBwg7k-UvPAEidkgw",
         "type": "script",
-        "duration": 675,
+        "duration": 669,
         "transferSize": 95515
       },
       {
-        "name": "https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.min.js",
+        "name": "https://www.yettel.bg/sites/default/files/migration/logo-yellow.png",
+        "type": "img",
+        "duration": 1903,
+        "transferSize": 5598
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js",
         "type": "script",
-        "duration": 545,
-        "transferSize": 11570
+        "duration": 419,
+        "transferSize": 24161
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/js/js_d9r0_0uWKptpUPvk9It0UUU-LA2XSCnFckcVumnlNak.js?scope=footer&delta=2&language=bg&theme=bootstrap_subtheme&include=eJyFy0EKgDAMAMEPWfqkkpRYA2kjTXLw94KgJ9HrDouqbj5hz00UQZL5ITzagjcUC_SNOuUnveH_3mlEqjA1jGSpYa69XFTWGNVZBwg7k-UvPAEidkgw",
         "type": "script",
-        "duration": 564,
+        "duration": 588,
         "transferSize": 11988
+      },
+      {
+        "name": "https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.min.js",
+        "type": "script",
+        "duration": 528,
+        "transferSize": 11570
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/js/js_sdhshbLye6-W7znYDGAerqIeklPqzJZSPHdQVTDXKyo.js?scope=footer&delta=4&language=bg&theme=bootstrap_subtheme&include=eJyFy0EKgDAMAMEPWfqkkpRYA2kjTXLw94KgJ9HrDouqbj5hz00UQZL5ITzagjcUC_SNOuUnveH_3mlEqjA1jGSpYa69XFTWGNVZBwg7k-UvPAEidkgw",
         "type": "script",
-        "duration": 719,
+        "duration": 657,
         "transferSize": 29774
       },
       {
         "name": "https://www.googletagmanager.com/gtm.js?id=GTM-M22DM2F",
         "type": "script",
-        "duration": 175,
+        "duration": 126,
         "transferSize": 0
       },
       {
         "name": "https://www.yettel.bg/themes/custom/bootstrap_subtheme/fonts/Yettel-Regular.woff2",
         "type": "css",
-        "duration": 369,
+        "duration": 411,
         "transferSize": 35988
       },
       {
         "name": "https://www.yettel.bg/themes/custom/bootstrap_subtheme/fonts/Yettel-Bold.woff2",
         "type": "css",
-        "duration": 463,
+        "duration": 505,
         "transferSize": 35832
       },
       {
         "name": "https://www.yettel.bg/themes/custom/bootstrap_subtheme/fonts/Yettel-Light.woff2",
         "type": "css",
-        "duration": 315,
+        "duration": 473,
         "transferSize": 34848
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/styles/scaled_images_2/public/2026-10/iphone-duo-preorder-lp-ds.png?itok=OcnZEoFm",
         "type": "img",
-        "duration": 1082,
+        "duration": 1245,
         "transferSize": 631728
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/data/public/iPhone_Duo/Night_Sky/iPhone_Duo_Night_Sky_1.png",
         "type": "img",
-        "duration": 655,
+        "duration": 623,
         "transferSize": 125641
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/data/public/iPhone_Duo/Star_White/iPhone_Duo_Star_White_1.png",
         "type": "img",
-        "duration": 681,
+        "duration": 756,
         "transferSize": 155026
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2026-09/Online%20Security_15.png",
         "type": "img",
-        "duration": 1375,
+        "duration": 1422,
         "transferSize": 2080
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2026-09/Online%20Security_16.png",
         "type": "img",
-        "duration": 1380,
+        "duration": 1408,
         "transferSize": 2290
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2026-09/Online%20Security_17.png",
         "type": "img",
-        "duration": 1399,
+        "duration": 1411,
         "transferSize": 1877
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2026-10/duo-mockup4.png",
         "type": "img",
-        "duration": 1641,
+        "duration": 1754,
         "transferSize": 145657
       },
       {
         "name": "https://consent.cookiebot.com/uc.js?cbid=b686af4f-9a57-4d8d-aace-227d9d197041&implementation=gtm&consentmode-dataredaction=dynamic&culture=bg",
         "type": "script",
-        "duration": 110,
+        "duration": 120,
         "transferSize": 0
       },
       {
         "name": "https://www.yettel.bg/bg/login-status",
         "type": "fetch",
-        "duration": 239,
+        "duration": 370,
         "transferSize": 343
       },
       {
         "name": "https://consentcdn.cookiebot.com/sdk/bc-v4.min.html",
         "type": "iframe",
-        "duration": 91,
+        "duration": 102,
         "transferSize": 0
       },
       {
         "name": "https://consentcdn.cookiebot.com/consentconfig/b686af4f-9a57-4d8d-aace-227d9d197041/settings.json",
         "type": "xmlhttprequest",
-        "duration": 82,
+        "duration": 95,
         "transferSize": 0
       },
       {
         "name": "https://consent.cookiebot.com/b686af4f-9a57-4d8d-aace-227d9d197041/cc.js?renew=false&referer=www.yettel.bg&dnt=false&init=false&culture=bg",
         "type": "script",
-        "duration": 237,
+        "duration": 253,
         "transferSize": 0
       }
     ],
     "text_excerpt": "<iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-M22DM2F\"\n    height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe>\n     \n\n    \n      Skip to main content\n    \n    \n      \n    \n\n\t\n\t\t\t\n\t\n\t\n\t\t\n\t\t\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t  \n\n\n  \n  \n      \n    \n      \n\n\n  \n    Components library\n          \n              \n\n\n\n\n\n\n  \n  \n    \n\n    \n             \n          \n                          \n                      \n          \n          \n                          \n                      \n        \n    \n            \n            \n                \n                \n                                \n                \n\n           \n     \n  \n\n\n  \n\n          \n  \n\n                                                                                                                                                \n\n  \n    \n             \n                            \n                                                                                                \n                \n                                                \n\n                                \n                \n                    \n                        \n    \n                                                                        \n                                                                        \n                                                                                                \n                                                                                                                            \n\n                         \n                                                                \n                                                                                                                                                                \n                                                                \n                                  \n                                    Поръчай предварително iPhone Duo Сега можеш да вземеш първия сгъваем смартфон от Apple предварително. iPhone Duo може да бъде твой в няколко лесни стъпки, за да се насладиш на функциите и красивия му дизайн. \n                                \n\n                        \n\n                    \n                    \n                                                \n                    \n                \n                                  \n    \n  \n\n          \n\n    \n\n                                                \n\n\n  \n\n\n\n  \n    \n      \n    \n\n    \n                                  \n          \n                                                                  \n              \n                \n                  \n                \n                                \n                  Смартфони\n                \n              \n                      \n                  \n\n                                      \n        \t\n          \n                                        \n          \n            \n\n            \n\n                                                                  \n                  \n                                                                                                                                                                                                                                                                                                                                                                                                          \n                    \n\n                      \n                      \n                                                  \n                                              \n\n                                                                                        \n                      \n                                                                        iPhone Duo 256GB\n\n                                                \n                                                                                \n                            \n                            \n                                                              \n\n                                                                    \n                                    102.59 €/мес.\n                                  \n\n                                                                    \n                                                                    \n                                \n                                                          \n                          \n                                                                                                            с Total Unlimited 300 Online\n                                                    \n                        \n\n                        \n                          \n                            \n                              \n                            \n                          \n                        \n\n                      \n                    \n\n                                                                                                    \n                  \n                                                                                                                                                                                                                                                                                                                                                                                                          \n                    \n\n                      \n                      \n                                                  \n                                              \n\n                                                                                        \n                      \n                                                                        iPhone Duo 256GB\n\n                                                \n                                                                                \n                            \n                            \n                                                              \n\n                                                                    \n                                    102.59 €/мес.\n                                  \n\n                                                                    \n                                                                    \n                                \n                                                          \n                          \n                                                                                                            с Total Unlimited 300 Online\n                                                    \n                        \n\n                        \n                          \n                            \n                              \n                            \n                          \n                        \n\n                      \n                    \n\n                                                                                                    \n                  \n                                                                                                                                                                                                                                                                                                                                                                                                          \n                    \n\n                      \n                      \n                                                  \n                                              \n\n                                                                                        \n                      \n                                                                        iPhone Duo 512GB\n\n                                                \n                                                                                \n                            \n                            \n                                                              \n\n                                                                    \n                                    116.59 €/мес.\n                                  \n\n                                                                    \n                                                                    \n                                \n                                                          \n                          \n                                                                                                            с Total Unlimited 300 Online\n                                                    \n                        \n\n                        \n                          \n                            \n                              \n                            \n                          \n                        \n\n                      \n                    \n\n                                                                                                    \n                  \n                                                                                                                                                                                                                                                                                                                                                                                                          \n                    \n\n                      \n                      \n                                                  \n                                              \n\n                                                                                        \n                      \n                                                                        iPhone Duo 512GB\n\n                                                \n                                                                                \n                            \n                            \n                                                              \n\n                                                                    \n                                    116.59 €/мес.\n                                  \n\n                                                                    \n                                                                    \n                                \n                                                          \n                          \n                                                                                                            с Total Unlimited 300 Online\n                                                    \n                        \n\n                        \n                          \n                            \n                              \n                            \n                          \n                        \n\n                      \n                    \n\n                                                                                                    \n                  \n                                                                                                                                                                                                                                                                                                                                                                                                          \n                    \n\n                      \n                      \n                                                  \n                                              \n\n                                                                                        \n                      \n                                                                        iPhone Duo 1TB\n\n                                                \n                                                                                \n                            \n                            \n                                                              \n\n                                                                    \n                                    140.59 €/мес.\n                                  \n\n                                                                    \n                                                                    \n                                \n                                                          \n                          \n                                                                                                            с Total Unlimited 300 Online\n                                                    \n                        \n\n                        \n                          \n                            \n                              \n                            \n                          \n                        \n\n                      \n                    \n\n                                                                                                    \n                  \n                                                                                                                                                                                                                                                                                                                                                                                                          \n                    \n\n                      \n                      \n                                                  \n                                              \n\n                                                                                        \n                      \n                                                                        iPhone Duo 1TB\n\n                                                \n                                                                                \n                            \n                            \n                                                              \n\n                                                                    \n                                    140.59 €/мес.\n                                  \n\n                                                                    \n                                                                    \n                                \n                                                          \n                          \n                                                                                                            с Total Unlimited 300 Online\n                                                    \n                        \n\n                        \n                          \n                            \n                              \n                            \n                          \n                        \n\n                      \n                    \n\n                                                                                                    \n                  \n                                                                                                                                                                                                                                                                                                                                                                                                          \n                    \n\n                      \n                      \n                                                  \n                                              \n\n                                                                                        \n                      \n                                                                        iPhone Duo 2TB\n\n                                                \n                                                                                \n                            \n                            \n                                                              \n\n  ",
-    "load_ms": 5200,
+    "load_ms": 4934,
     "request_count": 60
   },
   "summary": {
-    "total_findings": 11,
+    "total_findings": 10,
     "by_severity": {
-      "medium": 7,
+      "medium": 6,
       "low": 4
     },
     "by_category": {
       "Accessibility": 9,
-      "Content": 1,
-      "Links": 1
+      "Content": 1
     }
   },
   "findings": [
@@ -1047,17 +1046,6 @@
     },
     {
       "id": "PA-007",
-      "category": "Links",
-      "severity": "medium",
-      "title": "Link could not be reliably verified",
-      "evidence": "https://www.instagram.com/yettel/ returned HTTP 429.",
-      "context": "Main content · image link · Instagram",
-      "impact": "Access controls, rate limits or server issues may affect the result.",
-      "confidence": "medium",
-      "source": "rules"
-    },
-    {
-      "id": "PA-008",
       "category": "Accessibility",
       "severity": "low",
       "title": "Image has empty alt text",
@@ -1068,7 +1056,7 @@
       "source": "rules"
     },
     {
-      "id": "PA-009",
+      "id": "PA-008",
       "category": "Accessibility",
       "severity": "low",
       "title": "Image has empty alt text",
@@ -1079,7 +1067,7 @@
       "source": "rules"
     },
     {
-      "id": "PA-010",
+      "id": "PA-009",
       "category": "Accessibility",
       "severity": "low",
       "title": "Image has empty alt text",
@@ -1090,7 +1078,7 @@
       "source": "rules"
     },
     {
-      "id": "PA-011",
+      "id": "PA-010",
       "category": "Accessibility",
       "severity": "low",
       "title": "Image has empty alt text",
@@ -1103,7 +1091,7 @@
   ],
   "ai_analysis": {
     "enabled": true,
-    "status": "Network error: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)",
+    "status": "completed (gemini-3.5-flash-lite; fallback after gemini-3.8-flash failed)",
     "model": "gemini-3.8-flash",
     "finding_count": 0
   },
