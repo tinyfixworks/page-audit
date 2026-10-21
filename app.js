@@ -1,7 +1,7 @@
+
 const $ = id => document.getElementById(id);
 
 let all = [];
-let aiFindings = [];
 
 const esc = v => String(v ?? "").replace(/[&<>"']/g, c => ({
   "&": "&amp;",
@@ -15,8 +15,18 @@ const nice = v => v ? v[0].toUpperCase() + v.slice(1) : "—";
 
 const textOr = (v, fallback = "Няма данни.") => {
   if (v === null || v === undefined || v === "") return fallback;
-  if (Array.isArray(v)) return v.length ? v.join(" · ") : fallback;
-  if (typeof v === "object") return JSON.stringify(v, null, 2);
+
+  if (Array.isArray(v)) {
+    return v.length ? v.map(item => textOr(item, "")).filter(Boolean).join(" · ") : fallback;
+  }
+
+  if (typeof v === "object") {
+    return Object.entries(v)
+      .map(([key, value]) => `${key}: ${textOr(value, "")}`)
+      .filter(Boolean)
+      .join("\n");
+  }
+
   return String(v);
 };
 
@@ -48,13 +58,6 @@ async function load() {
         <b>Няма зареден доклад</b>
         <p>${esc(e.message)}</p>
       </div>`;
-
-    $("ai-findings").innerHTML = `
-      <div class="empty card">
-        AI констатациите ще се покажат след зареждане на доклад.
-      </div>`;
-
-    $("ai-diagnostic").textContent = e.message;
   }
 }
 
@@ -63,16 +66,6 @@ function render(r) {
   const ai = r.ai_analysis || {};
 
   all = Array.isArray(r.findings) ? r.findings : [];
-
-  aiFindings = all.filter(x =>
-    String(x.source || "").toLowerCase().includes("gemini") ||
-    String(x.source || "").toLowerCase() === "ai" ||
-    x.ai_generated === true
-  );
-
-  const declaredAiCount = Number.isFinite(ai.finding_count)
-    ? ai.finding_count
-    : aiFindings.length;
 
   $("page-url").textContent =
     p.final_url || p.requested_url || "Неизвестен URL";
@@ -84,8 +77,8 @@ function render(r) {
     ? new Date(r.generated_at).toLocaleString("bg-BG")
     : "";
 
-  const count = s => all.filter(
-    x => String(x.severity || "").toLowerCase() === s
+  const count = severity => all.filter(
+    x => String(x.severity || "").toLowerCase() === severity
   ).length;
 
   $("total-count").textContent = all.length;
@@ -104,7 +97,7 @@ function render(r) {
   $("resource-size").textContent = p.resources?.length
     ? (
         p.resources.reduce(
-          (s, x) => s + (x.transferSize || 0),
+          (sum, resource) => sum + (resource.transferSize || 0),
           0
         ) / 1048576
       ).toFixed(1) + " MB"
@@ -115,6 +108,7 @@ function render(r) {
     : "HTTP неизвестен";
 
   $("title-value").textContent = p.title || "Не е открит";
+
   $("description-value").textContent =
     p.meta_description || "Не е открит";
 
@@ -125,21 +119,16 @@ function render(r) {
   $("canonical-value").textContent =
     p.canonical || "Не е открит";
 
-  renderAI(ai, declaredAiCount);
   renderContext(ai, p, r);
 
-  $("report-notes").textContent = ai.enabled
-    ? "AI анализ: " + textOr(ai.status, "Статусът не е записан.")
-    : "AI анализът не е активиран в този доклад.";
-
-  const cats = [
+  const categories = [
     ...new Set(all.map(x => x.category).filter(Boolean))
   ].sort();
 
   $("category-filter").innerHTML =
     '<option value="">Всички категории</option>' +
-    cats.map(x =>
-      `<option value="${esc(x)}">${esc(x)}</option>`
+    categories.map(category =>
+      `<option value="${esc(category)}">${esc(category)}</option>`
     ).join("");
 
   renderCategories();
@@ -162,81 +151,6 @@ function render(r) {
       : "Няма критични или високоприоритетни проблеми по текущите правила.";
 
   filter();
-  renderAIFindings();
-}
-
-function renderAI(ai, count) {
-  const status = textOr(
-    ai.status,
-    ai.enabled === false
-      ? "Не е активиран"
-      : "Няма записан статус."
-  );
-
-  const model = textOr(ai.model, "Не е записан");
-  const statusLower = String(status).toLowerCase();
-
-  const failed = /fail|error|timeout|неусп|греш/.test(statusLower);
-  const completed = /completed|завърш|success/.test(statusLower);
-  const usedFallback = /fallback|резерв/.test(statusLower);
-
-  $("ai-status").textContent = status;
-  $("ai-model").textContent = model;
-  $("ai-finding-count").textContent = count;
-
-  $("ai-fallback").textContent = usedFallback
-    ? "Да"
-    : ai.fallback_model
-      ? textOr(ai.fallback_model)
-      : "Не е посочено";
-
-  const badge = $("ai-status-badge");
-
-  badge.textContent = failed
-    ? "Проблем"
-    : completed
-      ? "Завършен"
-      : ai.enabled === false
-        ? "Изключен"
-        : "Няма данни";
-
-  badge.className = "status-badge " + (
-    failed
-      ? "status-error"
-      : completed
-        ? "status-success"
-        : "status-neutral"
-  );
-
-  const diagnostic = [
-    ai.error,
-    ai.error_message,
-    ai.primary_error,
-    ai.failure_reason,
-    ai.diagnostic,
-    ai.details
-  ].filter(Boolean);
-
-  if (!diagnostic.length && usedFallback) {
-    diagnostic.push(
-      "Основният модел не е завършил успешно; резервният модел е използван. " +
-      "Конкретната причина не е записана в results.json."
-    );
-  }
-
-  if (!diagnostic.length && failed) {
-    diagnostic.push(status);
-  }
-
-  if (!diagnostic.length) {
-    diagnostic.push(
-      "Няма записана грешка или допълнителна диагностична информация."
-    );
-  }
-
-  $("ai-diagnostic").textContent = diagnostic
-    .map(x => textOr(x, ""))
-    .join("\n");
 }
 
 function renderContext(ai, p, r) {
@@ -246,38 +160,59 @@ function renderContext(ai, p, r) {
     {};
 
   $("page-purpose").textContent = textOr(
-    context.page_purpose || context.purpose || ai.page_purpose
+    context.page_purpose ||
+    context.purpose ||
+    ai.page_purpose
   );
 
-  $("context-conflicts").textContent = textOr(
-    context.conflicts ||
-    context.potential_conflicts ||
-    ai.conflicts ||
-    ai.potential_conflicts
-  );
-
-  $("image-text-analysis").textContent = textOr(
-    context.image_text ||
+  const imageText = context.image_text ||
     context.image_text_analysis ||
     ai.image_text ||
-    ai.image_text_analysis
-  );
+    ai.image_text_analysis;
+
+  $("image-text-analysis").textContent = formatImageText(imageText);
 
   $("ai-summary").textContent = textOr(
-    ai.summary || ai.overview || context.summary
+    ai.summary ||
+    ai.overview ||
+    context.summary
   );
 }
 
-function renderCategories() {
-  const g = {};
+function formatImageText(value) {
+  if (!Array.isArray(value)) {
+    return textOr(value);
+  }
 
-  all.forEach(x => {
-    const category = x.category || "Друга";
-    g[category] = (g[category] || 0) + 1;
+  if (!value.length) {
+    return "Няма данни.";
+  }
+
+  return value.map(item => {
+    if (!item || typeof item !== "object") {
+      return textOr(item, "");
+    }
+
+    return [
+      item.text ? "Текст: " + item.text : "",
+      item.description ? "Описание: " + item.description : "",
+      item.confidence != null ? "Увереност: " + item.confidence : ""
+    ].filter(Boolean).join("\n");
+  }).filter(Boolean).join("\n\n");
+}
+
+function renderCategories() {
+  const groups = {};
+
+  all.forEach(item => {
+    const category = item.category || "Друга";
+    groups[category] = (groups[category] || 0) + 1;
   });
 
-  const entries = Object.entries(g).sort((a, b) => b[1] - a[1]);
-  const max = Math.max(1, ...entries.map(x => x[1]));
+  const entries = Object.entries(groups)
+    .sort((a, b) => b[1] - a[1]);
+
+  const max = Math.max(1, ...entries.map(item => item[1]));
 
   const colors = [
     "#e65a69",
@@ -292,14 +227,14 @@ function renderCategories() {
     ? entries.map(([name, count], i) => `
         <div class="category-row">
           <span class="cat-icon"
-            style="color:${colors[i % 6]};background:${colors[i % 6]}18">
+            style="color:${colors[i % colors.length]};background:${colors[i % colors.length]}18">
             ${icons[name] || "•"}
           </span>
           <span>${esc(name)}</span>
           <span class="cat-count">${count}</span>
           <div class="cat-track">
             <div class="cat-fill"
-              style="width:${count / max * 100}%;background:${colors[i % 6]}">
+              style="width:${count / max * 100}%;background:${colors[i % colors.length]}">
             </div>
           </div>
         </div>
@@ -329,24 +264,29 @@ function renderChecklist(p) {
   `).join("");
 }
 
-function findingCard(x) {
-  const severity = String(x.severity || "low").toLowerCase();
+function findingCard(item) {
+  const severity = String(item.severity || "low").toLowerCase();
 
   return `
-    <button class="finding card" data-id="${esc(x.id)}">
+    <button class="finding card" data-id="${esc(item.id)}">
       <div class="finding-top">
         <span class="severity severity-${esc(severity)}">
           ${esc(nice(severity))}
         </span>
-        <span class="finding-id">${esc(x.id || "")}</span>
-        <span class="category-tag">${esc(x.category || "Друга")}</span>
+        <span class="finding-id">${esc(item.id || "")}</span>
+        <span class="category-tag">${esc(item.category || "Друга")}</span>
       </div>
-      <span class="finding-title">${esc(x.title || "Без заглавие")}</span>
-      <span class="finding-evidence">
-        ${esc(x.evidence || "Няма записани доказателства.")}
+
+      <span class="finding-title">
+        ${esc(item.title || "Без заглавие")}
       </span>
+
+      <span class="finding-evidence">
+        ${esc(item.evidence || "Няма записани доказателства.")}
+      </span>
+
       <div class="finding-bottom">
-        <span>${esc(x.context || "Контекстът не е заснет")}</span>
+        <span>${esc(item.context || "Контекстът не е заснет")}</span>
         <span class="view-detail">Детайли ↗</span>
       </div>
     </button>
@@ -354,25 +294,28 @@ function findingCard(x) {
 }
 
 function filter() {
-  const q = $("search").value.trim().toLowerCase();
+  const query = $("search").value.trim().toLowerCase();
   const category = $("category-filter").value;
   const severity = $("severity-filter").value;
 
-  const items = all.filter(x =>
-    (
-      !q ||
-      [
-        x.id,
-        x.title,
-        x.category,
-        x.evidence,
-        x.context,
-        x.impact
-      ].join(" ").toLowerCase().includes(q)
-    ) &&
-    (!category || x.category === category) &&
-    (!severity || x.severity === severity)
-  );
+  const items = all.filter(item => {
+    const searchable = [
+      item.id,
+      item.title,
+      item.category,
+      item.evidence,
+      item.context,
+      item.impact,
+      item.recommendation,
+      item.source
+    ].map(value => textOr(value, "")).join(" ").toLowerCase();
+
+    return (
+      (!query || searchable.includes(query)) &&
+      (!category || item.category === category) &&
+      (!severity || String(item.severity || "").toLowerCase() === severity)
+    );
+  });
 
   $("visible-count").textContent = items.length;
 
@@ -383,42 +326,24 @@ function filter() {
   bindFindingButtons($("findings"));
 }
 
-function renderAIFindings() {
-  $("ai-visible-count").textContent = aiFindings.length;
-
-  $("ai-findings").innerHTML = aiFindings.length
-    ? aiFindings.map(findingCard).join("")
-    : `
-      <div class="empty card">
-        <b>Няма отделно маркирани AI констатации.</b>
-        <p>
-          Това не доказва, че страницата няма проблеми. Провери статуса
-          на анализа и дали findings в results.json съдържа
-          source: "ai" или source: "gemini".
-        </p>
-      </div>
-    `;
-
-  bindFindingButtons($("ai-findings"));
-}
-
 function bindFindingButtons(root) {
   root.querySelectorAll(".finding").forEach(button => {
     button.onclick = () => {
-      detail(all.find(x => x.id === button.dataset.id));
+      detail(all.find(item => item.id === button.dataset.id));
     };
   });
 }
 
-function detail(x) {
-  if (!x) return;
+function detail(item) {
+  if (!item) return;
 
   $("detail-category").textContent =
-    (x.category || "Констатация") + " · " + (x.id || "");
+    (item.category || "Констатация") + " · " + (item.id || "");
 
-  $("detail-title").textContent = x.title || "Без заглавие";
+  $("detail-title").textContent =
+    item.title || "Без заглавие";
 
-  const severity = String(x.severity || "low").toLowerCase();
+  const severity = String(item.severity || "low").toLowerCase();
 
   $("detail-severity").innerHTML = `
     <span class="sev sev-${esc(severity)}">
@@ -427,21 +352,34 @@ function detail(x) {
   `;
 
   $("detail-evidence").textContent =
-    x.evidence || "Няма записани доказателства.";
+    item.evidence || "Няма записани доказателства.";
 
   $("detail-context").textContent =
-    x.context || "Няма записан контекст.";
+    item.context || "Няма записан контекст.";
 
   $("detail-impact").textContent =
-    x.impact || "Въздействието не е оценено.";
+    item.impact || "Въздействието не е оценено.";
+
+  const recommendation = $("detail-recommendation");
+
+  if (recommendation) {
+    recommendation.textContent =
+      item.recommendation || "Няма конкретна препоръка за тази констатация.";
+
+    const section = recommendation.closest("section");
+
+    if (section) {
+      section.hidden = !item.recommendation;
+    }
+  }
 
   $("detail-confidence").textContent =
-    "Увереност: " + nice(x.confidence);
+    "Увереност: " + nice(item.confidence);
 
   $("detail-source").textContent =
-    "Източник: " + (x.source || "rules");
+    "Източник: " + (item.source || "rules");
 
-  $("detail-id").textContent = x.id || "";
+  $("detail-id").textContent = item.id || "";
 
   $("detail-dialog").showModal();
 }
@@ -455,29 +393,29 @@ function detail(x) {
 
 $("close-dialog").onclick = () => $("detail-dialog").close();
 
-$("detail-dialog").addEventListener("click", e => {
-  if (e.target === $("detail-dialog")) {
+$("detail-dialog").addEventListener("click", event => {
+  if (event.target === $("detail-dialog")) {
     $("detail-dialog").close();
   }
 });
 
-$("audit-form").addEventListener("submit", e => {
-  e.preventDefault();
+$("audit-form").addEventListener("submit", event => {
+  event.preventDefault();
 
-  let u;
+  let url;
 
   try {
-    u = new URL($("audit-url").value.trim());
+    url = new URL($("audit-url").value.trim());
   } catch {
     $("form-message").textContent = "Въведи валиден URL.";
     return;
   }
 
   if (
-    u.protocol !== "https:" ||
-    u.hostname.toLowerCase() !== "www.yettel.bg" ||
-    u.username ||
-    u.password
+    url.protocol !== "https:" ||
+    url.hostname.toLowerCase() !== "www.yettel.bg" ||
+    url.username ||
+    url.password
   ) {
     $("form-message").textContent =
       "Разрешени са само HTTPS адреси от точно www.yettel.bg.";
@@ -485,12 +423,12 @@ $("audit-form").addEventListener("submit", e => {
   }
 
   $("form-message").textContent =
-    "URL е валидиран: " + u.href +
+    "URL е валидиран: " + url.href +
     ". GitHub Pages не може да стартира workflow директно. " +
     "Отвори Actions → Audit public page → Run workflow и постави адреса.";
 
   if (navigator.clipboard?.writeText) {
-    navigator.clipboard.writeText(u.href).catch(() => {});
+    navigator.clipboard.writeText(url.href).catch(() => {});
   }
 });
 
