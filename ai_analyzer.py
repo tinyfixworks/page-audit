@@ -47,6 +47,7 @@ Return a JSON object with this exact structure:
       "evidence": "Exact text or observable evidence",
       "context": "Why the element may conflict with the page's purpose",
       "impact": "Plausible consequence for users or content quality",
+      "recommendation": "Specific, evidence-based next step; empty string if unclear",
       "confidence": "high | medium | low"
     }
   ]
@@ -72,7 +73,8 @@ IMPORTANT RULES
 - Omit weak or speculative findings.
 - Use low confidence when evidence is incomplete.
 - For screenshot text, include only legible text and indicate uncertainty where appropriate.
-- Do not suggest fixes.
+- Include a concise, specific recommendation for each finding only when the evidence supports one; otherwise use an empty string.
+- The conflicts array is explanatory context, not a separate findings list. Any actionable contradiction must also be represented as a finding, and must not be duplicated.
 - If no meaningful issues are supported by the evidence, return an empty findings array.
 - If information cannot be determined, use an empty string or empty array.
 - Return valid JSON only. Do not include Markdown fences or commentary.
@@ -259,6 +261,7 @@ def _normalize_findings(obj):
             "evidence": str(finding["evidence"])[:1200],
             "context": str(finding.get("context", ""))[:500],
             "impact": str(finding.get("impact", ""))[:600],
+            "recommendation": str(finding.get("recommendation", ""))[:800],
             "confidence": confidence,
             "source": "gemini",
             "ai_generated": True,
