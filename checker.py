@@ -1,14 +1,28 @@
 
-import argparse, json, os, re, time
+import argparse
+import json
+import os
+import re
+import time
 from collections import Counter
 from datetime import datetime, timezone
 from urllib.parse import urlparse
+
 import requests
 from playwright.sync_api import sync_playwright
 from ai_analyzer import analyze as analyze_with_gemini
 
 
-def finding(cat, sev, title, evidence, context="", impact="", confidence="high", source="rules"):
+def finding(
+    cat,
+    sev,
+    title,
+    evidence,
+    context="",
+    impact="",
+    confidence="high",
+    source="rules"
+):
     return {
         "id": "",
         "category": cat,
@@ -22,11 +36,45 @@ def finding(cat, sev, title, evidence, context="", impact="", confidence="high",
     }
 
 
+def deduplicate_findings(findings):
+    seen = set()
+    result = []
+
+    for item in findings:
+        title = re.sub(
+            r"\s+",
+            " ",
+            str(item.get("title", "")).strip().lower()
+        )
+        evidence = re.sub(
+            r"\s+",
+            " ",
+            str(item.get("evidence", "")).strip().lower()
+        )
+        category = str(
+            item.get("category", "")
+        ).strip().lower()
+
+        key = (category, title, evidence)
+
+        if key in seen:
+            continue
+
+        seen.add(key)
+        result.append(item)
+
+    return result
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--url", default=os.getenv("AUDIT_URL", ""))
     ap.add_argument("--output", default="results.json")
-    ap.add_argument("--skip-ai", action="store_true", help="Skip Gemini analysis")
+    ap.add_argument(
+        "--skip-ai",
+        action="store_true",
+        help="Skip Gemini analysis"
+    )
     a = ap.parse_args()
 
     u = a.url.strip()
@@ -36,8 +84,11 @@ def main():
         raise SystemExit("Enter a valid public HTTP(S) URL.")
 
     allowed_host = (p.hostname or "").lower().rstrip(".")
+
     if allowed_host != "www.yettel.bg":
-        raise SystemExit("For security, this prototype only audits URLs on www.yettel.bg.")
+        raise SystemExit(
+            "For security, this prototype only audits URLs on www.yettel.bg."
+        )
 
     start = time.time()
     fs = []
@@ -62,11 +113,17 @@ def main():
 
     with sync_playwright() as pw:
         browser = pw.chromium.launch()
-        page = browser.new_page(viewport={"width": 1440, "height": 1000})
+        page = browser.new_page(
+            viewport={"width": 1440, "height": 1000}
+        )
         response = None
 
         try:
-            response = page.goto(u, wait_until="networkidle", timeout=60000)
+            response = page.goto(
+                u,
+                wait_until="networkidle",
+                timeout=60000
+            )
         except Exception as e:
             fs.append(finding(
                 "Technical",
@@ -77,30 +134,35 @@ def main():
                 "Some checks may be incomplete.",
                 "medium"
             ))
+
             try:
-                page.goto(u, wait_until="domcontentloaded", timeout=25000)
+                page.goto(
+                    u,
+                    wait_until="domcontentloaded",
+                    timeout=25000
+                )
             except Exception:
                 pass
 
         d["final_url"] = page.url
         d["status"] = response.status if response else None
 
-        final_url = urlparse(d["final_url"])
-        final_host = (final_url.hostname or "").lower().rstrip(".")
+        final_host = (
+            urlparse(d["final_url"]).hostname or ""
+        ).lower().rstrip(".")
 
         if final_host != "www.yettel.bg":
             browser.close()
             raise SystemExit(
-                f"Navigation redirected outside www.yettel.bg. "
-                f"Final URL: {d['final_url']!r}. Audit stopped for security."
+                "Navigation redirected outside www.yettel.bg. "
+                "Audit stopped for security."
             )
 
-        # Remove global header and Cookiebot before screenshot and analysis.
         try:
             page.evaluate("""
                 () => {
                     document.querySelectorAll(
-                        'header, #CybotCookiebotDialog'
+                        '#CybotCookiebotDialog'
                     ).forEach(element => element.remove());
                 }
             """)
@@ -123,15 +185,21 @@ def main():
 
         try:
             extracted = page.evaluate("""() => {
-                const txt = e => (e?.innerText || e?.textContent || '').trim();
+                const txt = e => (
+                    e?.innerText || e?.textContent || ''
+                ).trim();
 
                 const excluded = e => !!e.closest(
-                    'header, #CybotCookiebotDialog'
+                    '#CybotCookiebotDialog'
                 );
                 const keep = e => !excluded(e);
 
-                const meta = document.querySelector('meta[name="description"]');
-                const can = document.querySelector('link[rel="canonical"]');
+                const meta = document.querySelector(
+                    'meta[name="description"]'
+                );
+                const can = document.querySelector(
+                    'link[rel="canonical"]'
+                );
 
                 return {
                     meta_description: meta?.content?.trim() || '',
@@ -141,23 +209,33 @@ def main():
                         .filter(keep)
                         .map(txt),
 
-                    headings: [...document.querySelectorAll('h1,h2,h3,h4,h5,h6')]
+                    headings: [
+                        ...document.querySelectorAll(
+                            'h1,h2,h3,h4,h5,h6'
+                        )
+                    ]
                         .filter(keep)
                         .map(e => ({
                             level: e.tagName,
                             text: txt(e).slice(0, 250)
                         })),
 
-                    links: [...document.querySelectorAll('a[href]')]
+                    links: [
+                        ...document.querySelectorAll('a[href]')
+                    ]
                         .filter(keep)
                         .map(a => ({
                             text: txt(a).slice(0, 200),
                             href: a.href,
-                            area: a.closest('footer') ? 'Footer'
+                            area: a.closest('header') ? 'Header'
                                 : a.closest('nav') ? 'Navigation'
+                                : a.closest('footer') ? 'Footer'
                                 : 'Main content',
-                            element: a.querySelector('img') ? 'image link' : 'text link',
-                            imageAlt: a.querySelector('img')?.getAttribute('alt') ?? null
+                            element: a.querySelector('img')
+                                ? 'image link'
+                                : 'text link',
+                            imageAlt: a.querySelector('img')
+                                ?.getAttribute('alt') ?? null
                         })),
 
                     images: [...document.images]
@@ -172,25 +250,30 @@ def main():
                                 getComputedStyle(i).display !== 'none' &&
                                 getComputedStyle(i).visibility !== 'hidden'
                             ),
-                            area: i.closest('footer') ? 'Footer' : 'Main content'
+                            area: i.closest('header') ? 'Header'
+                                : i.closest('footer') ? 'Footer'
+                                : 'Main content'
                         })),
 
-                    resources: performance.getEntriesByType('resource').map(r => ({
-                        name: r.name,
-                        type: r.initiatorType,
-                        duration: Math.round(r.duration),
-                        transferSize: r.transferSize || 0
-                    })),
+                    resources: performance
+                        .getEntriesByType('resource')
+                        .map(r => ({
+                            name: r.name,
+                            type: r.initiatorType,
+                            duration: Math.round(r.duration),
+                            transferSize: r.transferSize || 0
+                        })),
 
                     text_excerpt: (() => {
                         const clone = document.body.cloneNode(true);
+
                         clone.querySelectorAll(
-                            'header, #CybotCookiebotDialog'
+                            '#CybotCookiebotDialog'
                         ).forEach(element => element.remove());
 
-                        return (clone.innerText || clone.textContent || '')
-                            .trim()
-                            .slice(0, 16000);
+                        return (
+                            clone.innerText || clone.textContent || ''
+                        ).trim().slice(0, 16000);
                     })()
                 };
             }""")
@@ -225,7 +308,9 @@ def main():
 
     if not d["title"]:
         fs.append(finding(
-            "SEO", "high", "Missing page title",
+            "SEO",
+            "high",
+            "Missing page title",
             "No non-empty document title was detected.",
             "HTML <title>",
             "Search results and browser tabs may lack a useful title."
@@ -233,7 +318,9 @@ def main():
 
     if not d["meta_description"]:
         fs.append(finding(
-            "SEO", "medium", "Missing meta description",
+            "SEO",
+            "medium",
+            "Missing meta description",
             "No non-empty meta description was detected.",
             "HTML head",
             "Search engines may generate their own snippet."
@@ -241,14 +328,18 @@ def main():
 
     if not d["h1"]:
         fs.append(finding(
-            "SEO", "high", "No H1 heading detected",
+            "SEO",
+            "high",
+            "No H1 heading detected",
             "The page contains zero H1 elements.",
             "Heading structure",
             "The page lacks a primary heading in its HTML structure."
         ))
     elif len(d["h1"]) > 1:
         fs.append(finding(
-            "SEO", "medium", "Multiple H1 headings detected",
+            "SEO",
+            "medium",
+            "Multiple H1 headings detected",
             json.dumps(d["h1"], ensure_ascii=False),
             "Heading structure",
             "Multiple H1s may be intentional; review in context.",
@@ -257,7 +348,9 @@ def main():
 
     if not d["canonical"]:
         fs.append(finding(
-            "SEO", "low", "Canonical link not detected",
+            "SEO",
+            "low",
+            "Canonical link not detected",
             "No link[rel=canonical] was detected.",
             "HTML head",
             "This may be intentional.",
@@ -266,9 +359,12 @@ def main():
     else:
         ch = urlparse(d["canonical"]).netloc.lower()
         fh = urlparse(d["final_url"]).netloc.lower()
+
         if ch and fh and ch != fh:
             fs.append(finding(
-                "SEO", "medium", "Canonical points to a different host",
+                "SEO",
+                "medium",
+                "Canonical points to a different host",
                 d["canonical"],
                 "HTML link[rel=canonical]",
                 "Confirm whether this is intentional.",
@@ -278,29 +374,54 @@ def main():
     for im in d["images"]:
         if im["visible"] and im["alt"] is None:
             fs.append(finding(
-                "Accessibility", "medium", "Image has no alt attribute",
-                im["src"], im["area"],
+                "Accessibility",
+                "medium",
+                "Image has no alt attribute",
+                im["src"],
+                im["area"],
                 "Assistive technologies may lack a text alternative."
             ))
         elif im["visible"] and im["alt"] == "":
             fs.append(finding(
-                "Accessibility", "low", "Image has empty alt text",
-                im["src"], im["area"],
+                "Accessibility",
+                "low",
+                "Image has empty alt text",
+                im["src"],
+                im["area"],
                 "Empty alt can be correct for decorative images; verify purpose.",
                 "low"
             ))
 
     for pattern, label in [
-        (r"submitted by .{0,100} on .{0,80}", "Possible editorial metadata in page text"),
-        (r"components library", "Possible internal component-library text"),
-        (r"node background color", "Possible CMS/design configuration text"),
-        (r"lorem ipsum", "Placeholder text detected"),
-        (r"todo:|fixme:", "Possible internal note detected")
+        (
+            r"submitted by .{0,100} on .{0,80}",
+            "Possible editorial metadata in page text"
+        ),
+        (
+            r"components library",
+            "Possible internal component-library text"
+        ),
+        (
+            r"node background color",
+            "Possible CMS/design configuration text"
+        ),
+        (
+            r"lorem ipsum",
+            "Placeholder text detected"
+        ),
+        (
+            r"todo:|fixme:",
+            "Possible internal note detected"
+        )
     ]:
         m = re.search(pattern, d["text_excerpt"], re.I)
+
         if m:
             fs.append(finding(
-                "Content", "medium", label, m.group(0),
+                "Content",
+                "medium",
+                label,
+                m.group(0),
                 "Extracted page text",
                 "May be intentional; verify whether public visitors should see it.",
                 "medium"
@@ -311,9 +432,14 @@ def main():
 
     for x in d["links"]:
         href = x.get("href", "")
-        if urlparse(href).scheme in ("http", "https") and href not in seen:
+
+        if (
+            urlparse(href).scheme in ("http", "https")
+            and href not in seen
+        ):
             seen.add(href)
             links.append(x)
+
         if len(links) >= 60:
             break
 
@@ -322,7 +448,12 @@ def main():
 
     for x in links:
         try:
-            r = s.head(x["href"], allow_redirects=True, timeout=8)
+            r = s.head(
+                x["href"],
+                allow_redirects=True,
+                timeout=8
+            )
+
             if r.status_code in (403, 405):
                 r = s.get(
                     x["href"],
@@ -332,18 +463,27 @@ def main():
                 )
 
             label = x["text"] or x["imageAlt"] or "(unlabelled)"
-            ctx = f'{x["area"]} · {x["element"]} · {label}'
+            ctx = (
+                f'{x["area"]} · {x["element"]} · {label}'
+            )
 
             if r.status_code in (404, 410):
                 fs.append(finding(
-                    "Links", "high", "Link points to a missing page",
+                    "Links",
+                    "high",
+                    "Link points to a missing page",
                     f'{x["href"]} returned HTTP {r.status_code}.',
                     ctx,
                     "Visitors may reach a missing destination."
                 ))
-            elif r.status_code in (401, 403, 429) or r.status_code >= 500:
+            elif (
+                r.status_code in (401, 403, 429)
+                or r.status_code >= 500
+            ):
                 fs.append(finding(
-                    "Links", "medium", "Link could not be reliably verified",
+                    "Links",
+                    "medium",
+                    "Link could not be reliably verified",
                     f'{x["href"]} returned HTTP {r.status_code}.',
                     ctx,
                     "Access controls, rate limits or server issues may affect the result.",
@@ -351,7 +491,9 @@ def main():
                 ))
             elif r.status_code >= 400:
                 fs.append(finding(
-                    "Links", "medium", "Link returned an HTTP error",
+                    "Links",
+                    "medium",
+                    "Link returned an HTTP error",
                     f'{x["href"]} returned HTTP {r.status_code}.',
                     ctx,
                     "Confirm whether the response is expected.",
@@ -360,7 +502,9 @@ def main():
 
         except Exception as e:
             fs.append(finding(
-                "Links", "low", "Link check failed",
+                "Links",
+                "low",
+                "Link check failed",
                 f'{x["href"]} — {str(e)[:150]}',
                 x["area"],
                 "Network behavior prevented verification.",
@@ -376,23 +520,57 @@ def main():
     if not a.skip_ai:
         try:
             ai_result = analyze_with_gemini(d, screenshot_path)
-            fs.extend(ai_result.get("findings", []))
+
+            if not isinstance(ai_result, dict):
+                ai_result = {
+                    "enabled": True,
+                    "status": "Invalid AI analyzer result",
+                    "error": "analyze() did not return a dictionary.",
+                    "findings": []
+                }
+
+            ai_findings = ai_result.get("findings", [])
+
+            if not isinstance(ai_findings, list):
+                ai_findings = []
+
+            fs.extend(
+                item for item in ai_findings
+                if isinstance(item, dict)
+            )
+
         except Exception as e:
             ai_result = {
                 "enabled": True,
                 "status": f"error: {str(e)[:300]}",
+                "error": f"{type(e).__name__}: {str(e)[:500]}",
                 "findings": []
             }
 
-    order = {"critical": 0, "high": 1, "medium": 2, "low": 3}
+    fs = deduplicate_findings(fs)
+
+    order = {
+        "critical": 0,
+        "high": 1,
+        "medium": 2,
+        "low": 3
+    }
+
     fs.sort(key=lambda x: (
-        order.get(x["severity"], 9),
-        x["category"],
-        x["title"]
+        order.get(
+            str(x.get("severity", "")).lower(),
+            9
+        ),
+        str(x.get("category", "")),
+        str(x.get("title", ""))
     ))
 
     for i, x in enumerate(fs, 1):
         x["id"] = f"PA-{i:03d}"
+
+    ai_findings = ai_result.get("findings", [])
+    if not isinstance(ai_findings, list):
+        ai_findings = []
 
     report = {
         "schema_version": 1,
@@ -400,19 +578,33 @@ def main():
         "page": d,
         "summary": {
             "total_findings": len(fs),
-            "by_severity": dict(Counter(x["severity"] for x in fs)),
-            "by_category": dict(Counter(x["category"] for x in fs))
+            "by_severity": dict(
+                Counter(x.get("severity", "unknown") for x in fs)
+            ),
+            "by_category": dict(
+                Counter(x.get("category", "Other") for x in fs)
+            )
         },
         "findings": fs,
         "ai_analysis": {
+            **ai_result,
             "enabled": ai_result.get("enabled", False),
             "status": ai_result.get("status", "unknown"),
-            "model": os.getenv("GEMINI_MODEL", "gemini-3.8-flash"),
-            "finding_count": len(ai_result.get("findings", []))
+            "model": ai_result.get(
+                "model",
+                os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
+            ),
+            "used_model": ai_result.get("used_model"),
+            "fallback_used": ai_result.get("fallback_used", False),
+            "fallback_model": ai_result.get("fallback_model"),
+            "primary_error": ai_result.get("primary_error"),
+            "fallback_error": ai_result.get("fallback_error"),
+            "error": ai_result.get("error"),
+            "finding_count": len(ai_findings)
         },
         "notes": [
             "Findings require human review, especially contextual findings.",
-            "Checks up to 60 unique link destinations after excluding the header.",
+            "Checks up to 60 unique link destinations.",
             "AI findings are probabilistic and should be reviewed against the evidence."
         ]
     }
@@ -428,7 +620,9 @@ def main():
 
     print(
         f"Saved {len(fs)} findings to {a.output}; "
-        f"Gemini: {report['ai_analysis']['status']}"
+        f"Gemini: {report['ai_analysis']['status']}; "
+        f"AI findings: {report['ai_analysis']['finding_count']}; "
+        f"Model used: {report['ai_analysis'].get('used_model') or 'unknown'}"
     )
 
 
