@@ -926,3 +926,6 @@ dialog pre {
 @media (max-width: 440px) {
   .ai-stats { grid-template-columns: 1fr 1fr; }
 }
+
+.content-issues { background: #f5f1ff !important; border-color: #e7ddff !important; }
+.content-issues b { color: #7651c9; }
