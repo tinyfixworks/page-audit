@@ -25,8 +25,8 @@ jobs:
       - name: Run audit
         env:
           AUDIT_URL: ${{ inputs.url }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: gemini-3.8-flash
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: gpt-5.4-mini
         run: python checker.py --url "$AUDIT_URL" --output results.json
       - uses: actions/upload-artifact@v4
         with:
