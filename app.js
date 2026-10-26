@@ -55,6 +55,7 @@ async function load() {
 function render(r) {
   const p = r.page || {};
   const ai = r.ai_analysis || {};
+  window.__auditAI = ai;
 
   all = Array.isArray(r.findings) ? r.findings.map(item => ({
     ...item,
@@ -85,13 +86,11 @@ function render(r) {
     return String(a.id || "").localeCompare(String(b.id || ""));
   });
 
-  contentIssueCount = all.filter(item =>
-    item.content_issue === true && (
-      item.ai_generated === true ||
-      String(item.source || "").toLowerCase().includes("gemini") ||
-      String(item.source || "").toLowerCase() === "ai"
-    )
-  ).length;
+  contentIssueCount = all.filter(item => {
+    const source = String(item.source || "").toLowerCase();
+    const isAI = item.ai_generated === true || source.includes("gemini") || source === "ai" || source.includes("rules+gemini");
+    return isAI && (item.content_issue === true || String(item.category || "").toLowerCase() === "content");
+  }).length;
 
   $("page-url").textContent =
     p.final_url || p.requested_url || "Неизвестен URL";
@@ -188,24 +187,6 @@ function renderContext(ai, p, r) {
     context.page_purpose || context.purpose || ai.page_purpose
   );
 
-  const imageText = context.image_text ||
-    context.image_text_analysis ||
-    ai.image_text ||
-    ai.image_text_analysis;
-
-  $("image-text-analysis").textContent = Array.isArray(imageText)
-    ? (imageText.length
-      ? imageText.map(item => {
-          if (!item || typeof item !== "object") return textOr(item, "");
-          return [
-            item.text ? "Текст: " + item.text : "",
-            item.description ? "Описание: " + item.description : "",
-            item.confidence ? "Увереност: " + item.confidence : ""
-          ].filter(Boolean).join("\n");
-        }).filter(Boolean).join("\n\n")
-      : "Няма данни.")
-    : textOr(imageText);
-
   $("ai-summary").textContent = textOr(
     ai.summary || ai.overview || context.summary
   );
@@ -251,7 +232,10 @@ function renderCategories() {
 }
 
 function renderChecklist(p) {
+  const ai = window.__auditAI || {};
+  const aiAvailable = ai.enabled !== false && (ai.status === "completed" || ai.status === "success" || ai.status === "fallback_completed" || contentIssueCount > 0);
   const checks = [
+    ["Контекстуална съгласуваност (AI)", aiAvailable],
     ["Метаданни", !!p.title && !!p.meta_description],
     ["Заглавия (H1–H6)", !!p.headings?.length],
     ["Линкове", !!p.links?.length],

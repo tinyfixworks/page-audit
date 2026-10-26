@@ -32,7 +32,7 @@
 <article><span>Всички</span><b id="total-count">—</b><small>констатации</small></article>
 <article class="critical"><span>Critical</span><b id="critical-count">—</b><small>критични</small></article>
 <article class="high"><span>High</span><b id="high-only-count">—</b><small>висок приоритет</small></article>
-<article class="medium"><span>Medium</span><b id="medium-count">—</b><small>включва Low</small></article>
+<article class="medium"><span>Medium</span><b id="medium-count">—</b><small>среден приоритет</small></article>
 <article class="ok"><span>OK</span><b id="ok-count">—</b><small>без проблем</small></article>
 </div>
 <div class="overview">
@@ -44,10 +44,9 @@
 </section>
 
 <section class="card context-panel">
-<div class="heading"><div><label class="eyebrow">КОНТЕКСТ</label><h2>Разбиране на страницата</h2></div><span class="subtle">Попълва се при наличие на данни</span></div>
+<div class="heading"><div><label class="eyebrow">КОНТЕКСТ</label><h2>Контекст на страницата</h2></div><span class="subtle">Попълва се при наличие на данни</span></div>
 <div class="context-grid">
 <div><label>Предназначение на страницата</label><p id="page-purpose">Няма данни.</p></div>
-<div><label>Текст от изображения</label><p id="image-text-analysis">Няма данни.</p></div>
 <div><label>Обобщение от AI</label><p id="ai-summary">Няма данни.</p></div>
 </div>
 </section>
@@ -66,7 +65,7 @@
 <section class="side-card"><h3>Резултати по категория</h3><div id="category-summary"><p class="subtle">Няма данни за показване.</p></div></section>
 <section class="side-card"><h3>Време и ресурси</h3><div class="resources"><div><b id="load-time">—</b><small>Load time</small></div><div><b id="request-count">—</b><small>Заявки</small></div><div><b id="resource-size">—</b><small>Трансфер</small></div></div></section>
 <section class="side-card"><h3>Проверени елементи</h3><div id="checklist"><p class="subtle">Изчаква резултати.</p></div></section>
-<section class="side-card legend"><h3>Сериозност</h3><p><i class="dot red"></i> Critical <i class="dot orange"></i> High</p><p><i class="dot yellow"></i> Medium (включва Low)</p><p>Content Issues: AI открити контекстуални несъответствия</p></section>
+<section class="side-card legend"><h3>Сериозност</h3><p><i class="dot red"></i> Critical <i class="dot orange"></i> High</p><p><i class="dot yellow"></i> Medium</p><p>Content Issues: контекстуални несъответствия, открити от AI</p></section>
 </aside>
 </div>
 <section class="notice card"><div><b>Констатациите изискват преценка</b><p>Автоматичните проверки могат да дават фалшиви положителни резултати. Например празен alt текст може да е правилен за декоративно изображение.</p><p id="report-notes"></p></div></section>
