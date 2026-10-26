@@ -5,13 +5,14 @@ import os
 import re
 import difflib
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from collections import Counter
 from datetime import datetime, timezone
 from urllib.parse import urlparse
 
 import requests
 from playwright.sync_api import sync_playwright
-from ai_analyzer import analyze as analyze_with_gemini
+from ai_analyzer import analyze as analyze_with_openai
 
 
 def finding(
@@ -48,7 +49,7 @@ def _normalise_text(value):
 
 def _is_ai_finding(item):
     source = str(item.get("source", "")).lower()
-    return item.get("ai_generated") is True or "gemini" in source or source == "ai"
+    return item.get("ai_generated") is True or "openai" in source or "gemini" in source or source == "ai"
 
 
 def _merge_duplicate(existing, incoming):
@@ -64,7 +65,7 @@ def _merge_duplicate(existing, incoming):
             merged[field] = supplemental[field]
 
     if _is_ai_finding(existing) or _is_ai_finding(incoming):
-        merged["source"] = "rules+gemini"
+        merged["source"] = "rules+openai"
         merged["ai_generated"] = True
 
     confidence_rank = {"low": 1, "medium": 2, "high": 3}
@@ -132,7 +133,7 @@ def main():
     ap.add_argument(
         "--skip-ai",
         action="store_true",
-        help="Skip Gemini analysis"
+        help="Skip OpenAI analysis"
     )
     a = ap.parse_args()
 
@@ -180,9 +181,12 @@ def main():
         try:
             response = page.goto(
                 u,
-                wait_until="networkidle",
-                timeout=60000
+                wait_until="domcontentloaded",
+                timeout=30000
             )
+            # Allow client-side rendering to settle without waiting for every
+            # analytics/ad request to become idle.
+            page.wait_for_timeout(1500)
         except Exception as e:
             fs.append(finding(
                 "Technical",
@@ -502,73 +506,55 @@ def main():
         if len(links) >= 60:
             break
 
-    s = requests.Session()
-    s.headers["User-Agent"] = "PageAudit/0.1"
-
-    for x in links:
+    def check_link(x):
+        headers = {"User-Agent": "PageAudit/0.1"}
         try:
-            r = s.head(
-                x["href"],
-                allow_redirects=True,
-                timeout=8
+            r = requests.head(
+                x["href"], headers=headers, allow_redirects=True, timeout=(3, 5)
             )
-
             if r.status_code in (403, 405):
-                r = s.get(
-                    x["href"],
-                    allow_redirects=True,
-                    timeout=8,
-                    stream=True
+                r = requests.get(
+                    x["href"], headers=headers, allow_redirects=True,
+                    timeout=(3, 5), stream=True
                 )
+                r.close()
 
             label = x["text"] or x["imageAlt"] or "(unlabelled)"
-            ctx = (
-                f'{x["area"]} · {x["element"]} · {label}'
-            )
-
+            ctx = f'{x["area"]} · {x["element"]} · {label}'
             if r.status_code in (404, 410):
-                fs.append(finding(
-                    "Links",
-                    "high",
-                    "Link points to a missing page",
-                    f'{x["href"]} returned HTTP {r.status_code}.',
-                    ctx,
+                return finding(
+                    "Links", "high", "Link points to a missing page",
+                    f'{x["href"]} returned HTTP {r.status_code}.', ctx,
                     "Visitors may reach a missing destination."
-                ))
-            elif (
-                r.status_code in (401, 403, 429)
-                or r.status_code >= 500
-            ):
-                fs.append(finding(
-                    "Links",
-                    "medium",
-                    "Link could not be reliably verified",
-                    f'{x["href"]} returned HTTP {r.status_code}.',
-                    ctx,
+                )
+            if r.status_code in (401, 403, 429) or r.status_code >= 500:
+                return finding(
+                    "Links", "medium", "Link could not be reliably verified",
+                    f'{x["href"]} returned HTTP {r.status_code}.', ctx,
                     "Access controls, rate limits or server issues may affect the result.",
                     "medium"
-                ))
-            elif r.status_code >= 400:
-                fs.append(finding(
-                    "Links",
-                    "medium",
-                    "Link returned an HTTP error",
-                    f'{x["href"]} returned HTTP {r.status_code}.',
-                    ctx,
-                    "Confirm whether the response is expected.",
-                    "medium"
-                ))
-
+                )
+            if r.status_code >= 400:
+                return finding(
+                    "Links", "medium", "Link returned an HTTP error",
+                    f'{x["href"]} returned HTTP {r.status_code}.', ctx,
+                    "Confirm whether the response is expected.", "medium"
+                )
         except Exception as e:
-            fs.append(finding(
-                "Links",
-                "low",
-                "Link check failed",
-                f'{x["href"]} — {str(e)[:150]}',
-                x["area"],
-                "Network behavior prevented verification.",
-                "low"
-            ))
+            return finding(
+                "Links", "low", "Link check failed",
+                f'{x["href"]} — {str(e)[:150]}', x["area"],
+                "Network behavior prevented verification.", "low"
+            )
+        return None
+
+    # Check destinations concurrently to avoid waiting for each timeout in sequence.
+    with ThreadPoolExecutor(max_workers=12) as executor:
+        futures = [executor.submit(check_link, x) for x in links]
+        for future in as_completed(futures):
+            result = future.result()
+            if result:
+                fs.append(result)
 
     ai_result = {
         "enabled": False,
@@ -578,7 +564,7 @@ def main():
 
     if not a.skip_ai:
         try:
-            ai_result = analyze_with_gemini(d, screenshot_path)
+            ai_result = analyze_with_openai(d, screenshot_path)
 
             if not isinstance(ai_result, dict):
                 ai_result = {
@@ -655,7 +641,7 @@ def main():
             "status": ai_result.get("status", "unknown"),
             "model": ai_result.get(
                 "model",
-                os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
+                os.getenv("OPENAI_MODEL", "gpt-5.4-mini")
             ),
             "used_model": ai_result.get("used_model"),
             "fallback_used": ai_result.get("fallback_used", False),
@@ -684,7 +670,7 @@ def main():
 
     print(
         f"Saved {len(fs)} findings to {a.output}; "
-        f"Gemini: {report['ai_analysis']['status']}; "
+        f"OpenAI: {report['ai_analysis']['status']}; "
         f"AI findings: {report['ai_analysis']['finding_count']}; "
         f"Model used: {report['ai_analysis'].get('used_model') or 'unknown'}"
     )

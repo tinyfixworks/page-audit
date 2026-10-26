@@ -7,8 +7,7 @@ import time
 import requests
 
 
-PRIMARY_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
-FALLBACK_MODEL = os.getenv("GEMINI_FALLBACK_MODEL", "gemini-3.5-flash-lite")
+PRIMARY_MODEL = os.getenv("OPENAI_MODEL", "gpt-5.4-mini")
 
 RETRY_DELAYS = (2, 5)
 MAX_FINDINGS = 20
@@ -77,149 +76,91 @@ IMPORTANT RULES
 """
 
 
-def _prepare_parts(page_data, screenshot_path):
+def _prepare_input(page_data, screenshot_path):
     info = {
         key: page_data.get(key)
         for key in (
-            "requested_url",
-            "final_url",
-            "status",
-            "title",
-            "meta_description",
-            "canonical",
-            "h1",
-            "headings",
-            "text_excerpt",
-            "links",
-            "images",
+            "requested_url", "final_url", "status", "title", "meta_description",
+            "canonical", "h1", "headings", "text_excerpt", "links", "images",
         )
     }
-
     info["headings"] = (info.get("headings") or [])[:30]
     info["text_excerpt"] = (info.get("text_excerpt") or "")[:10000]
     info["links"] = (info.get("links") or [])[:40]
     info["images"] = (info.get("images") or [])[:50]
 
-    parts = [
-        {
-            "text": PROMPT
-            + "\n\nPAGE DATA:\n"
-            + json.dumps(info, ensure_ascii=False, default=str)
-        }
-    ]
+    content = [{
+        "type": "input_text",
+        "text": PROMPT + "\n\nPAGE DATA:\n" + json.dumps(info, ensure_ascii=False, default=str),
+    }]
 
     if screenshot_path and os.path.exists(screenshot_path):
         with open(screenshot_path, "rb") as file:
-            image_data = file.read()
-
-        parts.append({
-            "inline_data": {
-                "mime_type": "image/png",
-                "data": base64.b64encode(image_data).decode("ascii"),
-            }
+            image_data = base64.b64encode(file.read()).decode("ascii")
+        content.append({
+            "type": "input_image",
+            "image_url": f"data:image/png;base64,{image_data}",
+            "detail": "high",
         })
+    return content
 
-    return parts
 
-
-def _request_model(model, api_key, parts):
-    url = (
-        "https://generativelanguage.googleapis.com/"
-        f"v1beta/models/{model}:generateContent"
-    )
-
+def _request_model(model, api_key, content):
     payload = {
-        "contents": [
-            {
-                "role": "user",
-                "parts": parts,
-            }
-        ],
-        "generationConfig": {
-            "responseMimeType": "application/json",
-            "temperature": 0.1,
-        },
+        "model": model,
+        "input": [{"role": "user", "content": content}],
+        "text": {"format": {"type": "json_object"}},
+        "store": False,
     }
-
     last_error = None
-
     for attempt in range(len(RETRY_DELAYS) + 1):
         try:
             response = requests.post(
-                url,
-                params={"key": api_key},
+                "https://api.openai.com/v1/responses",
+                headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
                 json=payload,
                 timeout=REQUEST_TIMEOUT,
             )
         except requests.RequestException as error:
             last_error = f"Network error: {str(error)[:250]}"
-
             if attempt < len(RETRY_DELAYS):
                 time.sleep(RETRY_DELAYS[attempt])
                 continue
-
             return None, last_error, True
 
         if response.status_code == 200:
             try:
                 body = response.json()
-                candidates = body.get("candidates") or []
-
-                if not candidates:
-                    return None, "Gemini returned no candidates", False
-
-                content = candidates[0].get("content") or {}
-                response_parts = content.get("parts") or []
-
-                text_parts = [
-                    item["text"]
-                    for item in response_parts
-                    if isinstance(item, dict)
-                    and isinstance(item.get("text"), str)
-                ]
-
-                if not text_parts:
-                    finish_reason = candidates[0].get("finishReason", "")
-                    message = "Gemini returned an empty response"
-
-                    if finish_reason:
-                        message += f" (finishReason: {finish_reason})"
-
-                    return None, message, False
-
-                result = json.loads("\n".join(text_parts))
-
+                text_parts = []
+                for item in body.get("output", []):
+                    for part in item.get("content", []):
+                        if part.get("type") == "output_text" and isinstance(part.get("text"), str):
+                            text_parts.append(part["text"])
+                response_text = "\n".join(text_parts).strip()
+                if not response_text:
+                    return None, "OpenAI returned an empty response", False
+                result = json.loads(response_text)
                 if not isinstance(result, dict):
-                    return None, "Gemini returned invalid JSON structure", False
-
+                    return None, "OpenAI returned invalid JSON structure", False
                 if not isinstance(result.get("findings", []), list):
-                    return None, "Gemini returned an invalid findings array", False
-
+                    return None, "OpenAI returned an invalid findings array", False
                 return result, None, False
-
             except (ValueError, KeyError, TypeError) as error:
-                return None, f"Could not parse Gemini response: {str(error)[:250]}", False
+                return None, f"Could not parse OpenAI response: {str(error)[:250]}", False
 
         try:
-            error_body = response.json()
-            message = error_body.get("error", {}).get("message", "")
+            body = response.json()
+            message = body.get("error", {}).get("message", "")
         except (ValueError, AttributeError):
             message = response.text[:250]
-
-        last_error = (
-            f"Gemini API HTTP {response.status_code}: {message[:350]}"
-        )
-
-        if response.status_code in (429, 500, 502, 503, 504):
+        last_error = f"OpenAI API HTTP {response.status_code}: {message[:350]}"
+        if response.status_code in (408, 429, 500, 502, 503, 504):
             if attempt < len(RETRY_DELAYS):
                 time.sleep(RETRY_DELAYS[attempt])
                 continue
-
             return None, last_error, True
-
         return None, last_error, False
-
-    return None, last_error or "Unknown Gemini error", True
+    return None, last_error or "Unknown OpenAI error", True
 
 
 def _normalize_findings(obj):
@@ -259,7 +200,7 @@ def _normalize_findings(obj):
             "impact": str(finding.get("impact", ""))[:600],
             "recommendation": str(finding.get("recommendation", ""))[:800],
             "confidence": confidence,
-            "source": "gemini",
+            "source": "openai",
             "ai_generated": True,
             "content_issue": True,
         })
@@ -331,7 +272,7 @@ def _base_result():
         "model": PRIMARY_MODEL,
         "used_model": None,
         "fallback_used": False,
-        "fallback_model": FALLBACK_MODEL,
+        "fallback_model": None,
         "primary_error": None,
         "fallback_error": None,
         "error": None,
@@ -347,89 +288,39 @@ def _base_result():
 
 
 def analyze(page_data, screenshot_path):
-    api_key = os.getenv("GEMINI_API_KEY", "").strip()
-
+    api_key = os.getenv("OPENAI_API_KEY", "").strip()
     if not api_key:
         result = _base_result()
         result.update({
             "enabled": False,
-            "status": "GEMINI_API_KEY is not configured",
-            "error": "GEMINI_API_KEY is not configured",
+            "status": "OPENAI_API_KEY is not configured",
+            "error": "OPENAI_API_KEY is not configured",
         })
         return result
 
     output = _base_result()
-
     try:
-        parts = _prepare_parts(page_data, screenshot_path)
-
-        result, error, should_fallback = _request_model(
-            PRIMARY_MODEL,
-            api_key,
-            parts,
-        )
-
-        used_model = PRIMARY_MODEL
-
+        content = _prepare_input(page_data, screenshot_path)
+        result, error, _ = _request_model(PRIMARY_MODEL, api_key, content)
         if result is None:
-            output["primary_error"] = error
-
-            if should_fallback and FALLBACK_MODEL != PRIMARY_MODEL:
-                fallback_result, fallback_error, _ = _request_model(
-                    FALLBACK_MODEL,
-                    api_key,
-                    parts,
-                )
-
-                if fallback_result is None:
-                    output.update({
-                        "status": "Both models failed",
-                        "fallback_used": True,
-                        "fallback_error": fallback_error,
-                        "error": (
-                            f"Primary: {error}. "
-                            f"Fallback: {fallback_error}"
-                        )[:1200],
-                    })
-                    return output
-
-                result = fallback_result
-                used_model = FALLBACK_MODEL
-                output["fallback_used"] = True
-                output["fallback_error"] = None
-
-            else:
-                output.update({
-                    "status": error or "Gemini analysis failed",
-                    "error": error or "Gemini analysis failed",
-                })
-                return output
+            output.update({"status": error or "OpenAI analysis failed", "primary_error": error, "error": error})
+            return output
 
         findings = _normalize_findings(result)
-        context = _normalize_context(result)
-
-        output.update(context)
+        output.update(_normalize_context(result))
         output.update({
             "enabled": True,
             "model": PRIMARY_MODEL,
-            "used_model": used_model,
-            "fallback_model": FALLBACK_MODEL,
+            "used_model": PRIMARY_MODEL,
             "findings": findings,
             "finding_count": len(findings),
-            "status": (
-                f"completed ({used_model}; fallback after "
-                f"{PRIMARY_MODEL} failed)"
-                if output["fallback_used"]
-                else f"completed ({used_model})"
-            ),
+            "status": f"completed ({PRIMARY_MODEL})",
             "error": None,
         })
-
         return output
-
     except Exception as error:
         output.update({
-            "status": f"Gemini analysis failed: {str(error)[:300]}",
+            "status": f"OpenAI analysis failed: {str(error)[:300]}",
             "error": f"{type(error).__name__}: {str(error)[:500]}",
         })
         return output
