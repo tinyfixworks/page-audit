@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-26T08:04:06.954320+00:00",
+  "generated_at": "2026-10-26T09:56:34.865683+00:00",
   "page": {
     "requested_url": "https://www.yettel.bg/bg/uslugi/yettelapp",
     "final_url": "https://www.yettel.bg/bg/uslugi/yettelapp",
@@ -972,7 +972,7 @@
       },
       {
         "text": "Планове и допълнителни пакети",
-        "href": "https://www.yettel.bg/bg/faqs/planove-i-doplnitelni-paketi/doplnitelni-paketi-i-abonamentni-planove-faq",
+        "href": "https://www.yettel.bg/bg/faqs/planove-i-doplnitelni-paketi/doplnitelni-paketi-vprosi-i-otgovori-yettel",
         "area": "Header",
         "element": "text link",
         "imageAlt": null
@@ -1000,7 +1000,7 @@
       },
       {
         "text": "Виж всички",
-        "href": "https://www.yettel.bg/bg/faqs/planove-i-doplnitelni-paketi/abonamenti-planove-faq",
+        "href": "https://www.yettel.bg/bg/faqs/planove-i-doplnitelni-paketi/abonamentni-planove-vprosi-i-otgovori-yettel",
         "area": "Header",
         "element": "text link",
         "imageAlt": null
@@ -1839,395 +1839,477 @@
       {
         "name": "https://www.yettel.bg/sites/default/files/css/css_LbWf8vck0qPEdo2dFzHXEJdot8yqM__C-EGPfBYG0yM.css?delta=0&language=bg&theme=bootstrap_subtheme&include=eJyFjUuOxCAMRC9EwpGQATdBMjbCpiVu39Eskln0Z1n1SvWiiKkN6L6QRKBNbVHl4uIFGqpCQQ1Uy2H_AEvGOwad0Q5s6K_qHfykuRdWeW1KNeNwSQb6JK0LI5vu13zbGvL8xUMSmo3VpakmLfwJwmNysioMVK2i-m_QESyZFnLVJE8cy5-m89V1GFBO0aE-j9mB9rvZJ_cZqeqB2elSw-YjKL4AZt2R9A",
         "type": "link",
-        "duration": 370,
+        "duration": 527,
         "transferSize": 12538
-      },
-      {
-        "name": "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css",
-        "type": "link",
-        "duration": 18,
-        "transferSize": 29285
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/css/css_LnaBLHMxJIOiOnboUUDILY-yVjAh7HEWkbCCbNN3LX0.css?delta=1&language=bg&theme=bootstrap_subtheme&include=eJyFjUuOxCAMRC9EwpGQATdBMjbCpiVu39Eskln0Z1n1SvWiiKkN6L6QRKBNbVHl4uIFGqpCQQ1Uy2H_AEvGOwad0Q5s6K_qHfykuRdWeW1KNeNwSQb6JK0LI5vu13zbGvL8xUMSmo3VpakmLfwJwmNysioMVK2i-m_QESyZFnLVJE8cy5-m89V1GFBO0aE-j9mB9rvZJ_cZqeqB2elSw-YjKL4AZt2R9A",
         "type": "link",
-        "duration": 742,
+        "duration": 1092,
         "transferSize": 122335
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css",
+        "type": "link",
+        "duration": 24,
+        "transferSize": 24285
       },
       {
         "name": "https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css",
         "type": "link",
-        "duration": 30,
+        "duration": 26,
         "transferSize": 873
-      },
-      {
-        "name": "https://www.yettel.bg/sites/default/files/migration/logo-header.png",
-        "type": "img",
-        "duration": 363,
-        "transferSize": 2820
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/css/css_p8KjVQmxOaJSXb5GPBxizIjkLi32Iir6Fto32ye1ywY.css?delta=5&language=bg&theme=bootstrap_subtheme&include=eJyFjUuOxCAMRC9EwpGQATdBMjbCpiVu39Eskln0Z1n1SvWiiKkN6L6QRKBNbVHl4uIFGqpCQQ1Uy2H_AEvGOwad0Q5s6K_qHfykuRdWeW1KNeNwSQb6JK0LI5vu13zbGvL8xUMSmo3VpakmLfwJwmNysioMVK2i-m_QESyZFnLVJE8cy5-m89V1GFBO0aE-j9mB9rvZJ_cZqeqB2elSw-YjKL4AZt2R9A",
         "type": "link",
-        "duration": 391,
+        "duration": 554,
         "transferSize": 6659
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/migration/logo-header.png",
+        "type": "img",
+        "duration": 588,
+        "transferSize": 2820
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2026-01/smartphone-icon-3x.png",
         "type": "img",
-        "duration": 366,
+        "duration": 592,
         "transferSize": 1038
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/css/css_0Pb7ve8dogxC9wcNDM5sRSMg46zQoBuOcSWPgXKrDTw.css?delta=2&language=bg&theme=bootstrap_subtheme&include=eJyFjUuOxCAMRC9EwpGQATdBMjbCpiVu39Eskln0Z1n1SvWiiKkN6L6QRKBNbVHl4uIFGqpCQQ1Uy2H_AEvGOwad0Q5s6K_qHfykuRdWeW1KNeNwSQb6JK0LI5vu13zbGvL8xUMSmo3VpakmLfwJwmNysioMVK2i-m_QESyZFnLVJE8cy5-m89V1GFBO0aE-j9mB9rvZJ_cZqeqB2elSw-YjKL4AZt2R9A",
         "type": "link",
-        "duration": 2359,
+        "duration": 3020,
         "transferSize": 866
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-gadgets-menu-icon_0.png",
         "type": "img",
-        "duration": 371,
+        "duration": 599,
         "transferSize": 1042
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-tablets-menu-icon_0.png",
         "type": "img",
-        "duration": 372,
+        "duration": 604,
         "transferSize": 709
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-smrsrv-menu-icon_0.png",
         "type": "img",
-        "duration": 492,
+        "duration": 782,
         "transferSize": 1140
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-postpaid-menu-icon_0.png",
+        "type": "img",
+        "duration": 1120,
+        "transferSize": 840
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2026-08/su-new-icon.png",
         "type": "img",
-        "duration": 1036,
+        "duration": 1129,
         "transferSize": 8695
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-prepaid-menu-icon_0.png",
         "type": "img",
-        "duration": 1022,
+        "duration": 1105,
         "transferSize": 847
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-data-menu-icon_0.png",
         "type": "img",
-        "duration": 1022,
+        "duration": 1524,
         "transferSize": 1360
-      },
-      {
-        "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-postpaid-menu-icon_0.png",
-        "type": "img",
-        "duration": 1023,
-        "transferSize": 840
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/iconworlds_0.png",
         "type": "img",
-        "duration": 1123,
+        "duration": 1531,
         "transferSize": 1324
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-fixed-menu-icon_0.png",
         "type": "img",
-        "duration": 1156,
+        "duration": 1631,
         "transferSize": 1669
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-tv-navy-o.png",
         "type": "img",
-        "duration": 1153,
+        "duration": 1658,
         "transferSize": 2372
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-05/bundle-tv-net-res_1.png",
         "type": "img",
-        "duration": 1392,
+        "duration": 1722,
         "transferSize": 995
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-fixednet-menu-icon.png",
         "type": "img",
-        "duration": 1393,
+        "duration": 1729,
         "transferSize": 1960
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/tv-more-info.png",
         "type": "img",
-        "duration": 1395,
+        "duration": 1729,
         "transferSize": 1124
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-ds-menu-icon_0.png",
         "type": "img",
-        "duration": 1422,
+        "duration": 1799,
         "transferSize": 1466
-      },
-      {
-        "name": "https://www.yettel.bg/sites/default/files/2025-11/nsurance-menu.png",
-        "type": "img",
-        "duration": 1517,
-        "transferSize": 13858
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-star-menu-icon_0.png",
         "type": "img",
-        "duration": 1556,
+        "duration": 1838,
         "transferSize": 1624
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-4u-menu-icon_0.png",
         "type": "img",
-        "duration": 1531,
+        "duration": 1912,
         "transferSize": 1810
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/2025-11/nsurance-menu.png",
+        "type": "img",
+        "duration": 1938,
+        "transferSize": 13858
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-navy-security.png",
         "type": "img",
-        "duration": 1540,
+        "duration": 1954,
         "transferSize": 901
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-faq-menu-icon_0.png",
         "type": "img",
-        "duration": 1556,
+        "duration": 1974,
         "transferSize": 1168
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/yettel-info-menu-icon_0.png",
         "type": "img",
-        "duration": 1528,
+        "duration": 1845,
         "transferSize": 1584
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/menu-y-icon.png",
         "type": "img",
-        "duration": 1541,
+        "duration": 1902,
         "transferSize": 843
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/menu-careers-icon.png",
         "type": "img",
-        "duration": 1550,
+        "duration": 1921,
         "transferSize": 530
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/menu-network-icon.png",
         "type": "img",
-        "duration": 1652,
+        "duration": 1988,
         "transferSize": 1174
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-03/menu-esg-icon.png",
         "type": "img",
-        "duration": 1579,
+        "duration": 1998,
         "transferSize": 1175
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/migration/logo-yellow.png",
+        "type": "img",
+        "duration": 2021,
+        "transferSize": 5598
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/prefooter_images/yappmockup-pref.png",
         "type": "img",
-        "duration": 1766,
+        "duration": 2489,
         "transferSize": 165691
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/js/js_sTXDV0tmUUJwHU25QxHseIwcn6EZXK7RAYKIGrWelJU.js?scope=footer&delta=0&language=bg&theme=bootstrap_subtheme&include=eJyFy0EKgDAMAMEPWfqkkpRYA2kjTXLw94KgJ9HrDouqbj5hz00UQZL5ITzagjcUC_SNOuUnveH_3mlEqjA1jGSpYa69XFTWGNVZBwg7k-UvPAEidkgw",
         "type": "script",
-        "duration": 505,
+        "duration": 791,
         "transferSize": 95515
-      },
-      {
-        "name": "https://www.yettel.bg/sites/default/files/migration/logo-yellow.png",
-        "type": "img",
-        "duration": 1538,
-        "transferSize": 5598
       },
       {
         "name": "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js",
         "type": "script",
-        "duration": 258,
+        "duration": 433,
         "transferSize": 24161
-      },
-      {
-        "name": "https://www.yettel.bg/sites/default/files/js/js_d9r0_0uWKptpUPvk9It0UUU-LA2XSCnFckcVumnlNak.js?scope=footer&delta=2&language=bg&theme=bootstrap_subtheme&include=eJyFy0EKgDAMAMEPWfqkkpRYA2kjTXLw94KgJ9HrDouqbj5hz00UQZL5ITzagjcUC_SNOuUnveH_3mlEqjA1jGSpYa69XFTWGNVZBwg7k-UvPAEidkgw",
-        "type": "script",
-        "duration": 407,
-        "transferSize": 11988
       },
       {
         "name": "https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.min.js",
         "type": "script",
-        "duration": 674,
+        "duration": 581,
         "transferSize": 11570
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/js/js_d9r0_0uWKptpUPvk9It0UUU-LA2XSCnFckcVumnlNak.js?scope=footer&delta=2&language=bg&theme=bootstrap_subtheme&include=eJyFy0EKgDAMAMEPWfqkkpRYA2kjTXLw94KgJ9HrDouqbj5hz00UQZL5ITzagjcUC_SNOuUnveH_3mlEqjA1jGSpYa69XFTWGNVZBwg7k-UvPAEidkgw",
+        "type": "script",
+        "duration": 620,
+        "transferSize": 11988
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/js/js_sdhshbLye6-W7znYDGAerqIeklPqzJZSPHdQVTDXKyo.js?scope=footer&delta=4&language=bg&theme=bootstrap_subtheme&include=eJyFy0EKgDAMAMEPWfqkkpRYA2kjTXLw94KgJ9HrDouqbj5hz00UQZL5ITzagjcUC_SNOuUnveH_3mlEqjA1jGSpYa69XFTWGNVZBwg7k-UvPAEidkgw",
         "type": "script",
-        "duration": 798,
+        "duration": 751,
         "transferSize": 29774
       },
       {
         "name": "https://www.googletagmanager.com/gtm.js?id=GTM-M22DM2F",
         "type": "script",
-        "duration": 107,
+        "duration": 170,
         "transferSize": 0
       },
       {
         "name": "https://www.yettel.bg/themes/custom/bootstrap_subtheme/fonts/Yettel-Regular.woff2",
         "type": "css",
-        "duration": 345,
+        "duration": 408,
         "transferSize": 35988
       },
       {
         "name": "https://www.yettel.bg/themes/custom/bootstrap_subtheme/fonts/Yettel-Bold.woff2",
         "type": "css",
-        "duration": 348,
+        "duration": 521,
         "transferSize": 35832
       },
       {
         "name": "https://www.yettel.bg/themes/custom/bootstrap_subtheme/fonts/Yettel-Light.woff2",
         "type": "css",
-        "duration": 229,
+        "duration": 363,
         "transferSize": 34848
-      },
-      {
-        "name": "https://www.yettel.bg/sites/default/files/styles/scaled_images_2/public/2026-06/LandingPage-YApp-1900x550p%D1%85_0.png?itok=ejEHP2TD",
-        "type": "img",
-        "duration": 800,
-        "transferSize": 199314
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2025-10/BrandProofPoints_Unlimited%20Speed.png",
         "type": "img",
-        "duration": 323,
+        "duration": 346,
         "transferSize": 10190
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/styles/scaled_images_2/public/2026-06/LandingPage-YApp-1900x550p%D1%85_0.png?itok=ejEHP2TD",
+        "type": "img",
+        "duration": 941,
+        "transferSize": 199314
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2026-01/BrandProofPoints_Isolated_People_Woman%205.png",
         "type": "img",
-        "duration": 442,
+        "duration": 521,
         "transferSize": 7403
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2026-01/YT_Isolated_People_Hiker%20Trees%20WindTurbine%201.png",
         "type": "img",
-        "duration": 330,
+        "duration": 377,
         "transferSize": 13575
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2026-01/BrandProofPoints_Isolated_People_Woman%20Bike%20Dog.png",
         "type": "img",
-        "duration": 331,
+        "duration": 380,
         "transferSize": 12943
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2026-08/ekran-wyzm.png",
         "type": "img",
-        "duration": 1084,
+        "duration": 1523,
         "transferSize": 195623
-      },
-      {
-        "name": "https://www.yettel.bg/sites/default/files/2026-08/ekran-otst.png",
-        "type": "img",
-        "duration": 1049,
-        "transferSize": 153893
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2026-08/ekran-dog.png",
         "type": "img",
-        "duration": 1058,
+        "duration": 1698,
         "transferSize": 127376
+      },
+      {
+        "name": "https://www.yettel.bg/sites/default/files/2026-08/ekran-otst.png",
+        "type": "img",
+        "duration": 1891,
+        "transferSize": 153893
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2026-08/ekran-fnk.png",
         "type": "img",
-        "duration": 1368,
+        "duration": 1880,
         "transferSize": 160889
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/2026-08/ekran-upr.png",
         "type": "img",
-        "duration": 1199,
+        "duration": 1625,
         "transferSize": 123366
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/migration/ytl-facebook.png",
         "type": "img",
-        "duration": 1179,
+        "duration": 1704,
         "transferSize": 1083
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/migration/ytl-linkedin.png",
         "type": "img",
-        "duration": 1186,
+        "duration": 1823,
         "transferSize": 11432
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/inline-images/instagram-white.png",
         "type": "img",
-        "duration": 1187,
+        "duration": 1882,
         "transferSize": 1433
       },
       {
         "name": "https://www.yettel.bg/sites/default/files/migration/ytl-youtube.png",
         "type": "img",
-        "duration": 1206,
+        "duration": 1886,
         "transferSize": 864
       },
       {
         "name": "https://consent.cookiebot.com/uc.js?cbid=b686af4f-9a57-4d8d-aace-227d9d197041&implementation=gtm&consentmode-dataredaction=dynamic&culture=bg",
         "type": "script",
-        "duration": 40,
+        "duration": 31,
         "transferSize": 0
       },
       {
         "name": "https://www.yettel.bg/bg/login-status",
         "type": "fetch",
-        "duration": 228,
+        "duration": 351,
         "transferSize": 343
       },
       {
         "name": "https://consentcdn.cookiebot.com/sdk/bc-v5.min.html",
         "type": "iframe",
-        "duration": 32,
+        "duration": 31,
         "transferSize": 0
       },
       {
         "name": "https://consentcdn.cookiebot.com/consentconfig/b686af4f-9a57-4d8d-aace-227d9d197041/settings.json",
         "type": "xmlhttprequest",
-        "duration": 20,
+        "duration": 22,
         "transferSize": 0
       },
       {
         "name": "https://consent.cookiebot.com/b686af4f-9a57-4d8d-aace-227d9d197041/cc.js?renew=false&referer=www.yettel.bg&dnt=false&init=false&culture=bg",
         "type": "script",
-        "duration": 296,
+        "duration": 200,
         "transferSize": 0
       }
     ],
     "text_excerpt": "<iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-M22DM2F\"\n    height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe>\n     \n\n    \n      Skip to main content\n    \n    \n      \n    \n\n\t\n\t\t\t \n\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t  \n    \n            \n  Header Top Menu\n  \n\n        \n                  \n                    \n                Частни клиенти\n              \n                \n                Бизнес клиенти\n              \n                \n                Yettel портал\n              \n                \n                Бизнес портал\n              \n        \n  \n\n\n\n  \n\n  \n\n\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t  \n          \n              \n            \n    \n    \n  \n\n\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tПрофил\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n              \n                    \n                Моите оферти\n              \n                \n                Моите поръчки\n              \n                \n                Моите съгласия\n              \n                \n                Yettel портал\n              \n                \n                Изход\n              \n        \n  \n\n\n\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tВход\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t  \n    \n            \n  Header Top Menu\n  \n\n        \n                  \n                    \n                Частни клиенти\n              \n                \n                Бизнес клиенти\n              \n                \n                Yettel портал\n              \n                \n                Бизнес портал\n              \n        \n  \n\n\n\n  \n\n  \n\n\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t  \n            \n  Header menu\n  \n\n        \n                  \n                    \n                Устройства\n                                    \n                    \n                 Смартфони\n                                    \n                    \n                Apple\n              \n                \n                Samsung\n              \n                \n                Huawei\n              \n                \n                Xiaomi\n              \n                \n                Motorola\n              \n                \n                Ексклузивни онлайн модели\n              \n                \n                Разопаковани устройства\n              \n                \n                Виж всички\n              \n        \n  \n              \n                \n                 Смарт джаджи\n                                    \n                    \n                Смарт часовници\n              \n                \n                Безжични слушалки\n              \n                \n                Спортни гривни\n              \n                \n                Виж всички\n              \n        \n  \n              \n                \n                 Още устройства\n                                    \n                    \n                Tаблети\n              \n                \n                Лаптопи\n              \n                \n                Телевизори\n              \n                \n                Аксесоари\n              \n                \n                Мобилни телефони\n              \n                \n                Интернет модеми\n              \n        \n  \n              \n                \n                 Партньори\n                                    \n                    \n                Yettel & Apple\n              \n                \n                Yettel & Samsung\n              \n                \n                Yettel & Xiaomi\n              \n        \n  \n              \n                \n                 Смартфон Вселена\n                                    \n                    \n                eSIM\n              \n                \n                multiSIM\n              \n                \n                Смарт лизинг\n              \n                \n                Смартфон протект\n              \n                \n                Смартфон диагностика\n              \n                \n                Рециклирай и спести\n              \n        \n  \n              \n        \n  \n              \n                \n                Планове\n                                    \n                    \n                 Абонаментни планове\n                                    \n                    \n                Планове Total Unlimited\n              \n                \n                Допълнителни пакети\n              \n                \n                Ексклузивнo в приложението Yettel\n              \n                \n                Други планове\n              \n        \n  \n              \n                \n                 Предплатени планове\n                                    \n                    \n                Предплатени планове\n              \n                \n                Допълнителни пакети\n              \n                \n                Начини за презареждане\n              \n                \n                Предплатени планове за туристи\n              \n                \n                Други предплатени планове\n              \n        \n  \n              \n                \n                 Мобилен интернет\n                                    \n                    \n                Абонаментни планове за таблет и лаптоп\n              \n                \n                Допълнителни пакети за абонаментни планове\n              \n                \n                Предплатени планове за таблет и лаптоп\n              \n        \n  \n              \n                \n                 Извън България\n                                    \n                    \n                Роуминг\n              \n                \n                Международни разговори\n              \n        \n  \n              \n                \n                 Домашни телефони\n                                    \n                    \n                Планове за домашен телефон\n              \n        \n  \n              \n        \n  \n              \n                \n                TV и Интернет\n                                    \n                    \n                 Yettel TV\n                                    \n                    \n                Yettel TV планове\n              \n                \n                TV канали\n              \n                \n                Видеотеки\n              \n                \n                Телевизори\n              \n        \n  \n              \n                \n                 Пакети Интернет и телевизия\n                                    \n                    \n                TV + Интернет планове\n              \n                \n                Допълнителни пакети\n              \n        \n  \n              \n                \n                 Интернет за дома\n                                    \n                    \n                Интернет за дома планове\n              \n                \n                Mesh Мрежа\n              \n        \n  \n              \n                \n                 Повече инфо\n                                    \n                    \n                Оборудване за TV и Интернет за дома\n              \n                \n                Въпроси и отговори\n              \n                \n                Съвместими устройства\n              \n        \n  \n              \n        \n  \n              \n                \n                Услуги\n                                    \n                    \n                 Дигитално съдържание\n                                    \n                    \n                HBO Max\n              \n                \n                SkyShowtime\n              \n                \n                PLAY DIEMA XTRA\n              \n                \n                Storytel\n              \n                \n                Deezer\n              \n                \n                VOYO\n              \n                \n                Bookmate\n              \n                \n                iZZI\n              \n                \n                Капитал\n              \n        \n  \n              \n                \n                 За теб\n                                    \n                    \n                Yettel Cloud\n              \n                \n                Yettel ID\n              \n                \n                Приложението Yettel\n              \n                \n                Плати сметката си дигитално\n              \n                \n                100 обекта\n              \n                \n                Смарт тракер\n              \n                \n                Е-Винетка\n              \n                \n                Smart Fit\n              \n                \n                Смарт майстор\n              \n        \n  \n              \n                \n                 Застраховки\n                                    \n                    \n                Застраховка Смарт Турист\n              \n                \n                Застраховка Гражданска отговорност\n              \n                \n                Застраховка Автокаско\n              \n                \n                Застраховка Имущество\n              \n                \n                Застраховка Екстремни спортове\n              \n                \n                Виж всички\n              \n        \n  \n              \n                \n                 Още за теб\n                                    \n                    \n                Fun Call\n              \n                \n                Инфо услуги с SMS\n              \n                \n                Плати с Yettel\n              \n        \n  \n              \n                \n                 Защита\n                                    \n                    \n                Защита на профила\n              \n                \n                Онлайн защита\n              \n        \n  \n              \n        \n  \n              \n                \n                Помощник\n                                    \n                    \n                 Често задавани въпроси\n                                    \n                    \n                Обща информация\n              \n                \n                Планове и допълнителни пакети\n              \n                \n                Роуминг\n              \n                \n                Индексация\n              \n                \n                Промени в твоя план\n              \n                \n                Виж всички\n              \n        \n  \n              \n                \n                 Обслужване на клиенти\n                                    \n                    \n                Намери магазин\n              \n                \n                Свържи се с нас\n              \n        \n  \n              \n        \n  \n              \n                \n                За Yettel\n                                    \n                    \n                 За нас\n                                    \n                    \n                За нас\n              \n                \n                Добре дошъл в мрежата на Yettel\n              \n                \n                Защо Yettel\n              \n                \n                Лидерски екип\n              \n        \n  \n              \n                \n                 Кариери\n                                    \n                    \n                Кариера в Yettel\n              \n                \n                Обяви за работа\n              \n                \n                Работа в магазинната мрежа на Йеттел\n              \n                \n                Hub by Yettel\n              \n        \n  \n              \n                \n                 Нашата мрежа\n                                    \n                    \n                Най-добрата мрежа\n              \n                \n                Карти на покритието\n              \n                \n                Зелената мрежа на Yettel\n              \n        \n  \n              \n                \n                 Устойчиво развитие и баланс\n                                    \n                    \n                Устойчиво развитие и баланс\n              \n                \n                Околна среда\n              \n                \n                Хора\n              \n                \n                Технологии\n              \n                \n                Почтеност и прозрачност\n              \n                \n                Активен живот с технологиите\n              \n                \n                Безопасен интернет\n              \n        \n  \n              \n        \n  \n              \n        \n  \n\n\n\n  \n\n\n\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t\n\t\t\n\t\n\t\n\t\t\n\t\t\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t  \n\n\n  \n    \n        \n          \n        \n    \n    \n      \n    \n  \n\n\n                  \n            Submitted by Anonymous (not verified)\n on Wed, 09/17/2025 - 10:18\n\n          \n                \n      \n      \n  \n      \n    \n      \n\n\n  \n    Components library\n          \n              \n\n\n\n\n\n\n  \n    \n\n    \n             \n          \n                          \n                      \n          \n          \n                          \n                \n              \n                      \n        \n    \n            \n            \n                \n                \n                                \n                \n\n           \n     \n  \n\n\n\n          \n  \n\n                                                                                                    \n\n  \n    \n             \n                            \n                                                                                                \n                \n                                                \n\n                                \n                \n                    \n                        \n    \n                                                                        \n                                                                        \n                                                                                                \n                                                                                                                            \n\n                         \n                                                                \n                                                                                                                                                                \n                                                                \n                                  \n                                    Приложението Yettel - твоите услуги на едно място С приложението Yettel можеш да управляваш всички свои дигитални и мобилни услуги - от плащане на сметки до роуминг и абонаменти. Достъпно за Android и iOS, за да ти спести време и усилия.  \n                                \n\n                        \n\n                    \n                    \n                                                \n                    \n                \n                                  \n    \n  \n\n          \n\n\n\n\n\n\n\n\n\n    \n            \n                            @media (min-width: 577px) {\n                    #custom-component-4153 .cards-per-row-2-container .card-per-row-2{\n                        padding: 2%;\n                    }\n                }\n            \n                            @media (max-width: 576px) {\n                    #custom-component-4153 .component-margin.cards-per-row-2 {\n                        margin: 15% 0;\n                    }\n                }\n            \n                            @media (min-width: 577px) {\n                    #custom-component-4153 .component-margin.cards-per-row-2 {\n                        margin: 5% 0;\n                    }\n                }\n                \n\n\n  \n    \n      \n                                          \n              \n                                          \n                            \n                            \n                            \n\n          ",
-    "load_ms": 4447,
+    "load_ms": 5230,
     "request_count": 62
   },
   "summary": {
-    "total_findings": 15,
+    "total_findings": 14,
     "by_severity": {
-      "medium": 7,
-      "low": 8
+      "medium": 14
     },
     "by_category": {
       "Accessibility": 13,
-      "Content": 1,
-      "Images": 1
+      "Content": 1
     }
   },
   "findings": [
     {
       "id": "PA-001",
+      "category": "Accessibility",
+      "severity": "medium",
+      "title": "Image has empty alt text",
+      "evidence": "https://www.yettel.bg/sites/default/files/2025-10/BrandProofPoints_Unlimited%20Speed.png",
+      "context": "Main content",
+      "impact": "Empty alt can be correct for decorative images; verify purpose.",
+      "recommendation": "",
+      "confidence": "low",
+      "source": "rules"
+    },
+    {
+      "id": "PA-002",
+      "category": "Accessibility",
+      "severity": "medium",
+      "title": "Image has empty alt text",
+      "evidence": "https://www.yettel.bg/sites/default/files/2026-01/BrandProofPoints_Isolated_People_Woman%205.png",
+      "context": "Main content",
+      "impact": "Empty alt can be correct for decorative images; verify purpose.",
+      "recommendation": "",
+      "confidence": "low",
+      "source": "rules"
+    },
+    {
+      "id": "PA-003",
+      "category": "Accessibility",
+      "severity": "medium",
+      "title": "Image has empty alt text",
+      "evidence": "https://www.yettel.bg/sites/default/files/2026-01/YT_Isolated_People_Hiker%20Trees%20WindTurbine%201.png",
+      "context": "Main content",
+      "impact": "Empty alt can be correct for decorative images; verify purpose.",
+      "recommendation": "",
+      "confidence": "low",
+      "source": "rules"
+    },
+    {
+      "id": "PA-004",
+      "category": "Accessibility",
+      "severity": "medium",
+      "title": "Image has empty alt text",
+      "evidence": "https://www.yettel.bg/sites/default/files/2026-01/BrandProofPoints_Isolated_People_Woman%20Bike%20Dog.png",
+      "context": "Main content",
+      "impact": "Empty alt can be correct for decorative images; verify purpose.",
+      "recommendation": "",
+      "confidence": "low",
+      "source": "rules"
+    },
+    {
+      "id": "PA-005",
+      "category": "Accessibility",
+      "severity": "medium",
+      "title": "Image has empty alt text",
+      "evidence": "https://www.yettel.bg/sites/default/files/migration/ytl-facebook.png",
+      "context": "Main content",
+      "impact": "Empty alt can be correct for decorative images; verify purpose.",
+      "recommendation": "",
+      "confidence": "low",
+      "source": "rules"
+    },
+    {
+      "id": "PA-006",
+      "category": "Accessibility",
+      "severity": "medium",
+      "title": "Image has empty alt text",
+      "evidence": "https://www.yettel.bg/sites/default/files/migration/ytl-linkedin.png",
+      "context": "Main content",
+      "impact": "Empty alt can be correct for decorative images; verify purpose.",
+      "recommendation": "",
+      "confidence": "low",
+      "source": "rules"
+    },
+    {
+      "id": "PA-007",
+      "category": "Accessibility",
+      "severity": "medium",
+      "title": "Image has empty alt text",
+      "evidence": "https://www.yettel.bg/sites/default/files/migration/ytl-youtube.png",
+      "context": "Main content",
+      "impact": "Empty alt can be correct for decorative images; verify purpose.",
+      "recommendation": "",
+      "confidence": "low",
+      "source": "rules"
+    },
+    {
+      "id": "PA-008",
       "category": "Accessibility",
       "severity": "medium",
       "title": "Image has no alt attribute",
@@ -2239,7 +2321,7 @@
       "source": "rules"
     },
     {
-      "id": "PA-002",
+      "id": "PA-009",
       "category": "Accessibility",
       "severity": "medium",
       "title": "Image has no alt attribute",
@@ -2251,7 +2333,7 @@
       "source": "rules"
     },
     {
-      "id": "PA-003",
+      "id": "PA-010",
       "category": "Accessibility",
       "severity": "medium",
       "title": "Image has no alt attribute",
@@ -2263,7 +2345,7 @@
       "source": "rules"
     },
     {
-      "id": "PA-004",
+      "id": "PA-011",
       "category": "Accessibility",
       "severity": "medium",
       "title": "Image has no alt attribute",
@@ -2275,7 +2357,7 @@
       "source": "rules"
     },
     {
-      "id": "PA-005",
+      "id": "PA-012",
       "category": "Accessibility",
       "severity": "medium",
       "title": "Image has no alt attribute",
@@ -2287,7 +2369,7 @@
       "source": "rules"
     },
     {
-      "id": "PA-006",
+      "id": "PA-013",
       "category": "Accessibility",
       "severity": "medium",
       "title": "Image has no alt attribute",
@@ -2299,7 +2381,7 @@
       "source": "rules"
     },
     {
-      "id": "PA-007",
+      "id": "PA-014",
       "category": "Content",
       "severity": "medium",
       "title": "Possible internal component-library text",
@@ -2309,103 +2391,6 @@
       "recommendation": "",
       "confidence": "medium",
       "source": "rules"
-    },
-    {
-      "id": "PA-008",
-      "category": "Accessibility",
-      "severity": "low",
-      "title": "Image has empty alt text",
-      "evidence": "https://www.yettel.bg/sites/default/files/2025-10/BrandProofPoints_Unlimited%20Speed.png",
-      "context": "Main content",
-      "impact": "Empty alt can be correct for decorative images; verify purpose.",
-      "recommendation": "",
-      "confidence": "low",
-      "source": "rules"
-    },
-    {
-      "id": "PA-009",
-      "category": "Accessibility",
-      "severity": "low",
-      "title": "Image has empty alt text",
-      "evidence": "https://www.yettel.bg/sites/default/files/2026-01/BrandProofPoints_Isolated_People_Woman%205.png",
-      "context": "Main content",
-      "impact": "Empty alt can be correct for decorative images; verify purpose.",
-      "recommendation": "",
-      "confidence": "low",
-      "source": "rules"
-    },
-    {
-      "id": "PA-010",
-      "category": "Accessibility",
-      "severity": "low",
-      "title": "Image has empty alt text",
-      "evidence": "https://www.yettel.bg/sites/default/files/2026-01/YT_Isolated_People_Hiker%20Trees%20WindTurbine%201.png",
-      "context": "Main content",
-      "impact": "Empty alt can be correct for decorative images; verify purpose.",
-      "recommendation": "",
-      "confidence": "low",
-      "source": "rules"
-    },
-    {
-      "id": "PA-011",
-      "category": "Accessibility",
-      "severity": "low",
-      "title": "Image has empty alt text",
-      "evidence": "https://www.yettel.bg/sites/default/files/2026-01/BrandProofPoints_Isolated_People_Woman%20Bike%20Dog.png",
-      "context": "Main content",
-      "impact": "Empty alt can be correct for decorative images; verify purpose.",
-      "recommendation": "",
-      "confidence": "low",
-      "source": "rules"
-    },
-    {
-      "id": "PA-012",
-      "category": "Accessibility",
-      "severity": "low",
-      "title": "Image has empty alt text",
-      "evidence": "https://www.yettel.bg/sites/default/files/migration/ytl-facebook.png",
-      "context": "Main content",
-      "impact": "Empty alt can be correct for decorative images; verify purpose.",
-      "recommendation": "",
-      "confidence": "low",
-      "source": "rules"
-    },
-    {
-      "id": "PA-013",
-      "category": "Accessibility",
-      "severity": "low",
-      "title": "Image has empty alt text",
-      "evidence": "https://www.yettel.bg/sites/default/files/migration/ytl-linkedin.png",
-      "context": "Main content",
-      "impact": "Empty alt can be correct for decorative images; verify purpose.",
-      "recommendation": "",
-      "confidence": "low",
-      "source": "rules"
-    },
-    {
-      "id": "PA-014",
-      "category": "Accessibility",
-      "severity": "low",
-      "title": "Image has empty alt text",
-      "evidence": "https://www.yettel.bg/sites/default/files/migration/ytl-youtube.png",
-      "context": "Main content",
-      "impact": "Empty alt can be correct for decorative images; verify purpose.",
-      "recommendation": "",
-      "confidence": "low",
-      "source": "rules"
-    },
-    {
-      "id": "PA-015",
-      "category": "Images",
-      "severity": "low",
-      "title": "Undescriptive or incorrect image alternative text",
-      "evidence": "Prefooter image has alt text 'Smartwatches' (`src=\"/sites/default/files/prefooter_images/yappmockup-pref.png\"`), but it depicts a mobile app mockup rather than smartwatches.",
-      "context": "Screen readers will announce incorrect content for the app mockup image.",
-      "impact": "Minor accessibility confusion for visually impaired users relying on screen readers.",
-      "recommendation": "Update the alt text to accurately describe the Yettel app mockup.",
-      "confidence": "high",
-      "source": "gemini",
-      "ai_generated": true
     }
   ],
   "ai_analysis": {
@@ -2415,37 +2400,25 @@
     "used_model": "gemini-3.5-flash-lite",
     "fallback_used": true,
     "fallback_model": "gemini-3.5-flash-lite",
-    "primary_error": "Gemini API HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "primary_error": "Network error: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=60)",
     "fallback_error": null,
     "error": null,
-    "finding_count": 1,
-    "findings": [
+    "finding_count": 0,
+    "findings": [],
+    "page_purpose": "Promote the Yettel mobile application and detail its features for managing digital and mobile services",
+    "target_audience": "Yettel customers and mobile users looking to manage services digitally",
+    "intended_action": "Download the Yettel mobile application or explore its features and digital services",
+    "summary": "This page provides an overview of the Yettel mobile application, highlighting its features for managing plans, services, and accessing exclusive offers.",
+    "conflicts": [
       {
-        "id": "PA-015",
-        "category": "Images",
-        "severity": "low",
-        "title": "Undescriptive or incorrect image alternative text",
-        "evidence": "Prefooter image has alt text 'Smartwatches' (`src=\"/sites/default/files/prefooter_images/yappmockup-pref.png\"`), but it depicts a mobile app mockup rather than smartwatches.",
-        "context": "Screen readers will announce incorrect content for the app mockup image.",
-        "impact": "Minor accessibility confusion for visually impaired users relying on screen readers.",
-        "recommendation": "Update the alt text to accurately describe the Yettel app mockup.",
-        "confidence": "high",
-        "source": "gemini",
-        "ai_generated": true
+        "description": "Pre-footer image shows smartwatches with an alt text mismatch while the section discusses rewards",
+        "evidence": "Image src https://www.yettel.bg/sites/default/files/prefooter_images/yappmockup-pref.png with alt text 'Smartwatches'",
+        "impact": "May cause minor confusion regarding whether the section is about wearables or app rewards",
+        "confidence": "low"
       }
     ],
-    "page_purpose": "Promote the Yettel mobile application, highlighting its features, services, and management capabilities for customers.",
-    "target_audience": "Yettel mobile and digital service subscribers looking to manage their accounts or discover app features.",
-    "intended_action": "Download the Yettel app via app store badges/QR code or explore its features on the page.",
-    "summary": "The page is a well-structured promotional landing page for the Yettel mobile application. Content quality is generally high, though there are minor metadata/alt-text inconsistencies.",
-    "conflicts": [],
-    "image_text": [
-      {
-        "text": "Какво може новото приложение Yettel? Много повече от „ало“ и мегабайти. Забавлвай се, спортувай и планирай следващото си приключение с него.",
-        "description": "Hero banner highlighting app capabilities and features.",
-        "confidence": "high"
-      }
-    ]
+    "image_text": [],
+    "content_issues_count": 0
   },
   "notes": [
     "Findings require human review, especially contextual findings.",
