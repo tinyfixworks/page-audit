@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Page Audit</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+<header>
+<a class="brand" href="./"><span class="logo">PA</span><span><b>Page Audit</b><small>Audit Tools</small></span></a>
+<span class="top-note">Одит на съдържание, SEO, линкове и технически елементи</span>
+</header>
+<main>
+<section class="launch card">
+<div><label class="eyebrow">НОВА ПРОВЕРКА</label><h1>Одит на уеб страница</h1><p>Въведи публичен адрес.</p></div>
+<form id="audit-form">
+<label for="audit-url">URL адрес на страницата</label>
+<div class="url-input"><span>↗</span><input id="audit-url" type="url" placeholder="https://www.yettel.bg/..." required><button>Подготви одит →</button></div>
+<p id="form-message">Приемат се само HTTPS адреси от www.yettel.bg. Стартирането става през GitHub Actions.</p>
+</form>
+</section>
+<div class="layout">
+<div>
+<section class="card report">
+<div class="heading"><div><label class="eyebrow">ПОСЛЕДЕН ДОКЛАД</label><h2>Резултати от одита</h2></div><span id="http-status" class="pill">HTTP —</span></div>
+<div class="page-url">↗ <a id="page-url" href="#" target="_blank" rel="noopener">Няма зареден доклад</a><span id="report-date"></span></div>
+<div class="metrics">
+<article class="content-issues"><span>Content Issues</span><b id="content-issues-count">—</b><small>AI · контекстуални несъответствия</small></article>
+<article><span>Всички</span><b id="total-count">—</b><small>констатации</small></article>
+<article class="critical"><span>Critical</span><b id="critical-count">—</b><small>критични</small></article>
+<article class="high"><span>High</span><b id="high-only-count">—</b><small>висок приоритет</small></article>
+<article class="medium"><span>Medium</span><b id="medium-count">—</b><small>включва Low</small></article>
+<article class="ok"><span>OK</span><b id="ok-count">—</b><small>без проблем</small></article>
+</div>
+<div class="overview">
+<div><label>Title</label><p id="title-value">—</p></div>
+<div><label>Meta description</label><p id="description-value">—</p></div>
+<div><label>H1 заглавия</label><p id="h1-value">—</p></div>
+<div><label>Canonical URL</label><p id="canonical-value">—</p></div>
+</div>
+</section>
+
+<section class="card context-panel">
+<div class="heading"><div><label class="eyebrow">КОНТЕКСТ</label><h2>Разбиране на страницата</h2></div><span class="subtle">Попълва се при наличие на данни</span></div>
+<div class="context-grid">
+<div><label>Предназначение на страницата</label><p id="page-purpose">Няма данни.</p></div>
+<div><label>Текст от изображения</label><p id="image-text-analysis">Няма данни.</p></div>
+<div><label>Обобщение от AI</label><p id="ai-summary">Няма данни.</p></div>
+</div>
+</section>
+
+<section class="results">
+<div class="heading"><div><label class="eyebrow">АВТОМАТИЧНИ ПРОВЕРКИ</label><h2>Открити проблеми <span id="visible-count" class="bubble">0</span></h2></div><span class="subtle">Правила и AI · Доказателства · Препоръки</span></div>
+<div class="filters card"><input id="search" type="search" placeholder="⌕ Търси проблем, текст или URL…"><select id="category-filter"><option value="">Всички категории</option></select><select id="severity-filter"><option value="">Всички нива</option><option>critical</option><option>high</option><option>medium</option></select></div>
+<div id="findings" class="finding-list"><div class="empty card">Зареждане на резултатите…</div></div>
+</section>
+
+
+</div>
+
+<aside>
+<section class="side-card score"><div class="ring"><b id="score-value">—<small>/100</small></b></div><div><h3>Обща оценка</h3><p id="score-description">Оценката ще се появи след първия одит.</p></div></section>
+<section class="side-card"><h3>Резултати по категория</h3><div id="category-summary"><p class="subtle">Няма данни за показване.</p></div></section>
+<section class="side-card"><h3>Време и ресурси</h3><div class="resources"><div><b id="load-time">—</b><small>Load time</small></div><div><b id="request-count">—</b><small>Заявки</small></div><div><b id="resource-size">—</b><small>Трансфер</small></div></div></section>
+<section class="side-card"><h3>Проверени елементи</h3><div id="checklist"><p class="subtle">Изчаква резултати.</p></div></section>
+<section class="side-card legend"><h3>Сериозност</h3><p><i class="dot red"></i> Critical <i class="dot orange"></i> High</p><p><i class="dot yellow"></i> Medium (включва Low)</p><p>Content Issues: AI открити контекстуални несъответствия</p></section>
+</aside>
+</div>
+<section class="notice card"><div><b>Констатациите изискват преценка</b><p>Автоматичните проверки могат да дават фалшиви положителни резултати. Например празен alt текст може да е правилен за декоративно изображение.</p><p id="report-notes"></p></div></section>
+</main>
+<footer><span>Page Audit · Prototype 0.3</span><span>Rules-based checks · AI анализ и диагностика</span></footer>
+</div>
+<dialog id="detail-dialog">
+<div class="heading"><label id="detail-category"></label><button id="close-dialog">×</button></div>
+<h2 id="detail-title"></h2><div id="detail-severity"></div>
+<section><label>Доказателства</label><pre id="detail-evidence"></pre></section>
+<section><label>Контекст</label><p id="detail-context"></p></section>
+<section><label>Потенциално въздействие</label><p id="detail-impact"></p></section>
+<section><label>Препоръчително действие</label><p id="detail-recommendation"></p></section>
+<div class="dialog-meta"><span id="detail-confidence"></span><span id="detail-source"></span><span id="detail-id"></span></div>
+</dialog>
+<script src="app.js"></script>
+</body>
+</html>
