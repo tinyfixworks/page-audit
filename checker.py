@@ -28,7 +28,7 @@ def finding(
     return {
         "id": "",
         "category": cat,
-        "severity": sev,
+        "severity": "medium" if str(sev).lower() == "low" else sev,
         "title": title,
         "evidence": evidence,
         "context": context,
@@ -608,6 +608,10 @@ def main():
 
     fs = deduplicate_findings(fs)
 
+    for item in fs:
+        if str(item.get("severity", "")).lower() == "low":
+            item["severity"] = "medium"
+
     order = {
         "critical": 0,
         "high": 1,
@@ -659,7 +663,8 @@ def main():
             "primary_error": ai_result.get("primary_error"),
             "fallback_error": ai_result.get("fallback_error"),
             "error": ai_result.get("error"),
-            "finding_count": len(ai_findings)
+            "finding_count": len(ai_findings),
+            "content_issues_count": sum(1 for x in fs if x.get("content_issue") is True and _is_ai_finding(x))
         },
         "notes": [
             "Findings require human review, especially contextual findings.",

@@ -1,7 +1,7 @@
-
 const $ = id => document.getElementById(id);
 
 let all = [];
+let contentIssueCount = 0;
 
 const esc = v => String(v ?? "").replace(/[&<>"']/g, c => ({
   "&": "&amp;",
@@ -15,18 +15,8 @@ const nice = v => v ? v[0].toUpperCase() + v.slice(1) : "—";
 
 const textOr = (v, fallback = "Няма данни.") => {
   if (v === null || v === undefined || v === "") return fallback;
-
-  if (Array.isArray(v)) {
-    return v.length ? v.map(item => textOr(item, "")).filter(Boolean).join(" · ") : fallback;
-  }
-
-  if (typeof v === "object") {
-    return Object.entries(v)
-      .map(([key, value]) => `${key}: ${textOr(value, "")}`)
-      .filter(Boolean)
-      .join("\n");
-  }
-
+  if (Array.isArray(v)) return v.length ? v.join(" · ") : fallback;
+  if (typeof v === "object") return JSON.stringify(v, null, 2);
   return String(v);
 };
 
@@ -58,6 +48,7 @@ async function load() {
         <b>Няма зареден доклад</b>
         <p>${esc(e.message)}</p>
       </div>`;
+
   }
 }
 
@@ -65,7 +56,42 @@ function render(r) {
   const p = r.page || {};
   const ai = r.ai_analysis || {};
 
-  all = Array.isArray(r.findings) ? r.findings : [];
+  all = Array.isArray(r.findings) ? r.findings.map(item => ({
+    ...item,
+    severity: String(item.severity || "low").toLowerCase() === "low"
+      ? "medium"
+      : String(item.severity || "medium").toLowerCase()
+  })) : [];
+
+  const severityOrder = { critical: 0, high: 1, medium: 2 };
+  all.sort((a, b) => {
+    const aContent = a.content_issue === true && (
+      a.ai_generated === true ||
+      String(a.source || "").toLowerCase().includes("gemini") ||
+      String(a.source || "").toLowerCase() === "ai"
+    );
+    const bContent = b.content_issue === true && (
+      b.ai_generated === true ||
+      String(b.source || "").toLowerCase().includes("gemini") ||
+      String(b.source || "").toLowerCase() === "ai"
+    );
+
+    if (aContent !== bContent) return aContent ? -1 : 1;
+
+    const severityDiff =
+      (severityOrder[a.severity] ?? 9) - (severityOrder[b.severity] ?? 9);
+    if (severityDiff) return severityDiff;
+
+    return String(a.id || "").localeCompare(String(b.id || ""));
+  });
+
+  contentIssueCount = all.filter(item =>
+    item.content_issue === true && (
+      item.ai_generated === true ||
+      String(item.source || "").toLowerCase().includes("gemini") ||
+      String(item.source || "").toLowerCase() === "ai"
+    )
+  ).length;
 
   $("page-url").textContent =
     p.final_url || p.requested_url || "Неизвестен URL";
@@ -77,15 +103,15 @@ function render(r) {
     ? new Date(r.generated_at).toLocaleString("bg-BG")
     : "";
 
-  const count = severity => all.filter(
-    x => String(x.severity || "").toLowerCase() === severity
+  const count = s => all.filter(
+    x => String(x.severity || "").toLowerCase() === s
   ).length;
 
   $("total-count").textContent = all.length;
   $("critical-count").textContent = count("critical");
   $("high-only-count").textContent = count("high");
   $("medium-count").textContent = count("medium");
-  $("low-count").textContent = count("low");
+  $("content-issues-count").textContent = contentIssueCount;
   $("ok-count").textContent = "—";
 
   $("load-time").textContent = p.load_ms == null
@@ -97,7 +123,7 @@ function render(r) {
   $("resource-size").textContent = p.resources?.length
     ? (
         p.resources.reduce(
-          (sum, resource) => sum + (resource.transferSize || 0),
+          (s, x) => s + (x.transferSize || 0),
           0
         ) / 1048576
       ).toFixed(1) + " MB"
@@ -108,7 +134,6 @@ function render(r) {
     : "HTTP неизвестен";
 
   $("title-value").textContent = p.title || "Не е открит";
-
   $("description-value").textContent =
     p.meta_description || "Не е открит";
 
@@ -121,14 +146,14 @@ function render(r) {
 
   renderContext(ai, p, r);
 
-  const categories = [
+  const cats = [
     ...new Set(all.map(x => x.category).filter(Boolean))
   ].sort();
 
   $("category-filter").innerHTML =
     '<option value="">Всички категории</option>' +
-    categories.map(category =>
-      `<option value="${esc(category)}">${esc(category)}</option>`
+    cats.map(x =>
+      `<option value="${esc(x)}">${esc(x)}</option>`
     ).join("");
 
   renderCategories();
@@ -160,9 +185,7 @@ function renderContext(ai, p, r) {
     {};
 
   $("page-purpose").textContent = textOr(
-    context.page_purpose ||
-    context.purpose ||
-    ai.page_purpose
+    context.page_purpose || context.purpose || ai.page_purpose
   );
 
   const imageText = context.image_text ||
@@ -170,49 +193,34 @@ function renderContext(ai, p, r) {
     ai.image_text ||
     ai.image_text_analysis;
 
-  $("image-text-analysis").textContent = formatImageText(imageText);
+  $("image-text-analysis").textContent = Array.isArray(imageText)
+    ? (imageText.length
+      ? imageText.map(item => {
+          if (!item || typeof item !== "object") return textOr(item, "");
+          return [
+            item.text ? "Текст: " + item.text : "",
+            item.description ? "Описание: " + item.description : "",
+            item.confidence ? "Увереност: " + item.confidence : ""
+          ].filter(Boolean).join("\n");
+        }).filter(Boolean).join("\n\n")
+      : "Няма данни.")
+    : textOr(imageText);
 
   $("ai-summary").textContent = textOr(
-    ai.summary ||
-    ai.overview ||
-    context.summary
+    ai.summary || ai.overview || context.summary
   );
 }
 
-function formatImageText(value) {
-  if (!Array.isArray(value)) {
-    return textOr(value);
-  }
-
-  if (!value.length) {
-    return "Няма данни.";
-  }
-
-  return value.map(item => {
-    if (!item || typeof item !== "object") {
-      return textOr(item, "");
-    }
-
-    return [
-      item.text ? "Текст: " + item.text : "",
-      item.description ? "Описание: " + item.description : "",
-      item.confidence != null ? "Увереност: " + item.confidence : ""
-    ].filter(Boolean).join("\n");
-  }).filter(Boolean).join("\n\n");
-}
-
 function renderCategories() {
-  const groups = {};
+  const g = {};
 
-  all.forEach(item => {
-    const category = item.category || "Друга";
-    groups[category] = (groups[category] || 0) + 1;
+  all.forEach(x => {
+    const category = x.category || "Друга";
+    g[category] = (g[category] || 0) + 1;
   });
 
-  const entries = Object.entries(groups)
-    .sort((a, b) => b[1] - a[1]);
-
-  const max = Math.max(1, ...entries.map(item => item[1]));
+  const entries = Object.entries(g).sort((a, b) => b[1] - a[1]);
+  const max = Math.max(1, ...entries.map(x => x[1]));
 
   const colors = [
     "#e65a69",
@@ -227,14 +235,14 @@ function renderCategories() {
     ? entries.map(([name, count], i) => `
         <div class="category-row">
           <span class="cat-icon"
-            style="color:${colors[i % colors.length]};background:${colors[i % colors.length]}18">
+            style="color:${colors[i % 6]};background:${colors[i % 6]}18">
             ${icons[name] || "•"}
           </span>
           <span>${esc(name)}</span>
           <span class="cat-count">${count}</span>
           <div class="cat-track">
             <div class="cat-fill"
-              style="width:${count / max * 100}%;background:${colors[i % colors.length]}">
+              style="width:${count / max * 100}%;background:${colors[i % 6]}">
             </div>
           </div>
         </div>
@@ -264,29 +272,24 @@ function renderChecklist(p) {
   `).join("");
 }
 
-function findingCard(item) {
-  const severity = String(item.severity || "low").toLowerCase();
+function findingCard(x) {
+  const severity = String(x.severity || "low").toLowerCase();
 
   return `
-    <button class="finding card" data-id="${esc(item.id)}">
+    <button class="finding card" data-id="${esc(x.id)}">
       <div class="finding-top">
         <span class="severity severity-${esc(severity)}">
           ${esc(nice(severity))}
         </span>
-        <span class="finding-id">${esc(item.id || "")}</span>
-        <span class="category-tag">${esc(item.category || "Друга")}</span>
+        <span class="finding-id">${esc(x.id || "")}</span>
+        <span class="category-tag">${esc(x.category || "Друга")}</span>
       </div>
-
-      <span class="finding-title">
-        ${esc(item.title || "Без заглавие")}
-      </span>
-
+      <span class="finding-title">${esc(x.title || "Без заглавие")}</span>
       <span class="finding-evidence">
-        ${esc(item.evidence || "Няма записани доказателства.")}
+        ${esc(x.evidence || "Няма записани доказателства.")}
       </span>
-
       <div class="finding-bottom">
-        <span>${esc(item.context || "Контекстът не е заснет")}</span>
+        <span>${esc(x.context || "Контекстът не е заснет")}</span>
         <span class="view-detail">Детайли ↗</span>
       </div>
     </button>
@@ -294,28 +297,26 @@ function findingCard(item) {
 }
 
 function filter() {
-  const query = $("search").value.trim().toLowerCase();
+  const q = $("search").value.trim().toLowerCase();
   const category = $("category-filter").value;
   const severity = $("severity-filter").value;
 
-  const items = all.filter(item => {
-    const searchable = [
-      item.id,
-      item.title,
-      item.category,
-      item.evidence,
-      item.context,
-      item.impact,
-      item.recommendation,
-      item.source
-    ].map(value => textOr(value, "")).join(" ").toLowerCase();
-
-    return (
-      (!query || searchable.includes(query)) &&
-      (!category || item.category === category) &&
-      (!severity || String(item.severity || "").toLowerCase() === severity)
-    );
-  });
+  const items = all.filter(x =>
+    (
+      !q ||
+      [
+        x.id,
+        x.title,
+        x.category,
+        x.evidence,
+        x.context,
+        x.impact,
+        x.recommendation
+      ].join(" ").toLowerCase().includes(q)
+    ) &&
+    (!category || x.category === category) &&
+    (!severity || x.severity === severity)
+  );
 
   $("visible-count").textContent = items.length;
 
@@ -329,21 +330,20 @@ function filter() {
 function bindFindingButtons(root) {
   root.querySelectorAll(".finding").forEach(button => {
     button.onclick = () => {
-      detail(all.find(item => item.id === button.dataset.id));
+      detail(all.find(x => x.id === button.dataset.id));
     };
   });
 }
 
-function detail(item) {
-  if (!item) return;
+function detail(x) {
+  if (!x) return;
 
   $("detail-category").textContent =
-    (item.category || "Констатация") + " · " + (item.id || "");
+    (x.category || "Констатация") + " · " + (x.id || "");
 
-  $("detail-title").textContent =
-    item.title || "Без заглавие";
+  $("detail-title").textContent = x.title || "Без заглавие";
 
-  const severity = String(item.severity || "low").toLowerCase();
+  const severity = String(x.severity || "low").toLowerCase();
 
   $("detail-severity").innerHTML = `
     <span class="sev sev-${esc(severity)}">
@@ -352,34 +352,28 @@ function detail(item) {
   `;
 
   $("detail-evidence").textContent =
-    item.evidence || "Няма записани доказателства.";
+    x.evidence || "Няма записани доказателства.";
 
   $("detail-context").textContent =
-    item.context || "Няма записан контекст.";
+    x.context || "Няма записан контекст.";
 
   $("detail-impact").textContent =
-    item.impact || "Въздействието не е оценено.";
+    x.impact || "Въздействието не е оценено.";
 
   const recommendation = $("detail-recommendation");
-
   if (recommendation) {
     recommendation.textContent =
-      item.recommendation || "Няма конкретна препоръка за тази констатация.";
-
-    const section = recommendation.closest("section");
-
-    if (section) {
-      section.hidden = !item.recommendation;
-    }
+      x.recommendation || "Няма конкретна препоръка за тази констатация.";
+    recommendation.closest("section").hidden = !x.recommendation;
   }
 
   $("detail-confidence").textContent =
-    "Увереност: " + nice(item.confidence);
+    "Увереност: " + nice(x.confidence);
 
   $("detail-source").textContent =
-    "Източник: " + (item.source || "rules");
+    "Източник: " + (x.source || "rules");
 
-  $("detail-id").textContent = item.id || "";
+  $("detail-id").textContent = x.id || "";
 
   $("detail-dialog").showModal();
 }
@@ -393,29 +387,29 @@ function detail(item) {
 
 $("close-dialog").onclick = () => $("detail-dialog").close();
 
-$("detail-dialog").addEventListener("click", event => {
-  if (event.target === $("detail-dialog")) {
+$("detail-dialog").addEventListener("click", e => {
+  if (e.target === $("detail-dialog")) {
     $("detail-dialog").close();
   }
 });
 
-$("audit-form").addEventListener("submit", event => {
-  event.preventDefault();
+$("audit-form").addEventListener("submit", e => {
+  e.preventDefault();
 
-  let url;
+  let u;
 
   try {
-    url = new URL($("audit-url").value.trim());
+    u = new URL($("audit-url").value.trim());
   } catch {
     $("form-message").textContent = "Въведи валиден URL.";
     return;
   }
 
   if (
-    url.protocol !== "https:" ||
-    url.hostname.toLowerCase() !== "www.yettel.bg" ||
-    url.username ||
-    url.password
+    u.protocol !== "https:" ||
+    u.hostname.toLowerCase() !== "www.yettel.bg" ||
+    u.username ||
+    u.password
   ) {
     $("form-message").textContent =
       "Разрешени са само HTTPS адреси от точно www.yettel.bg.";
@@ -423,12 +417,12 @@ $("audit-form").addEventListener("submit", event => {
   }
 
   $("form-message").textContent =
-    "URL е валидиран: " + url.href +
+    "URL е валидиран: " + u.href +
     ". GitHub Pages не може да стартира workflow директно. " +
     "Отвори Actions → Audit public page → Run workflow и постави адреса.";
 
   if (navigator.clipboard?.writeText) {
-    navigator.clipboard.writeText(url.href).catch(() => {});
+    navigator.clipboard.writeText(u.href).catch(() => {});
   }
 });
 
