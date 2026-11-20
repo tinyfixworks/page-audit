@@ -1,3 +1,4 @@
+
 name: Audit public page
 on:
   workflow_dispatch:
@@ -6,32 +7,40 @@ on:
         description: "Public Yettel page URL (https://www.yettel.bg/...)"
         required: true
         type: string
+
 permissions:
   contents: write
+
 jobs:
   audit:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
+
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: "pip"
+
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
           python -m playwright install --with-deps chromium
+
       - name: Run audit
         env:
           AUDIT_URL: ${{ inputs.url }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: gemini-3.8-flash
         run: python checker.py --url "$AUDIT_URL" --output results.json
+
       - uses: actions/upload-artifact@v4
         with:
           name: page-audit-report
           path: results.json
+
       - name: Commit latest report
         run: |
           git config user.name "github-actions[bot]"
